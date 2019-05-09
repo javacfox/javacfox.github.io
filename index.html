@@ -172,6 +172,97 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-无法登陆github官网的解决办法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/05/09/无法登陆github官网的解决办法/">无法登陆github官网的解决办法</a>
+    </h1>
+  
+
+        
+        <a href="/2019/05/09/无法登陆github官网的解决办法/" class="archive-article-date">
+  	<time datetime="2019-05-09T09:52:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-09</time>
+</a>
+        
+		
+		<!-- 目录内容 -->
+		
+		<!-- 目录内容结束 -->
+		
+		
+		
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>今天向博客提交文章的时候，出现了如下的错误，大概的意思就是请确认你是否有权限访问这个仓库，刚开始以为是我的hexo出现了错误，一顿hexo –debug后也没有发现什么异常，后来我就想着查看一下我的github，然后发现无法访问，于是就定位到原因了，无法访问仓库地址。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">ssh: connect to host github.com port <span class="number">22</span>: Connection timed out</span><br><span class="line">fatal: Could not read from remote repository.</span><br><span class="line"></span><br><span class="line">Please make sure you have the correct access rights</span><br><span class="line">and the repository exists.</span><br><span class="line">[<span class="number">41</span>mFATAL[<span class="number">49</span>m Something<span class="string">'s wrong. Maybe you can find the solution here: [4mhttp://hexo.io/docs/troubleshooting.html[24m</span></span><br><span class="line"><span class="string">[33mError: Spawn failed</span></span><br><span class="line"><span class="string">    at ChildProcess.&lt;anonymous&gt; (D:\work\hexo\node_modules\hexo-util\lib\spawn.js:52:19)</span></span><br><span class="line"><span class="string">    at ChildProcess.emit (events.js:189:13)</span></span><br><span class="line"><span class="string">    at ChildProcess.cp.emit (D:\work\hexo\node_modules\cross-spawn\lib\enoent.js:40:29)</span></span><br><span class="line"><span class="string">    at Process.ChildProcess._handle.onexit (internal/child_process.js:248:12)[39m</span></span><br></pre></td></tr></table></figure></p>
+<h1 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h1><p><strong>修改host文件</strong><br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Windows 系统位于 C:\Windows\System32\drivers\etc\ </span><br><span class="line">Android（安卓）系统hosts位于 /etc/ </span><br><span class="line">Mac（苹果电脑）系统hosts位于 /etc/ </span><br><span class="line">iPhone（iOS）系统hosts位于 /etc/ </span><br><span class="line">Linux系统hosts位于 /etc/</span><br><span class="line">绝大多数Unix系统都是在 /etc/</span><br><span class="line"></span><br><span class="line">链接：https:<span class="comment">//www.zhihu.com/question/20732532/answer/253922215</span></span><br></pre></td></tr></table></figure></p>
+<p>1.打开Dns检测|Dns查询 - 站长工具: <a href="http://tool.chinaz.com/dns?type=1&amp;host=github.com&amp;ip=" target="_blank" rel="noopener">http://tool.chinaz.com/dns?type=1&amp;host=github.com&amp;ip=</a></p>
+<p>2.在检测输入栏中输入<a href="http://github.com官网" target="_blank" rel="noopener">http://github.com官网</a></p>
+<p>3.把检测列表里的TTL值最小的IP输入到hosts里，并对应写上github官网域名<br><img src="https://note.youdao.com/yws/public/resource/fac2cd9beba4e06cacef59ad04d62009/xmlnote/2A3AD5E8358D498A9CB339A4CEBD0B16/4022" alt="image"></p>
+<p>4.接下来就一个一个试吧，总有一个有用的，目前我现在用的是这个,亲测可用<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//把这行代码添加到hosts文件内</span></span><br><span class="line"><span class="number">192.30</span>.253.112 github.com</span><br></pre></td></tr></table></figure></p>
+
+      
+	  
+	  
+		
+		  <div class="declare" hidden="hidden"></div>
+		
+	  
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">github官网</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/05/09/无法登陆github官网的解决办法/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-前端开发兼容ie9趟过的坑" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -452,6 +543,10 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">前端,ie9兼容,阻止事件冒泡,上传文件清空</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">github官网</a>
               </li>
             
             <div class="clearfix"></div>
