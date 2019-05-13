@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>前端开发兼容ie9趟过的坑 | 胖胖</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="前言最近接手了一个银行的项目，合作方要求兼容ie9。之前习惯在chrome浏览器上开发，没有考虑过兼容问题，这次好多在chrome和firefox上都是可以，但是ie9标准版问题千奇百怪，只有你没有想不到的，没有它出不来的！！！ 问题集锦 文件上传错乱  根本原因：文件没有清空，上次上传的文件还存在123456//之前的写法$(&quot;#id&quot;).val(&quot;&quot;);//出现错误的问题是ie9不支持，下面是">
+  <meta name="description" content="前言最近接手了一个银行的项目，合作方要求兼容ie9。之前习惯在chrome浏览器上开发，没有考虑过兼容问题，这次好多在chrome和firefox上都是可以，但是ie9标准版问题千奇百怪，只有你没有想不到的，没有它出不来的！！！">
 <meta name="keywords" content="日常bug记录">
 <meta property="og:type" content="article">
 <meta property="og:title" content="前端开发兼容ie9趟过的坑">
 <meta property="og:url" content="http://yoursite.com/2019/05/09/前端开发兼容ie9趟过的坑/index.html">
 <meta property="og:site_name" content="胖胖">
-<meta property="og:description" content="前言最近接手了一个银行的项目，合作方要求兼容ie9。之前习惯在chrome浏览器上开发，没有考虑过兼容问题，这次好多在chrome和firefox上都是可以，但是ie9标准版问题千奇百怪，只有你没有想不到的，没有它出不来的！！！ 问题集锦 文件上传错乱  根本原因：文件没有清空，上次上传的文件还存在123456//之前的写法$(&quot;#id&quot;).val(&quot;&quot;);//出现错误的问题是ie9不支持，下面是">
+<meta property="og:description" content="前言最近接手了一个银行的项目，合作方要求兼容ie9。之前习惯在chrome浏览器上开发，没有考虑过兼容问题，这次好多在chrome和firefox上都是可以，但是ie9标准版问题千奇百怪，只有你没有想不到的，没有它出不来的！！！">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-05-10T03:54:28.467Z">
+<meta property="og:updated_time" content="2019-05-10T07:49:32.858Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="前端开发兼容ie9趟过的坑">
-<meta name="twitter:description" content="前言最近接手了一个银行的项目，合作方要求兼容ie9。之前习惯在chrome浏览器上开发，没有考虑过兼容问题，这次好多在chrome和firefox上都是可以，但是ie9标准版问题千奇百怪，只有你没有想不到的，没有它出不来的！！！ 问题集锦 文件上传错乱  根本原因：文件没有清空，上次上传的文件还存在123456//之前的写法$(&quot;#id&quot;).val(&quot;&quot;);//出现错误的问题是ie9不支持，下面是">
+<meta name="twitter:description" content="前言最近接手了一个银行的项目，合作方要求兼容ie9。之前习惯在chrome浏览器上开发，没有考虑过兼容问题，这次好多在chrome和firefox上都是可以，但是ie9标准版问题千奇百怪，只有你没有想不到的，没有它出不来的！！！">
   
     <link rel="alternative" href="/atom.xml" title="胖胖" type="application/atom+xml">
   
@@ -223,6 +223,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>最近接手了一个银行的项目，合作方要求兼容ie9。之前习惯在chrome浏览器上开发，没有考虑过兼容问题，这次好多在chrome和firefox上都是可以，但是ie9标准版问题千奇百怪，只有你没有想不到的，没有它出不来的！！！</p>
+<a id="more"></a>
 <h1 id="问题集锦"><a href="#问题集锦" class="headerlink" title="问题集锦"></a>问题集锦</h1><ul>
 <li><strong>文件上传错乱</strong></li>
 </ul>
@@ -255,6 +256,10 @@
 			<strong>本文链接：</strong>
 			http://yoursite.com/2019/05/09/前端开发兼容ie9趟过的坑/
 			<br>
+			<span>
+				<strong>阅读量：</strong><span id="busuanzi_value_page_pv"></span>
+			</span>次
+			<br>
 			<strong>版权声明：</strong>
 			本作品采用
 			<a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>
@@ -263,6 +268,9 @@
 			  <br>
 			  <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"></a>
 			
+			
+		
+	
 		  </div>
 		
 	  
@@ -299,6 +307,7 @@
         </div>
       
     </div>
+	
     <div class="article-info article-info-index">
       
       
@@ -449,7 +458,8 @@ gitment.render('gitment-ctn')
     	<div class="footer-left">
     		&copy; 2019 Lujianlong
     	</div>
-		<span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span>
+
+		<span id="busuanzi_container_site_uv">本站总访问量<span id="busuanzi_value_site_uv"></span>人次</span>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
       	</div>

@@ -17,7 +17,7 @@
 <meta property="og:description" content="前言今天向博客提交文章的时候，出现了如下的错误，大概的意思就是请确认你是否有权限访问这个仓库，刚开始以为是我的hexo出现了错误，一顿hexo –debug后也没有发现什么异常，后来我就想着查看一下我的github，然后发现无法访问，于是就定位到原因了，无法访问仓库地址。1234567891011ssh: connect to host github.com port 22: Connection">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://note.youdao.com/yws/public/resource/fac2cd9beba4e06cacef59ad04d62009/xmlnote/2A3AD5E8358D498A9CB339A4CEBD0B16/4022">
-<meta property="og:updated_time" content="2019-05-10T03:53:22.044Z">
+<meta property="og:updated_time" content="2019-05-10T07:49:31.536Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="无法登陆github官网的解决办法">
 <meta name="twitter:description" content="前言今天向博客提交文章的时候，出现了如下的错误，大概的意思就是请确认你是否有权限访问这个仓库，刚开始以为是我的hexo出现了错误，一顿hexo –debug后也没有发现什么异常，后来我就想着查看一下我的github，然后发现无法访问，于是就定位到原因了，无法访问仓库地址。1234567891011ssh: connect to host github.com port 22: Connection">
@@ -225,6 +225,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>今天向博客提交文章的时候，出现了如下的错误，大概的意思就是请确认你是否有权限访问这个仓库，刚开始以为是我的hexo出现了错误，一顿hexo –debug后也没有发现什么异常，后来我就想着查看一下我的github，然后发现无法访问，于是就定位到原因了，无法访问仓库地址。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">ssh: connect to host github.com port <span class="number">22</span>: Connection timed out</span><br><span class="line">fatal: Could not read from remote repository.</span><br><span class="line"></span><br><span class="line">Please make sure you have the correct access rights</span><br><span class="line">and the repository exists.</span><br><span class="line">[<span class="number">41</span>mFATAL[<span class="number">49</span>m Something<span class="string">'s wrong. Maybe you can find the solution here: [4mhttp://hexo.io/docs/troubleshooting.html[24m</span></span><br><span class="line"><span class="string">[33mError: Spawn failed</span></span><br><span class="line"><span class="string">    at ChildProcess.&lt;anonymous&gt; (D:\work\hexo\node_modules\hexo-util\lib\spawn.js:52:19)</span></span><br><span class="line"><span class="string">    at ChildProcess.emit (events.js:189:13)</span></span><br><span class="line"><span class="string">    at ChildProcess.cp.emit (D:\work\hexo\node_modules\cross-spawn\lib\enoent.js:40:29)</span></span><br><span class="line"><span class="string">    at Process.ChildProcess._handle.onexit (internal/child_process.js:248:12)[39m</span></span><br></pre></td></tr></table></figure></p>
+<a id="more"></a>
 <h1 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h1><p><strong>修改host文件</strong><br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Windows 系统位于 C:\Windows\System32\drivers\etc\ </span><br><span class="line">Android（安卓）系统hosts位于 /etc/ </span><br><span class="line">Mac（苹果电脑）系统hosts位于 /etc/ </span><br><span class="line">iPhone（iOS）系统hosts位于 /etc/ </span><br><span class="line">Linux系统hosts位于 /etc/</span><br><span class="line">绝大多数Unix系统都是在 /etc/</span><br><span class="line"></span><br><span class="line">链接：https:<span class="comment">//www.zhihu.com/question/20732532/answer/253922215</span></span><br></pre></td></tr></table></figure></p>
 <p>1.打开Dns检测|Dns查询 - 站长工具: <a href="http://tool.chinaz.com/dns?type=1&amp;host=github.com&amp;ip=" target="_blank" rel="noopener">http://tool.chinaz.com/dns?type=1&amp;host=github.com&amp;ip=</a></p>
 <p>2.在检测输入栏中输入<a href="http://github.com官网" target="_blank" rel="noopener">http://github.com官网</a></p>
@@ -244,6 +245,10 @@
 			<strong>本文链接：</strong>
 			http://yoursite.com/2019/05/09/无法登陆github官网的解决办法/
 			<br>
+			<span>
+				<strong>阅读量：</strong><span id="busuanzi_value_page_pv"></span>
+			</span>次
+			<br>
 			<strong>版权声明：</strong>
 			本作品采用
 			<a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>
@@ -252,6 +257,9 @@
 			  <br>
 			  <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"></a>
 			
+			
+		
+	
 		  </div>
 		
 	  
@@ -288,6 +296,7 @@
         </div>
       
     </div>
+	
     <div class="article-info article-info-index">
       
       
@@ -429,7 +438,8 @@ gitment.render('gitment-ctn')
     	<div class="footer-left">
     		&copy; 2019 Lujianlong
     	</div>
-		<span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span>
+
+		<span id="busuanzi_container_site_uv">本站总访问量<span id="busuanzi_value_site_uv"></span>人次</span>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
       	</div>

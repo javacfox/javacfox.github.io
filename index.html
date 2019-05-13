@@ -200,12 +200,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>今天向博客提交文章的时候，出现了如下的错误，大概的意思就是请确认你是否有权限访问这个仓库，刚开始以为是我的hexo出现了错误，一顿hexo –debug后也没有发现什么异常，后来我就想着查看一下我的github，然后发现无法访问，于是就定位到原因了，无法访问仓库地址。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">ssh: connect to host github.com port <span class="number">22</span>: Connection timed out</span><br><span class="line">fatal: Could not read from remote repository.</span><br><span class="line"></span><br><span class="line">Please make sure you have the correct access rights</span><br><span class="line">and the repository exists.</span><br><span class="line">[<span class="number">41</span>mFATAL[<span class="number">49</span>m Something<span class="string">'s wrong. Maybe you can find the solution here: [4mhttp://hexo.io/docs/troubleshooting.html[24m</span></span><br><span class="line"><span class="string">[33mError: Spawn failed</span></span><br><span class="line"><span class="string">    at ChildProcess.&lt;anonymous&gt; (D:\work\hexo\node_modules\hexo-util\lib\spawn.js:52:19)</span></span><br><span class="line"><span class="string">    at ChildProcess.emit (events.js:189:13)</span></span><br><span class="line"><span class="string">    at ChildProcess.cp.emit (D:\work\hexo\node_modules\cross-spawn\lib\enoent.js:40:29)</span></span><br><span class="line"><span class="string">    at Process.ChildProcess._handle.onexit (internal/child_process.js:248:12)[39m</span></span><br></pre></td></tr></table></figure></p>
-<h1 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h1><p><strong>修改host文件</strong><br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Windows 系统位于 C:\Windows\System32\drivers\etc\ </span><br><span class="line">Android（安卓）系统hosts位于 /etc/ </span><br><span class="line">Mac（苹果电脑）系统hosts位于 /etc/ </span><br><span class="line">iPhone（iOS）系统hosts位于 /etc/ </span><br><span class="line">Linux系统hosts位于 /etc/</span><br><span class="line">绝大多数Unix系统都是在 /etc/</span><br><span class="line"></span><br><span class="line">链接：https:<span class="comment">//www.zhihu.com/question/20732532/answer/253922215</span></span><br></pre></td></tr></table></figure></p>
-<p>1.打开Dns检测|Dns查询 - 站长工具: <a href="http://tool.chinaz.com/dns?type=1&amp;host=github.com&amp;ip=" target="_blank" rel="noopener">http://tool.chinaz.com/dns?type=1&amp;host=github.com&amp;ip=</a></p>
-<p>2.在检测输入栏中输入<a href="http://github.com官网" target="_blank" rel="noopener">http://github.com官网</a></p>
-<p>3.把检测列表里的TTL值最小的IP输入到hosts里，并对应写上github官网域名<br><img src="https://note.youdao.com/yws/public/resource/fac2cd9beba4e06cacef59ad04d62009/xmlnote/2A3AD5E8358D498A9CB339A4CEBD0B16/4022" alt="image"></p>
-<p>4.接下来就一个一个试吧，总有一个有用的，目前我现在用的是这个,亲测可用<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//把这行代码添加到hosts文件内</span></span><br><span class="line"><span class="number">192.30</span>.253.112 github.com</span><br></pre></td></tr></table></figure></p>
-
+        
       
 	  
 	  
@@ -215,6 +210,7 @@
 	  
       
     </div>
+	
     <div class="article-info article-info-index">
       
       
@@ -291,25 +287,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>最近接手了一个银行的项目，合作方要求兼容ie9。之前习惯在chrome浏览器上开发，没有考虑过兼容问题，这次好多在chrome和firefox上都是可以，但是ie9标准版问题千奇百怪，只有你没有想不到的，没有它出不来的！！！</p>
-<h1 id="问题集锦"><a href="#问题集锦" class="headerlink" title="问题集锦"></a>问题集锦</h1><ul>
-<li><strong>文件上传错乱</strong></li>
-</ul>
-<p>根本原因：文件没有清空，上次上传的文件还存在<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//之前的写法</span></span><br><span class="line">$(<span class="string">"#id"</span>).val(<span class="string">""</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//出现错误的问题是ie9不支持，下面是兼容写法</span></span><br><span class="line"><span class="keyword">var</span> input = $(<span class="string">"#id"</span>);</span><br><span class="line">input.replaceWith(input.clone());</span><br></pre></td></tr></table></figure></p>
-<p>值得一提的是：上面那种写法在chrome和firefox都是可以的，然而在ie9是行不通的；可是下面那种写法在firefox是无效的，所以最终的解决方案如下：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//navigator.userAgent.toLocaleLowerCase()获取浏览器的版本信息</span></span><br><span class="line"><span class="keyword">if</span>(navigator.userAgent.toLocaleLowerCase().indexOf(<span class="string">'firefox'</span>) != <span class="number">-1</span>)&#123;</span><br><span class="line">	<span class="built_in">document</span>.getElementById(<span class="string">'serverCert'</span>).value = <span class="string">""</span>;</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">	<span class="keyword">var</span> serverCert = $(<span class="string">"#serverCert"</span>);</span><br><span class="line">	serverCert.replaceWith(serverCert.clone());		</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>最后面这种写法完美兼容了chrome、firefox和ie9</p>
-<ul>
-<li><strong>选中取消后页面刷新</strong></li>
-</ul>
-<p>根本原因：事件冒泡<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//最初添加的兼容ie9的写法</span></span><br><span class="line">event.preventDefault? event.preventDefault(): event.returnValue = <span class="literal">false</span>;</span><br></pre></td></tr></table></figure></p>
-<p>这种写法确实解决了ie9的事件冒泡，可是却引出了另外一个bug,火狐识别不了event,于是乎出现了下面这种兼容的写法<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//防止冒泡事件的兼容写法</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">cancelBubbonEvent</span>(<span class="params">evt</span>)</span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(navigator.userAgent.toLocaleLowerCase().indexOf(<span class="string">'firefox'</span>) == <span class="number">-1</span>)&#123;</span><br><span class="line">		event.preventDefault? event.preventDefault(): event.returnValue = <span class="literal">false</span>;</span><br><span class="line">	&#125;<span class="keyword">else</span> &#123;</span><br><span class="line">		<span class="keyword">if</span> (evt != <span class="literal">undefined</span>) &#123;</span><br><span class="line">			<span class="keyword">var</span> oEvent = <span class="built_in">window</span>.event || evt;</span><br><span class="line">			oEvent.preventDefault? oEvent.preventDefault(): oEvent.returnValue = <span class="literal">false</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//调用时，相应的html页面也需要做一些改变，传入event这个参数</span></span><br></pre></td></tr></table></figure></p>
-<p>之前一直在两者之间切换，问题在两者之间来回变化，之后就用了上面这种写法，完美兼容了ie9,chrome和firefox的表单提交冒泡事件</p>
-<ul>
-<li><strong>ie9对页面做出修改之后获取的请求结果是没有修改之前的结果</strong></li>
-</ul>
-<p>根本原因：ie9对于同一个请求，如果参数没有变化，就默认直接去缓存里面获取先前的请求结果，不会调用后端的接口，所以每次的请求结果都是未修改之前的结果</p>
-<p>解决办法：在前端请求方法里添加一个参数datax：new Date(),相应的问题就会解决</p>
-<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>ie9很容易出现各种各样的问题，还是Chrome好用，支持绝大多数的写法。</p>
-
+        
       
 	  
 	  
@@ -319,6 +297,7 @@
 	  
       
     </div>
+	
     <div class="article-info article-info-index">
       
       
@@ -396,14 +375,7 @@
       
         <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
 <h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
+        
       
 	  
 	  
@@ -413,6 +385,7 @@
 	  
       
     </div>
+	
     <div class="article-info article-info-index">
       
       
@@ -462,7 +435,8 @@
     	<div class="footer-left">
     		&copy; 2019 Lujianlong
     	</div>
-		<span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span>
+
+		<span id="busuanzi_container_site_uv">本站总访问量<span id="busuanzi_value_site_uv"></span>人次</span>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
       	</div>
