@@ -16,12 +16,12 @@
 <meta property="og:site_name" content="胖胖">
 <meta property="og:description" content="前言今天向博客提交文章的时候，出现了如下的错误，大概的意思就是请确认你是否有权限访问这个仓库，刚开始以为是我的hexo出现了错误，一顿hexo –debug后也没有发现什么异常，后来我就想着查看一下我的github，然后发现无法访问，于是就定位到原因了，无法访问仓库地址。1234567891011ssh: connect to host github.com port 22: Connection">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://note.youdao.com/yws/public/resource/fac2cd9beba4e06cacef59ad04d62009/xmlnote/2A3AD5E8358D498A9CB339A4CEBD0B16/4022">
-<meta property="og:updated_time" content="2019-05-10T07:49:31.536Z">
+<meta property="og:image" content="https://raw.githubusercontent.com/javacfox/photos/master/Hexo%2BGithub%E5%AE%9E%E7%8E%B0%E7%9B%B8%E5%86%8C%E5%8A%9F%E8%83%BD/clipboard4.png">
+<meta property="og:updated_time" content="2019-05-18T14:53:48.805Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="无法登陆github官网的解决办法">
 <meta name="twitter:description" content="前言今天向博客提交文章的时候，出现了如下的错误，大概的意思就是请确认你是否有权限访问这个仓库，刚开始以为是我的hexo出现了错误，一顿hexo –debug后也没有发现什么异常，后来我就想着查看一下我的github，然后发现无法访问，于是就定位到原因了，无法访问仓库地址。1234567891011ssh: connect to host github.com port 22: Connection">
-<meta name="twitter:image" content="https://note.youdao.com/yws/public/resource/fac2cd9beba4e06cacef59ad04d62009/xmlnote/2A3AD5E8358D498A9CB339A4CEBD0B16/4022">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/javacfox/photos/master/Hexo%2BGithub%E5%AE%9E%E7%8E%B0%E7%9B%B8%E5%86%8C%E5%8A%9F%E8%83%BD/clipboard4.png">
   
     <link rel="alternative" href="/atom.xml" title="胖胖" type="application/atom+xml">
   
@@ -229,7 +229,7 @@
 <h1 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h1><p><strong>修改host文件</strong><br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Windows 系统位于 C:\Windows\System32\drivers\etc\ </span><br><span class="line">Android（安卓）系统hosts位于 /etc/ </span><br><span class="line">Mac（苹果电脑）系统hosts位于 /etc/ </span><br><span class="line">iPhone（iOS）系统hosts位于 /etc/ </span><br><span class="line">Linux系统hosts位于 /etc/</span><br><span class="line">绝大多数Unix系统都是在 /etc/</span><br><span class="line"></span><br><span class="line">链接：https:<span class="comment">//www.zhihu.com/question/20732532/answer/253922215</span></span><br></pre></td></tr></table></figure></p>
 <p>1.打开Dns检测|Dns查询 - 站长工具: <a href="http://tool.chinaz.com/dns?type=1&amp;host=github.com&amp;ip=" target="_blank" rel="noopener">http://tool.chinaz.com/dns?type=1&amp;host=github.com&amp;ip=</a></p>
 <p>2.在检测输入栏中输入<a href="http://github.com官网" target="_blank" rel="noopener">http://github.com官网</a></p>
-<p>3.把检测列表里的TTL值最小的IP输入到hosts里，并对应写上github官网域名<br><img src="https://note.youdao.com/yws/public/resource/fac2cd9beba4e06cacef59ad04d62009/xmlnote/2A3AD5E8358D498A9CB339A4CEBD0B16/4022" alt="image"></p>
+<p>3.把检测列表里的TTL值最小的IP输入到hosts里，并对应写上github官网域名<br><img src="https://raw.githubusercontent.com/javacfox/photos/master/Hexo%2BGithub%E5%AE%9E%E7%8E%B0%E7%9B%B8%E5%86%8C%E5%8A%9F%E8%83%BD/clipboard4.png" alt="image"></p>
 <p>4.接下来就一个一个试吧，总有一个有用的，目前我现在用的是这个,亲测可用<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//把这行代码添加到hosts文件内</span></span><br><span class="line"><span class="number">192.30</span>.253.112 github.com</span><br></pre></td></tr></table></figure></p>
 
       
@@ -528,15 +528,15 @@ gitment.render('gitment-ctn')
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">日常bug记录</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">github</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">yillia</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">日常bug记录</a>
               </li>
             
             <div class="clearfix"></div>
