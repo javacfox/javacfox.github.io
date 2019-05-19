@@ -172,20 +172,20 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-三个简化开发的小技巧" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-Base64算法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/05/19/三个简化开发的小技巧/">三个简化开发的小技巧</a>
+      <a class="article-title" href="/2019/05/19/Base64算法/">Base64算法</a>
     </h1>
   
 
         
-        <a href="/2019/05/19/三个简化开发的小技巧/" class="archive-article-date">
-  	<time datetime="2019-05-19T04:18:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-19</time>
+        <a href="/2019/05/19/Base64算法/" class="archive-article-date">
+  	<time datetime="2019-05-19T09:18:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-19</time>
 </a>
         
 		
@@ -199,666 +199,33 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="lombok"><a href="#lombok" class="headerlink" title="lombok"></a>lombok</h1><p>在接触lombok之前，需要我们使用快捷键生成get/set方法，有参无参构造和toString方法，一个简单的entity类看起来代码量却很多。<br>
-        
-      
-	  
-	  
-		
-		  <div class="declare" hidden="hidden"></div>
-		
-	  
-      
-    </p></div>
-	
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">lombok</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">swagger2</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">devtools</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/05/19/三个简化开发的小技巧/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-You-must-configure-either-the-server-or-JDBC-driver-via-the-serverTimezone-conf解决办法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/05/19/You-must-configure-either-the-server-or-JDBC-driver-via-the-serverTimezone-conf解决办法/">You must configure either the server or JDBC driver (via the serverTimezone conf解决办法</a>
-    </h1>
-  
-
-        
-        <a href="/2019/05/19/You-must-configure-either-the-server-or-JDBC-driver-via-the-serverTimezone-conf解决办法/" class="archive-article-date">
-  	<time datetime="2019-05-19T04:11:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-19</time>
-</a>
-        
-		
-		<!-- 目录内容 -->
-		
-		<!-- 目录内容结束 -->
-		
-		
-		
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="错误提示"><a href="#错误提示" class="headerlink" title="错误提示"></a>错误提示</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">Fri May <span class="number">17</span> <span class="number">14</span>:<span class="number">55</span>:<span class="number">39</span> CST <span class="number">2019</span></span><br><span class="line"><span class="function">There was an unexpected <span class="title">error</span> <span class="params">(type=Internal Server Error, status=<span class="number">500</span>)</span>.</span></span><br><span class="line">nested exception is org.apache.ibatis.exceptions.PersistenceException: ### Error querying database. Cause: org.springframework.jdbc.CannotGetJdbcConnectionException: Failed to obtain JDBC Connection; nested exception is java.sql.SQLSyntaxErrorException: Identifier name 'netsafe&amp;useunicode=true&amp;characterencoding=utf-8&amp;allowmultiqueries=true&amp;usessl=false' is too long ### The error may exist in com/infosec/netsafess/mapper/UserMapper.java (best guess) ### The error may involve com.infosec.netsafess.mapper.UserMapper.getAllUser ### The error occurred while executing a query ### Cause: org.springframework.jdbc.CannotGetJdbcConnectionException: Failed to obtain JDBC Connection; nested exception is java.sql.SQLSyntaxErrorException: Identifier name 'netsafe&amp;useunicode=true&amp;characterencoding=utf-8&amp;allowmultiqueries=true&amp;usessl=false' is too long</span><br><span class="line">org.mybatis.spring.MyBatisSystemException: nested exception is org.apache.ibatis.exceptions.PersistenceException: </span><br><span class="line">### Error querying database.  Cause: org.springframework.jdbc.CannotGetJdbcConnectionException: Failed to obtain JDBC Connection; nested exception is java.sql.SQLSyntaxErrorException: Identifier name 'netsafe&amp;useunicode=true&amp;characterencoding=utf-8&amp;allowmultiqueries=true&amp;usessl=false' is too long</span><br><span class="line">### The error may exist in com/infosec/netsafess/mapper/UserMapper.java (best guess)</span><br><span class="line">### The error may involve com.infosec.netsafess.mapper.UserMapper.getAllUser</span><br><span class="line">### The error occurred while executing a query</span><br><span class="line">### Cause: org.springframework.jdbc.CannotGetJdbcConnectionException: Failed to obtain JDBC Connection; nested exception is java.sql.SQLSyntaxErrorException: Identifier name 'netsafe&amp;useunicode=true&amp;characterencoding=utf-8&amp;allowmultiqueries=true&amp;usessl=false' is too long</span><br><span class="line">	at org.mybatis.spring.MyBatisExceptionTranslator.translateExceptionIfPossible(MyBatisExceptionTranslator.java:<span class="number">77</span>)</span><br><span class="line">	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:<span class="number">446</span>)</span><br><span class="line">	at com.sun.proxy.$Proxy60.selectList(Unknown Source)</span><br><span class="line">	at org.mybatis.spring.SqlSessionTemplate.selectList(SqlSessionTemplate.java:<span class="number">230</span>)</span><br><span class="line">	at org.apache.ibatis.binding.MapperMethod.executeForMany(MapperMethod.java:<span class="number">147</span>)</span><br><span class="line">	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:<span class="number">80</span>)</span><br><span class="line">	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:<span class="number">58</span>)</span><br><span class="line">	at com.sun.proxy.$Proxy64.getAllUser(Unknown Source)</span><br><span class="line">	at com.infosec.netsafess.service.impl.UserServiceImpl.getAllUser(UserServiceImpl.java:<span class="number">19</span>)</span><br><span class="line">	at com.infosec.netsafess.controller.HelloController.getAllUser(HelloController.java:<span class="number">25</span>)</span><br><span class="line">	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)</span><br><span class="line">	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:<span class="number">62</span>)</span><br><span class="line">	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:<span class="number">43</span>)</span><br></pre></td></tr></table></figure>
-        
-      
-	  
-	  
-		
-		  <div class="declare" hidden="hidden"></div>
-		
-	  
-      
-    </div>
-	
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">日常bug</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">JDBC driver异常</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/05/19/You-must-configure-either-the-server-or-JDBC-driver-via-the-serverTimezone-conf解决办法/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-org-apache-catalina-LifecycleException解决办法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/05/19/org-apache-catalina-LifecycleException解决办法/">org.apache.catalina.LifecycleException解决办法</a>
-    </h1>
-  
-
-        
-        <a href="/2019/05/19/org-apache-catalina-LifecycleException解决办法/" class="archive-article-date">
-  	<time datetime="2019-05-19T04:07:41.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-19</time>
-</a>
-        
-		
-		<!-- 目录内容 -->
-		
-		<!-- 目录内容结束 -->
-		
-		
-		
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line">严重: ContainerBase.addChild: start: </span><br><span class="line">org.apache.catalina.LifecycleException: Failed to start component [StandardEngine[Catalina].StandardHost[localhost].StandardContext[/MAuthManage]]</span><br><span class="line">	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:<span class="number">167</span>)</span><br><span class="line">	at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:<span class="number">754</span>)</span><br><span class="line">	at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:<span class="number">730</span>)</span><br><span class="line">	at org.apache.catalina.core.StandardHost.addChild(StandardHost.java:<span class="number">734</span>)</span><br><span class="line">	at org.apache.catalina.startup.HostConfig.deployDescriptor(HostConfig.java:<span class="number">624</span>)</span><br><span class="line">	at org.apache.catalina.startup.HostConfig$DeployDescriptor.run(HostConfig.java:<span class="number">1833</span>)</span><br><span class="line">	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:<span class="number">511</span>)</span><br><span class="line">	at java.util.concurrent.FutureTask.run(FutureTask.java:<span class="number">266</span>)</span><br><span class="line">	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:<span class="number">1149</span>)</span><br><span class="line">	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:<span class="number">624</span>)</span><br><span class="line">	at java.lang.Thread.run(Thread.java:<span class="number">748</span>)</span><br><span class="line">Caused by: java.lang.NoClassDefFoundError: com/sun/istack/localization/Localizable</span><br><span class="line">	at java.lang.ClassLoader.defineClass1(Native Method)</span><br><span class="line">	at java.lang.ClassLoader.defineClass(ClassLoader.java:<span class="number">763</span>)</span><br><span class="line">	at java.security.SecureClassLoader.defineClass(SecureClassLoader.java:<span class="number">142</span>)</span><br><span class="line">	at org.apache.catalina.loader.WebappClassLoaderBase.findClassInternal(WebappClassLoaderBase.java:<span class="number">2401</span>)</span><br><span class="line">	at org.apache.catalina.loader.WebappClassLoaderBase.findClass(WebappClassLoaderBase.java:<span class="number">859</span>)</span><br><span class="line">	at org.apache.catalina.loader.WebappClassLoaderBase.loadClass(WebappClassLoaderBase.java:<span class="number">1333</span>)</span><br><span class="line">	at org.apache.catalina.loader.WebappClassLoaderBase.loadClass(WebappClassLoaderBase.java:<span class="number">1185</span>)</span><br><span class="line">	at java.lang.ClassLoader.defineClass1(Native Method)</span><br><span class="line">	at java.lang.ClassLoader.defineClass(ClassLoader.java:<span class="number">763</span>)</span><br><span class="line">	at java.security.SecureClassLoader.defineClass(SecureClassLoader.java:<span class="number">142</span>)</span><br><span class="line">	at org.apache.catalina.loader.WebappClassLoaderBase.findClassInternal(WebappClassLoaderBase.java:<span class="number">2401</span>)</span><br><span class="line">	at org.apache.catalina.loader.WebappClassLoaderBase.findClass(WebappClassLoaderBase.java:<span class="number">859</span>)</span><br><span class="line">	at org.apache.catalina.loader.WebappClassLoaderBase.loadClass(WebappClassLoaderBase.java:<span class="number">1333</span>)</span><br><span class="line">	at org.apache.catalina.loader.WebappClassLoaderBase.loadClass(WebappClassLoaderBase.java:<span class="number">1185</span>)</span><br><span class="line">	at com.sun.xml.ws.transport.http.servlet.WSServletContainerInitializer.onStartup(WSServletContainerInitializer.java:<span class="number">64</span>)</span><br><span class="line">	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:<span class="number">5225</span>)</span><br><span class="line">	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:<span class="number">150</span>)</span><br><span class="line">	... <span class="number">10</span> more</span><br><span class="line">Caused by: java.lang.ClassNotFoundException: com.sun.istack.localization.Localizable</span><br><span class="line">	at org.apache.catalina.loader.WebappClassLoaderBase.loadClass(WebappClassLoaderBase.java:<span class="number">1364</span>)</span><br><span class="line">	at org.apache.catalina.loader.WebappClassLoaderBase.loadClass(WebappClassLoaderBase.java:<span class="number">1185</span>)</span><br><span class="line">	... <span class="number">27</span> more</span><br><span class="line"></span><br><span class="line">四月 <span class="number">29</span>, <span class="number">2019</span> <span class="number">9</span>:<span class="number">51</span>:<span class="number">05</span> 上午 org.apache.catalina.startup.HostConfig deployDescriptor</span><br><span class="line">严重: Error deploying configuration descriptor [D:\Users\Javacfox\eclipse-workspace\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\conf\Catalina\localhost\MAuthManage.xml]</span><br><span class="line">java.lang.IllegalStateException: ContainerBase.addChild: start: org.apache.catalina.LifecycleException: Failed to start component [StandardEngine[Catalina].StandardHost[localhost].StandardContext[/MAuthManage]]</span><br><span class="line">	at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:<span class="number">758</span>)</span><br><span class="line">	at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:<span class="number">730</span>)</span><br><span class="line">	at org.apache.catalina.core.StandardHost.addChild(StandardHost.java:<span class="number">734</span>)</span><br><span class="line">	at org.apache.catalina.startup.HostConfig.deployDescriptor(HostConfig.java:<span class="number">624</span>)</span><br><span class="line">	at org.apache.catalina.startup.HostConfig$DeployDescriptor.run(HostConfig.java:<span class="number">1833</span>)</span><br><span class="line">	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:<span class="number">511</span>)</span><br><span class="line">	at java.util.concurrent.FutureTask.run(FutureTask.java:<span class="number">266</span>)</span><br><span class="line">	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:<span class="number">1149</span>)</span><br><span class="line">	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:<span class="number">624</span>)</span><br><span class="line">	at java.lang.Thread.run(Thread.java:<span class="number">748</span>)</span><br><span class="line"></span><br><span class="line">四月 <span class="number">29</span>, <span class="number">2019</span> <span class="number">9</span>:<span class="number">51</span>:<span class="number">05</span> 上午 org.apache.catalina.startup.HostConfig deployDescriptor</span><br><span class="line">信息: Deployment of configuration descriptor [D:\Users\Javacfox\eclipse-workspace\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\conf\Catalina\localhost\MAuthManage.xml] has finished in [<span class="number">10</span>,<span class="number">512</span>] ms</span><br><span class="line">四月 <span class="number">29</span>, <span class="number">2019</span> <span class="number">9</span>:<span class="number">51</span>:<span class="number">05</span> 上午 org.apache.coyote.AbstractProtocol start</span><br><span class="line">信息: Starting ProtocolHandler [<span class="string">"http-nio-8080"</span>]</span><br><span class="line">四月 <span class="number">29</span>, <span class="number">2019</span> <span class="number">9</span>:<span class="number">51</span>:<span class="number">05</span> 上午 org.apache.coyote.AbstractProtocol start</span><br><span class="line">信息: Starting ProtocolHandler [<span class="string">"ajp-nio-8009"</span>]</span><br><span class="line">四月 <span class="number">29</span>, <span class="number">2019</span> <span class="number">9</span>:<span class="number">51</span>:<span class="number">05</span> 上午 org.apache.catalina.startup.Catalina start</span><br><span class="line">信息: Server startup in <span class="number">14048</span> ms</span><br></pre></td></tr></table></figure>
-        
-      
-	  
-	  
-		
-		  <div class="declare" hidden="hidden"></div>
-		
-	  
-      
-    </div>
-	
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">日常bug</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">LifecycleException解决思路</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/05/19/org-apache-catalina-LifecycleException解决办法/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-安装虚拟机时趟过的坑" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/05/19/安装虚拟机时趟过的坑/">安装虚拟机时趟过的坑</a>
-    </h1>
-  
-
-        
-        <a href="/2019/05/19/安装虚拟机时趟过的坑/" class="archive-article-date">
-  	<time datetime="2019-05-19T03:08:41.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-19</time>
-</a>
-        
-		
-		<!-- 目录内容 -->
-		
-		<!-- 目录内容结束 -->
-		
-		
-		
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="1、Intel-VT-x禁用"><a href="#1、Intel-VT-x禁用" class="headerlink" title="1、Intel VT-x禁用"></a>1、Intel VT-x禁用</h1><ol>
-<li>重启电脑，在开机动画之前，连续按F2</li>
-<li>进入bios界面，点击上方菜单栏处的【Advanced】</li>
-<li>进入advanced界面，点击列表中的【CPU Configuration】或者CPU-Setup</li>
-<li>找到【Intel Virtualization Technology】选项，点击回车选项</li>
-<li>该选项默认的是Disabled关闭状态，进入设置栏将Enabled勾选</li>
-<li>此时点击键盘上的F10选项，进行保存，在弹出的保存界面，点击YES保存，重启电脑
-        
-      
-	  
-	  
-		
-		  <div class="declare" hidden="hidden"></div>
-		
-	  
-      
-    </li></ol></div>
-	
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">日常bug</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">虚拟机的安装</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/05/19/安装虚拟机时趟过的坑/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-解决slf4j导入失败" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/05/19/解决slf4j导入失败/">解决slf4j导入失败</a>
-    </h1>
-  
-
-        
-        <a href="/2019/05/19/解决slf4j导入失败/" class="archive-article-date">
-  	<time datetime="2019-05-19T03:01:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-19</time>
-</a>
-        
-		
-		<!-- 目录内容 -->
-		
-		<!-- 目录内容结束 -->
-		
-		
-		
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>报错内容：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".</span><br><span class="line">SLF4J: Defaulting to no-operation (NOP) logger implementation</span><br><span class="line">SLF4J: See http:<span class="comment">//www.slf4j.org/codes.html#StaticLoggerBinder for further details.</span></span><br></pre></td></tr></table></figure></p>
-        
-      
-	  
-	  
-		
-		  <div class="declare" hidden="hidden"></div>
-		
-	  
-      
-    </div>
-	
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">日常bug</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">slf4j引入异常</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/05/19/解决slf4j导入失败/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-将一个已存在的目录转换为一个-GIT-项目并托管到-GITHUB-仓库" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/05/19/将一个已存在的目录转换为一个-GIT-项目并托管到-GITHUB-仓库/">将一个已存在的目录转换为一个 GIT 项目并托管到 GITHUB 仓库</a>
-    </h1>
-  
-
-        
-        <a href="/2019/05/19/将一个已存在的目录转换为一个-GIT-项目并托管到-GITHUB-仓库/" class="archive-article-date">
-  	<time datetime="2019-05-19T02:51:14.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-19</time>
-</a>
-        
-		
-		<!-- 目录内容 -->
-		
-		<!-- 目录内容结束 -->
-		
-		
-		
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <ol>
-<li>进入项目所在目录，右键，点击Git Bash Here进入终端</li>
-<li>将目录初始化为一个 Git 项目<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git init</span><br></pre></td></tr></table></figure>
-</li>
+        <h1 id="Base64"><a href="#Base64" class="headerlink" title="Base64"></a>Base64</h1><p>Base64是一种基于64个字符的编码算法，，根据RFC 2045的定义：“Base64内容传送编码是以一种任意8位字节序列组合的描述形式，这种形式不易被人直接识别”。经过Base64编码后的数据会比原始数据略长，为原来的4/3倍。字符串的字符数是以4位单位的整数倍。</p>
+<h1 id="实现原理"><a href="#实现原理" class="headerlink" title="实现原理"></a>实现原理</h1><ol>
+<li>将给定的字符串以字符为单位，转换为对应的字符编码(ASCII)</li>
+<li>将获得的字符编码转换为二进制码</li>
+<li>对获得的二进制编码做分组操作，每3个8位二进制码为一组，转换为每4个6位二进制码为一组(不足6位时低位补0)</li>
+<li>对获得的4-6二进制码补位，向6位二进制码添加2位高位0，组成4个8位二进制码</li>
+<li>将获得的4-8二进制码转换为十进制码</li>
+<li>将获得的十进制码转换为Base64字符表中对应的字符</li>
 </ol>
-<p>执行完后会在目录中创建一个 .git 隐藏文件夹<br>
-        
-      
-	  
-	  
-		
-		  <div class="declare" hidden="hidden"></div>
-		
-	  
-      
-    </p></div>
-	
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">git</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">GIT 项目并托管到 GITHUB 仓库</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/05/19/将一个已存在的目录转换为一个-GIT-项目并托管到-GITHUB-仓库/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Hexo-yilia主题的使用方法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/05/19/Hexo-yilia主题的使用方法/">Hexo yilia主题的使用方法</a>
-    </h1>
-  
-
-        
-        <a href="/2019/05/19/Hexo-yilia主题的使用方法/" class="archive-article-date">
-  	<time datetime="2019-05-19T02:41:59.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-19</time>
-</a>
-        
-		
-		<!-- 目录内容 -->
-		
-		<!-- 目录内容结束 -->
-		
-		
-		
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>时隔两年，终于使用Hexo搭建完毕，我选择了yilia这个主题，一来干净简洁，二来能够满足我对博客平台的要求。接下来就是开始定制化自己的技术博客平台了。</p>
-<h1 id="1-设置主页标题和个性签名"><a href="#1-设置主页标题和个性签名" class="headerlink" title="1.设置主页标题和个性签名"></a>1.设置主页标题和个性签名</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//在全局配置文件_config.yml中进行如下的修改</span></span><br><span class="line">title: 胖胖  <span class="comment">//站点标题</span></span><br><span class="line">subtitle: 笑不语  <span class="comment">//站点副标题</span></span><br><span class="line">description: 个人技术博客  <span class="comment">//站点描述</span></span><br><span class="line">keywords: 前端博客，后端博客，java,vue.js,jquery,html5,springboot,springcloud<span class="comment">//博客关键字</span></span><br><span class="line">author: Lujianlong  <span class="comment">//作者</span></span><br><span class="line">language: zh-CN  </span><br><span class="line">timezone:</span><br></pre></td></tr></table></figure>
-        
-      
-	  
-	  
-		
-		  <div class="declare" hidden="hidden"></div>
-		
-	  
-      
-    </div>
-	
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">yilia</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">使用方法</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/05/19/Hexo-yilia主题的使用方法/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Hexo博客yilia主题添加Gitment评论系统" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/05/19/Hexo博客yilia主题添加Gitment评论系统/">Hexo博客yilia主题添加Gitment评论系统</a>
-    </h1>
-  
-
-        
-        <a href="/2019/05/19/Hexo博客yilia主题添加Gitment评论系统/" class="archive-article-date">
-  	<time datetime="2019-05-19T02:30:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-19</time>
-</a>
-        
-		
-		<!-- 目录内容 -->
-		
-		<!-- 目录内容结束 -->
-		
-		
-		
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>gitment是imsun利用github上的issues做的评论系统,我这里大力推荐，原因有三：</p>
+<h1 id="Base64字符映射表"><a href="#Base64字符映射表" class="headerlink" title="Base64字符映射表"></a>Base64字符映射表</h1><p><img src="https://raw.githubusercontent.com/javacfox/photos/master/Hexo%2BGithub%E5%AE%9E%E7%8E%B0%E7%9B%B8%E5%86%8C%E5%8A%9F%E8%83%BD/clipboard9.png" alt="image"></p>
+<h1 id="ASCII码加密推导演示"><a href="#ASCII码加密推导演示" class="headerlink" title="ASCII码加密推导演示"></a>ASCII码加密推导演示</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">字符          B</span><br><span class="line">ASCII码       <span class="number">66</span>（不足<span class="number">24</span>位）</span><br><span class="line">二进制码      <span class="number">01000010</span></span><br><span class="line"><span class="number">4</span>-<span class="number">6</span>二进制码   <span class="number">010000</span>     <span class="number">100000</span> (不足低位补<span class="number">0</span>)</span><br><span class="line"><span class="number">4</span>-<span class="number">8</span>二进制码   <span class="number">00010000</span>   <span class="number">00100000</span> (高位补<span class="number">0</span>)</span><br><span class="line">十进制码      <span class="number">16</span>         <span class="number">32</span></span><br><span class="line">字符表映射码  Q          g      =    =  (不足<span class="number">4</span>个的补=)</span><br></pre></td></tr></table></figure>
+<h1 id="UTF-8码介绍"><a href="#UTF-8码介绍" class="headerlink" title="UTF-8码介绍"></a>UTF-8码介绍</h1><p>UTF-8是一种变长字节编码方式。对于某一个字符的UTF-8编码，如果只有一个字节则其最高二进制位为0；如果是多字节，其第一个字节从最高位开始，连续的二进制位值为1的个数决定了其编码的位数，其余各字节均以10开头。UTF-8最多可用到6个字节。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">如表(补位)： </span><br><span class="line"><span class="number">1</span>字节 <span class="number">0</span>xxxxxxx </span><br><span class="line"><span class="number">2</span>字节 <span class="number">110</span>xxxxx <span class="number">10</span>xxxxxx </span><br><span class="line"><span class="number">3</span>字节 <span class="number">1110</span>xxxx <span class="number">10</span>xxxxxx <span class="number">10</span>xxxxxx </span><br><span class="line"><span class="number">4</span>字节 <span class="number">11110</span>xxx <span class="number">10</span>xxxxxx <span class="number">10</span>xxxxxx <span class="number">10</span>xxxxxx </span><br><span class="line"><span class="number">5</span>字节 <span class="number">111110</span>xx <span class="number">10</span>xxxxxx <span class="number">10</span>xxxxxx <span class="number">10</span>xxxxxx <span class="number">10</span>xxxxxx </span><br><span class="line"><span class="number">6</span>字节 <span class="number">1111110</span>x <span class="number">10</span>xxxxxx <span class="number">10</span>xxxxxx <span class="number">10</span>xxxxxx <span class="number">10</span>xxxxxx <span class="number">10</span>xxxxxx</span><br></pre></td></tr></table></figure></p>
+<h1 id="UTF-8加密推导演示"><a href="#UTF-8加密推导演示" class="headerlink" title="UTF-8加密推导演示"></a>UTF-8加密推导演示</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">字符          爱</span><br><span class="line">utf-<span class="number">8</span>         %u7231</span><br><span class="line">二进制转换    <span class="number">0111</span>(<span class="number">7</span>)    <span class="number">0010</span>(<span class="number">2</span>)    <span class="number">0011</span>(<span class="number">3</span>)    <span class="number">0001</span>(<span class="number">1</span>)  <span class="comment">//括号对应上面的utf-8码</span></span><br><span class="line">二进制码      (<span class="number">1110</span>)<span class="number">0111</span> (<span class="number">10</span>)<span class="number">001000</span> (<span class="number">10</span>)<span class="number">110001</span>  <span class="comment">//括号里为填充码</span></span><br><span class="line"><span class="number">4</span>-<span class="number">6</span>二进制码   <span class="number">111001</span>     <span class="number">111000</span>     <span class="number">100010</span>     <span class="number">110001</span></span><br><span class="line"><span class="number">4</span>-<span class="number">8</span>二进制码   <span class="number">00111001</span>   <span class="number">00111000</span>   <span class="number">00100010</span>   <span class="number">00110001</span></span><br><span class="line">十进制码      <span class="number">57</span>         <span class="number">56</span>         <span class="number">34</span>         <span class="number">49</span></span><br><span class="line">字符映射码    <span class="number">5</span>          <span class="number">4</span>          i          x</span><br></pre></td></tr></table></figure>
+<h1 id="Base64算法实现"><a href="#Base64算法实现" class="headerlink" title="Base64算法实现"></a>Base64算法实现</h1><p>Bouncy Castle和Commons Codec两大开源组件提供了一般Base64算法的实现。</p>
+<p><strong>区别：</strong> </p>
 <ol>
-<li>注册简单，只要填写APP名和主页地址</li>
-<li>实现方便，只要简单的配置</li>
-<li>没有广告，这个很重要</li>
-<li>缺点也很明显，需要登录后才能评论，按需采取
-        
+<li>Bouncy Castle遵循的是一般Base64算法，也就是简单的根据字符映射表做了编码转换。</li>
+<li>Commons Codec遵循RFC 2045的相关定义，同时也支持一般Base64算法的实现。</li>
+<li>Commons Codec还提供了Base64算法的定制实现，可以自定义字符数和行末符号。</li>
+<li>Commons Codec还提供了输入输出流的实现</li>
+</ol>
+<p><strong>Bouncy Castle代码演示：</strong><br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//jar包引入</span></span><br><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;org.bouncycastle&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;bcprov-jdk15on&lt;/artifactId&gt;</span><br><span class="line">    &lt;version&gt;1.61&lt;/version&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment">//Castle工具类</span></span><br><span class="line"><span class="keyword">import</span> org.bouncycastle.util.encoders.Base64;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CastlesUtil</span> </span>&#123;</span><br><span class="line">    <span class="comment">//字符编码集</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> String ENCODING = <span class="string">"UTF-8"</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 将字符串类型进行Base64编码</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> data 明文</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span> 密文</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@throws</span> Exception</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">encode</span><span class="params">(String data)</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">        <span class="comment">//执行编码</span></span><br><span class="line">        <span class="keyword">byte</span>[] bytes = Base64.encode(data.getBytes(ENCODING));</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> String(bytes,ENCODING);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 解码</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> data 密文</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span> 明文</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@throws</span> Exception</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">decode</span><span class="params">(String data)</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">        <span class="comment">//执行解码</span></span><br><span class="line">        <span class="keyword">byte</span>[] bytes = Base64.decode(data);</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> String(bytes,ENCODING);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//单元测试</span></span><br><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">test</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        <span class="comment">//加密</span></span><br><span class="line">        String str = <span class="string">"梵如花"</span>;</span><br><span class="line">        System.out.println(<span class="string">"原文："</span>+str);</span><br><span class="line">        str = CastlesUtil.encode(str);</span><br><span class="line">        System.out.println(<span class="string">"密文："</span>+str);</span><br><span class="line">        <span class="comment">//解密</span></span><br><span class="line">        System.out.println(<span class="string">"解密："</span>+CastlesUtil.decode(str));</span><br><span class="line">    &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">        e.printStackTrace();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//打印结果</span></span><br><span class="line">原文：梵如花</span><br><span class="line">密文：<span class="number">5</span>qK15aaC6Iqx</span><br><span class="line">解密：梵如花</span><br></pre></td></tr></table></figure></p>
+<p><strong>Commons Codec代码演示：</strong><br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//引入jar包</span></span><br><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;commons-codec&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;commons-codec&lt;/artifactId&gt;</span><br><span class="line">    &lt;version&gt;1.12&lt;/version&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment">//Commons工具类</span></span><br><span class="line"><span class="keyword">import</span> org.apache.commons.codec.binary.Base64;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CommonsUntils</span> </span>&#123;</span><br><span class="line">    <span class="comment">//字符编码集</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> String ENCODING = <span class="string">"UTF-8"</span>;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">encode</span><span class="params">(String data)</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">        <span class="comment">//执行编码</span></span><br><span class="line">        <span class="keyword">byte</span>[] bytes = Base64.encodeBase64(data.getBytes(ENCODING));</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> String(bytes,ENCODING);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">encodeSafe</span><span class="params">(String data)</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">        <span class="comment">//执行编码</span></span><br><span class="line">        <span class="keyword">byte</span>[] bytes = Base64.encodeBase64(data.getBytes(ENCODING),<span class="keyword">true</span>);</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> String(bytes,ENCODING);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">decode</span><span class="params">(String data)</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">        <span class="comment">//执行解码</span></span><br><span class="line">        <span class="keyword">byte</span>[] bytes = Base64.decodeBase64(data);</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> String(bytes,ENCODING);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//单元测试</span></span><br><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">test</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        <span class="comment">//加密</span></span><br><span class="line">        String str = <span class="string">"梵如花是一个好的县令，没有错的哈哈哈哈哈哈哈哈哈哈或或"</span>;</span><br><span class="line">        System.out.println(<span class="string">"原文："</span>+str);</span><br><span class="line">        str = CommonsUntils.encode(str);</span><br><span class="line">        System.out.println(<span class="string">"普通加密："</span>+str);</span><br><span class="line">        str = <span class="string">"梵如花是一个好的县令，没有错的哈哈哈哈哈哈哈哈哈哈或或"</span>;</span><br><span class="line">        str = CommonsUntils.encodeSafe(str);</span><br><span class="line">        System.out.println(<span class="string">"安全加密："</span>+str);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//解密</span></span><br><span class="line">        System.out.println(<span class="string">"解密："</span>+CommonsUntils.decode(str));</span><br><span class="line">    &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">        e.printStackTrace();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//输出结果,注意的是，如果str比较短，则安全和非安全的输出结果是一致的</span></span><br><span class="line">原文：梵如花是一个好的县令，没有错的哈哈哈哈哈哈哈哈哈哈或或</span><br><span class="line">普通加密：<span class="number">5</span>qK15aaC6Iqx5piv5LiA5Liq5aW955qE5Y6/<span class="number">5L</span>uk77yM5rKh5pyJ6ZSZ55qE5ZOI5ZOI5ZOI5ZOI5ZOI5ZOI5ZOI5ZOI5ZOI5ZOI5oiW5oiW</span><br><span class="line">安全加密：<span class="number">5</span>qK15aaC6Iqx5piv5LiA5Liq5aW955qE5Y6/<span class="number">5L</span>uk77yM5rKh5pyJ6ZSZ55qE5ZOI5ZOI5ZOI5ZOI</span><br><span class="line"><span class="number">5</span>ZOI5ZOI5ZOI5ZOI5ZOI5ZOI5oiW5oiW</span><br></pre></td></tr></table></figure></p>
+<h1 id="Url-Base64算法"><a href="#Url-Base64算法" class="headerlink" title="Url Base64算法"></a>Url Base64算法</h1><p>Bouncy Castle遵从了RFC 4648的建议，使用”.”做填充符，构建定长Url Base64编码;</p>
+<p>Commons Codec舍弃了填充符，使用不定长Url Base64编码。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">byte</span>[] byts = Base64.encode(<span class="string">"梵如花是一个好的县令，没有错的哈哈哈哈哈哈哈哈哈哈或或"</span>.getBytes(<span class="string">"utf-8"</span>));</span><br><span class="line">System.out.println(<span class="string">"普通加密："</span>+<span class="keyword">new</span> String(byts,<span class="string">"utf-8"</span>));</span><br><span class="line"><span class="keyword">byte</span>[] bytes = UrlBase64.encode(<span class="string">"梵如花是一个好的县令，没有错的哈哈哈哈哈哈哈哈哈哈或或"</span>.getBytes(<span class="string">"utf-8"</span>));</span><br><span class="line">System.out.println(<span class="string">"url："</span>+<span class="keyword">new</span> String(bytes,<span class="string">"utf-8"</span>));</span><br><span class="line"></span><br><span class="line"><span class="comment">//打印结果:</span></span><br><span class="line">普通加密：<span class="number">5</span>qK15aaC6Iqx5piv5LiA5Liq5aW955qE5Y6/<span class="number">5L</span>uk77yM5rKh5pyJ6ZSZ55qE5ZOI5ZOI5ZOI5ZOI5ZOI5ZOI5ZOI5ZOI5ZOI5ZOI5oiW5oiW</span><br><span class="line">url：<span class="number">5</span>qK15aaC6Iqx5piv5LiA5Liq5aW955qE5Y6_5Luk77yM5rKh5pyJ6ZSZ55qE5ZOI5ZOI5ZOI5ZOI5ZOI5ZOI5ZOI5ZOI5ZOI5ZOI5oiW5oiW</span><br></pre></td></tr></table></figure></p>
+<h1 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景"></a>应用场景</h1><p>Base64算法广泛应用于电子邮件传输，网络信息传输，以及密钥和证书文件的文本式保存。在数据保密要求强度不高的情况下，可以使用Base64算法做简单的数据加密。</p>
+
       
 	  
 	  
@@ -867,7 +234,7 @@
 		
 	  
       
-    </li></ol></div>
+    </div>
 	
     <div class="article-info article-info-index">
       
@@ -877,11 +244,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">yilia</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">密码学基础</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">gitment评论系统</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Base64算法</a>
         		</li>
       		
 		</ul>
@@ -891,7 +258,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/05/19/Hexo博客yilia主题添加Gitment评论系统/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/05/19/Base64算法/">展开全文 >></a>
         </p>
       
 
@@ -921,20 +288,20 @@
 
 
   
-    <article id="post-Hexo-yilia添加helper-live2d插件实现宠物动画" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-消息摘要算法-进阶" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/05/19/Hexo-yilia添加helper-live2d插件实现宠物动画/">Hexo+yilia添加helper-live2d插件实现宠物动画</a>
+      <a class="article-title" href="/2019/05/19/消息摘要算法-进阶/">消息摘要算法(进阶)</a>
     </h1>
   
 
         
-        <a href="/2019/05/19/Hexo-yilia添加helper-live2d插件实现宠物动画/" class="archive-article-date">
-  	<time datetime="2019-05-19T02:20:51.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-19</time>
+        <a href="/2019/05/19/消息摘要算法-进阶/" class="archive-article-date">
+  	<time datetime="2019-05-19T09:17:55.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-19</time>
 </a>
         
 		
@@ -948,8 +315,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><strong>个人主页</strong>：<a href="https://javacfox.github.io" target="_blank" rel="noopener">https://javacfox.github.io</a><br><img src="https://raw.githubusercontent.com/javacfox/photos/master/Hexo%2BGithub%E5%AE%9E%E7%8E%B0%E7%9B%B8%E5%86%8C%E5%8A%9F%E8%83%BD/clipboard5.png" alt="image"></p>
-<h1 id="实现方法"><a href="#实现方法" class="headerlink" title="实现方法"></a>实现方法</h1><p>1.在博客目录选择cmd命令窗口或者git bash窗口输入以下代码，安装插件<br>
+        <h1 id="定义："><a href="#定义：" class="headerlink" title="定义："></a>定义：</h1><p>消息摘要算法又称为散列算法，其核心在于散列函数的单向性。即通过散列函数可获得对应的散列值，但不可通过该散列值反推其原始数据信息，这是消息摘要算法的安全性的根本所在。<br>
         
       
 	  
@@ -969,11 +335,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">yilia</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">密码学基础</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">helper_live2d</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">消息摘要算法</a>
         		</li>
       		
 		</ul>
@@ -983,7 +349,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/05/19/Hexo-yilia添加helper-live2d插件实现宠物动画/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/05/19/消息摘要算法-进阶/">展开全文 >></a>
         </p>
       
 
@@ -1013,20 +379,20 @@
 
 
   
-    <article id="post-Hexo-Github实现相册功能" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-初等数据加密-对称加密算法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/05/12/Hexo-Github实现相册功能/">Hexo+Github实现相册功能</a>
+      <a class="article-title" href="/2019/05/19/初等数据加密-对称加密算法/">初等数据加密--对称加密算法</a>
     </h1>
   
 
         
-        <a href="/2019/05/12/Hexo-Github实现相册功能/" class="archive-article-date">
-  	<time datetime="2019-05-12T03:17:38.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-12</time>
+        <a href="/2019/05/19/初等数据加密-对称加密算法/" class="archive-article-date">
+  	<time datetime="2019-05-19T09:16:57.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-19</time>
 </a>
         
 		
@@ -1040,13 +406,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <ul>
-<li>最终效果请看这里：<a href="https://javacfox.github.io/photos/" target="_blank" rel="noopener">https://javacfox.github.io/photos/</a></li>
-<li>本文参考了Lawlite大神的实现方法，如果想看具体原理，请访问：<a href="http://lawlite.me/" target="_blank" rel="noopener">http://lawlite.me/</a><h1 id="一、具体实现流程"><a href="#一、具体实现流程" class="headerlink" title="一、具体实现流程"></a>一、具体实现流程</h1><h2 id="1、github操作"><a href="#1、github操作" class="headerlink" title="1、github操作"></a>1、github操作</h2></li>
-<li>在github上新建一个仓库，用于存储相册</li>
-<li>github的相关命令操作，请参考：<a href="https://blog.csdn.net/weixin_43935907/article/details/89469444" target="_blank" rel="noopener">https://blog.csdn.net/weixin_43935907/article/details/89469444</a><h2 id="2、博客操作"><a href="#2、博客操作" class="headerlink" title="2、博客操作"></a>2、博客操作</h2></li>
-<li>进入到你的博客目录下执行 hexo new page “photos”,就会出现一个这样的新目录,这个photos目录在source文件下，删除里面的文件index.md</li>
-<li><p>配置yilia主题让其显示出来</p>
+        <p>对称加密算法的核心：加密和解密操作使用同一套密钥。<br>
         
       
 	  
@@ -1056,7 +416,7 @@
 		
 	  
       
-    </li></ul></div>
+    </p></div>
 	
     <div class="article-info article-info-index">
       
@@ -1066,7 +426,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">yillia</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">密码学基础</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">对称加密算法</a>
         		</li>
       		
 		</ul>
@@ -1076,7 +440,648 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/05/12/Hexo-Github实现相册功能/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/05/19/初等数据加密-对称加密算法/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-高等数据加密-非对称加密算法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/05/19/高等数据加密-非对称加密算法/">高等数据加密--非对称加密算法</a>
+    </h1>
+  
+
+        
+        <a href="/2019/05/19/高等数据加密-非对称加密算法/" class="archive-article-date">
+  	<time datetime="2019-05-19T09:16:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-19</time>
+</a>
+        
+		
+		<!-- 目录内容 -->
+		
+		<!-- 目录内容结束 -->
+		
+		
+		
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>非对称加密算法与对称加密算法的主要区别在于非对称加密算法用于加密和解密的密钥不同，一个公开，称为公钥；一个保密，称为私钥。因此，非对称密码算法也称为双钥和公钥加密算法。</p>
+<p>非对称加密算法解决了对称加密算法密钥分配问题，并极大的提高了算法的安全性。多种B2C或B2B应用均使用非对称加密算法作为数据加密的核心算法。解决了对称加密算法的密钥存储问题。<br>
+        
+      
+	  
+	  
+		
+		  <div class="declare" hidden="hidden"></div>
+		
+	  
+      
+    </p></div>
+	
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">密码学基础</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">非对称加密算法</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/05/19/高等数据加密-非对称加密算法/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-数字签名算法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/05/19/数字签名算法/">数字签名算法</a>
+    </h1>
+  
+
+        
+        <a href="/2019/05/19/数字签名算法/" class="archive-article-date">
+  	<time datetime="2019-05-19T09:16:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-19</time>
+</a>
+        
+		
+		<!-- 目录内容 -->
+		
+		<!-- 目录内容结束 -->
+		
+		
+		
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><p>数字签名算法看以看做是一种带有密钥的消息摘要算法，并且这种算法包含了公钥和私钥。也就是说，数字签名算法是非对称加密算法和消息摘要算法的结合体。</p>
+<p>数字签名算法要求能够验证数据完整性、认证数据来源，并起到抗否认的作用。这三点与OSI参考模型中的数据完整性服务、认证服务和抗否认服务。消息摘要算法是验证数据完整性的最佳算法，因此，该算法成为数字签名算法中的必要组成部分。数字签名算法包含签名和验证两项操作，遵循”私钥签名，公钥验证”的签名、验证方式。<br>
+        
+      
+	  
+	  
+		
+		  <div class="declare" hidden="hidden"></div>
+		
+	  
+      
+    </p></div>
+	
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">密码学基础</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">数字签名算法</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/05/19/数字签名算法/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-数字证书" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/05/19/数字证书/">数字证书</a>
+    </h1>
+  
+
+        
+        <a href="/2019/05/19/数字证书/" class="archive-article-date">
+  	<time datetime="2019-05-19T09:15:37.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-19</time>
+</a>
+        
+		
+		<!-- 目录内容 -->
+		
+		<!-- 目录内容结束 -->
+		
+		
+		
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>消息摘要算法用于验证数据完整性服务，对称加密算法和非对称加密算法用于保证数据保密性服务，数字签名算法用于抗否认服务。</p>
+<p>数字证书集合了多种密码学算法：自身带有公钥信息，可完成相应的加密/解密操作，同时，还带有数字签名，可鉴别消息来源；且自身带有消息摘由信息，可验证证书的完整性；由于证书本身含有用户身份信息，因而具有认证性。</p>
+<p>数字证书有多种文件编码格式，主要包含CER编码(变长模式)、DER编码(定长模式)和PKCS系列等<br>
+        
+      
+	  
+	  
+		
+		  <div class="declare" hidden="hidden"></div>
+		
+	  
+      
+    </p></div>
+	
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">密码学基础</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">数字证书</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/05/19/数字证书/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-JCE加密和解密-基础篇" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/05/19/JCE加密和解密-基础篇/">JCE加密和解密(基础篇)</a>
+    </h1>
+  
+
+        
+        <a href="/2019/05/19/JCE加密和解密-基础篇/" class="archive-article-date">
+  	<time datetime="2019-05-19T04:41:50.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-19</time>
+</a>
+        
+		
+		<!-- 目录内容 -->
+		
+		<!-- 目录内容结束 -->
+		
+		
+		
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Cipher"><a href="#Cipher" class="headerlink" title="Cipher"></a>Cipher</h1><p>Cipher类为加密和解密提供密码功能。它构成了JCE框架的核心(引擎类)。<br>
+        
+      
+	  
+	  
+		
+		  <div class="declare" hidden="hidden"></div>
+		
+	  
+      
+    </p></div>
+	
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">密码学基础</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">加密与解密类</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/05/19/JCE加密和解密-基础篇/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-KeyGenerator和KeyPairGenerator" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/05/19/KeyGenerator和KeyPairGenerator/">KeyGenerator和KeyPairGenerator</a>
+    </h1>
+  
+
+        
+        <a href="/2019/05/19/KeyGenerator和KeyPairGenerator/" class="archive-article-date">
+  	<time datetime="2019-05-19T04:38:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-19</time>
+</a>
+        
+		
+		<!-- 目录内容 -->
+		
+		<!-- 目录内容结束 -->
+		
+		
+		
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Key"><a href="#Key" class="headerlink" title="Key"></a>Key</h1><p><strong>接口介绍：</strong> Key接口是所有密钥接口的顶层接口，一切与加密有关的操作都离不开Key接口,其中SecrectKey、PublicKey()和PrivateKey()均继承自Key接口，定义了对称密钥和非对称密钥接口。<br>
+        
+      
+	  
+	  
+		
+		  <div class="declare" hidden="hidden"></div>
+		
+	  
+      
+    </p></div>
+	
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">密码学基础</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">密钥生成器</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/05/19/KeyGenerator和KeyPairGenerator/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-证书和密钥的存储类" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/05/19/证书和密钥的存储类/">证书和密钥的存储类</a>
+    </h1>
+  
+
+        
+        <a href="/2019/05/19/证书和密钥的存储类/" class="archive-article-date">
+  	<time datetime="2019-05-19T04:36:39.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-19</time>
+</a>
+        
+		
+		<!-- 目录内容 -->
+		
+		<!-- 目录内容结束 -->
+		
+		
+		
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="KeyStore"><a href="#KeyStore" class="headerlink" title="KeyStore"></a>KeyStore</h1><p>KeyStore被称为密钥库，用于管理密钥和证书的存储(引擎类)，它提供一些相当完善的接口来访问和修改密钥仓库中的信息<br>
+        
+      
+	  
+	  
+		
+		  <div class="declare" hidden="hidden"></div>
+		
+	  
+      
+    </p></div>
+	
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">密码学基础</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">证书和密钥的存储类</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/05/19/证书和密钥的存储类/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-数字签名" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/05/19/数字签名/">数字签名算法</a>
+    </h1>
+  
+
+        
+        <a href="/2019/05/19/数字签名/" class="archive-article-date">
+  	<time datetime="2019-05-19T04:33:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-19</time>
+</a>
+        
+		
+		<!-- 目录内容 -->
+		
+		<!-- 目录内容结束 -->
+		
+		
+		
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Signature类"><a href="#Signature类" class="headerlink" title="Signature类"></a>Signature类</h1><p>Signature类用来生成和验证数字签名（引擎类）<br>
+        
+      
+	  
+	  
+		
+		  <div class="declare" hidden="hidden"></div>
+		
+	  
+      
+    </p></div>
+	
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">密码学基础</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">数字签名算法</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/05/19/数字签名/">展开全文 >></a>
         </p>
       
 
@@ -1108,7 +1113,7 @@
   
   
     <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
     </nav>
   
 
@@ -1203,11 +1208,11 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">yilia</a>
+                <a href="javascript:void(0)" class="js-tag color2">yillia</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">使用方法</a>
+                <a href="javascript:void(0)" class="js-tag color1">yilia</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1215,7 +1220,27 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">yillia</a>
+                <a href="javascript:void(0)" class="js-tag color1">密码学基础</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">加密与解密类</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Base64算法</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">密钥生成器</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">使用方法</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">java.security包</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1223,15 +1248,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">JDBC driver异常</a>
+                <a href="javascript:void(0)" class="js-tag color3">LifecycleException解决思路</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">gitment评论系统</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">LifecycleException解决思路</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1263,11 +1284,39 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">数字签名算法</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">github</a>
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">消息摘要算法</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">JDBC driver异常</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">对称加密算法</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">证书和密钥的存储类</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">slf4j引入异常</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">数字证书</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">非对称加密算法</a>
               </li>
             
             <div class="clearfix"></div>
