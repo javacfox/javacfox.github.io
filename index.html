@@ -172,20 +172,20 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-Base64算法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-springboot多环境（devlop、test、product）配置" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/05/19/Base64算法/">Base64算法</a>
+      <a class="article-title" href="/2019/05/19/springboot多环境（devlop、test、product）配置/">SpringBoot返回类型封装</a>
     </h1>
   
 
         
-        <a href="/2019/05/19/Base64算法/" class="archive-article-date">
-  	<time datetime="2019-05-19T09:18:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-19</time>
+        <a href="/2019/05/19/springboot多环境（devlop、test、product）配置/" class="archive-article-date">
+  	<time datetime="2019-05-19T10:28:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-19</time>
 </a>
         
 		
@@ -199,7 +199,11 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="Base64"><a href="#Base64" class="headerlink" title="Base64"></a>Base64</h1><p>Base64是一种基于64个字符的编码算法，，根据RFC 2045的定义：“Base64内容传送编码是以一种任意8位字节序列组合的描述形式，这种形式不易被人直接识别”。经过Base64编码后的数据会比原始数据略长，为原来的4/3倍。字符串的字符数是以4位单位的整数倍。<br>
+        <h1 id="多环境的配置"><a href="#多环境的配置" class="headerlink" title="多环境的配置"></a>多环境的配置</h1><p>定义一个获取配置文件的方法，让环境变量决定调用哪个配置文件 ：</p>
+<ol>
+<li><strong>核心思想</strong>： 定义一个私有方法，读取环境变量里的一个自定义属性，让这个属性决定服务器调用哪个配置文件，从而达到无需修改代码和配置文件就可以实现调用不同配置文件的目的；</li>
+<li><strong>基本组成</strong>：环境变量、tomcat启动入口、命令和jar包运行入口、配置文件选择器和配置文件；</li>
+<li><strong>优点</strong>：服务器调用不同的配置文件无需修改代码和配置文件，只需要配置环境变量即可，一定程度上降低了开发难度;
         
       
 	  
@@ -209,7 +213,7 @@
 		
 	  
       
-    </p></div>
+    </li></ol></div>
 	
     <div class="article-info article-info-index">
       
@@ -219,11 +223,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">密码学基础</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">springboot</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Base64算法</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">多环境的配置</a>
         		</li>
       		
 		</ul>
@@ -233,7 +237,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/05/19/Base64算法/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/05/19/springboot多环境（devlop、test、product）配置/">展开全文 >></a>
         </p>
       
 
@@ -263,20 +267,20 @@
 
 
   
-    <article id="post-消息摘要算法-进阶" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-SpringBoot 中使用 MongoDB 基于 MongoRepository增删改查(基础篇)" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/05/19/消息摘要算法-进阶/">消息摘要算法(进阶)</a>
+      <a class="article-title" href="/2019/05/19/SpringBoot 中使用 MongoDB 基于 MongoRepository增删改查(基础篇)/">SpringBoot 中使用 MongoDB 基于 MongoRepository增删改查(基础篇)</a>
     </h1>
   
 
         
-        <a href="/2019/05/19/消息摘要算法-进阶/" class="archive-article-date">
-  	<time datetime="2019-05-19T09:17:55.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-19</time>
+        <a href="/2019/05/19/SpringBoot 中使用 MongoDB 基于 MongoRepository增删改查(基础篇)/" class="archive-article-date">
+  	<time datetime="2019-05-19T10:18:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-19</time>
 </a>
         
 		
@@ -290,7 +294,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="定义："><a href="#定义：" class="headerlink" title="定义："></a>定义：</h1><p>消息摘要算法又称为散列算法，其核心在于散列函数的单向性。即通过散列函数可获得对应的散列值，但不可通过该散列值反推其原始数据信息，这是消息摘要算法的安全性的根本所在。<br>
+        <h1 id="一、MongoDB的配置"><a href="#一、MongoDB的配置" class="headerlink" title="一、MongoDB的配置"></a>一、MongoDB的配置</h1><h2 id="1-引入jar包"><a href="#1-引入jar包" class="headerlink" title="1.引入jar包"></a>1.引入jar包</h2>  <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-data-mongodb<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
         
       
 	  
@@ -300,7 +304,7 @@
 		
 	  
       
-    </p></div>
+    </div>
 	
     <div class="article-info article-info-index">
       
@@ -310,11 +314,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">密码学基础</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">springboot</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">消息摘要算法</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Monogdb</a>
         		</li>
       		
 		</ul>
@@ -324,7 +328,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/05/19/消息摘要算法-进阶/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/05/19/SpringBoot 中使用 MongoDB 基于 MongoRepository增删改查(基础篇)/">展开全文 >></a>
         </p>
       
 
@@ -354,20 +358,20 @@
 
 
   
-    <article id="post-初等数据加密-对称加密算法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-swagger2的跨域配置" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/05/19/初等数据加密-对称加密算法/">初等数据加密--对称加密算法</a>
+      <a class="article-title" href="/2019/05/19/swagger2的跨域配置/">Swagger的配置</a>
     </h1>
   
 
         
-        <a href="/2019/05/19/初等数据加密-对称加密算法/" class="archive-article-date">
-  	<time datetime="2019-05-19T09:16:57.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-19</time>
+        <a href="/2019/05/19/swagger2的跨域配置/" class="archive-article-date">
+  	<time datetime="2019-05-19T10:08:58.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-19</time>
 </a>
         
 		
@@ -381,7 +385,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>对称加密算法的核心：加密和解密操作使用同一套密钥。<br>
+        <h2 id="手写api的痛点"><a href="#手写api的痛点" class="headerlink" title="手写api的痛点"></a>手写api的痛点</h2><p>手写Api文档的几个痛点：</p>
+<p>1.文档更新的时候，需要再次更新文档一份给前端，不能及时的和前端进行交流。<br>2.接口返回结果不明确<br>3.不能直接在线测试接口，需要借助第三方工具，比如：postman<br>4.如果接口文档太多，不方便管理<br>Swagger也就是为了解决这些问题而设计的，当然也不能说Swagger就一定是完美的，也有缺点，最明显的就是代码移入性比较强。<br>
         
       
 	  
@@ -401,11 +406,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">密码学基础</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">swagger2</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">对称加密算法</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">java</a>
         		</li>
       		
 		</ul>
@@ -415,7 +420,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/05/19/初等数据加密-对称加密算法/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/05/19/swagger2的跨域配置/">展开全文 >></a>
         </p>
       
 
@@ -445,20 +450,20 @@
 
 
   
-    <article id="post-高等数据加密-非对称加密算法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-Fork_Join框架的浅析" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/05/19/高等数据加密-非对称加密算法/">高等数据加密--非对称加密算法</a>
+      <a class="article-title" href="/2019/05/19/Fork_Join框架的浅析/">Fork/Join框架的学习和浅析</a>
     </h1>
   
 
         
-        <a href="/2019/05/19/高等数据加密-非对称加密算法/" class="archive-article-date">
-  	<time datetime="2019-05-19T09:16:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-19</time>
+        <a href="/2019/05/19/Fork_Join框架的浅析/" class="archive-article-date">
+  	<time datetime="2019-05-19T10:08:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-19</time>
 </a>
         
 		
@@ -472,8 +477,10 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>非对称加密算法与对称加密算法的主要区别在于非对称加密算法用于加密和解密的密钥不同，一个公开，称为公钥；一个保密，称为私钥。因此，非对称密码算法也称为双钥和公钥加密算法。</p>
-<p>非对称加密算法解决了对称加密算法密钥分配问题，并极大的提高了算法的安全性。多种B2C或B2B应用均使用非对称加密算法作为数据加密的核心算法。解决了对称加密算法的密钥存储问题。<br>
+        <h1 id="Fork-Join框架的主要功能"><a href="#Fork-Join框架的主要功能" class="headerlink" title="Fork/Join框架的主要功能"></a>Fork/Join框架的主要功能</h1><p>Fork/Join框架主要完成了两件事情：</p>
+<ol>
+<li><strong>任务分割</strong>：首先把大的任务分割成足够小的子任务；</li>
+<li><strong>执行任务并合并结果</strong>：分割的子任务分别存放到双端队列中，然后几个启动线程风别从双端队列中获取任务执行，子任务执行完成的结果都存放在另一个队列里，启动一个线程从队列里取数据，然后合并这些数据；
         
       
 	  
@@ -483,7 +490,7 @@
 		
 	  
       
-    </p></div>
+    </li></ol></div>
 	
     <div class="article-info article-info-index">
       
@@ -493,11 +500,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">密码学基础</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">java8</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">非对称加密算法</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Fork/Join框架</a>
         		</li>
       		
 		</ul>
@@ -507,7 +514,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/05/19/高等数据加密-非对称加密算法/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/05/19/Fork_Join框架的浅析/">展开全文 >></a>
         </p>
       
 
@@ -537,20 +544,20 @@
 
 
   
-    <article id="post-数字签名算法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-SpringBoot返回类型封装" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/05/19/数字签名算法/">数字签名算法</a>
+      <a class="article-title" href="/2019/05/19/SpringBoot返回类型封装/">SpringBoot返回类型封装</a>
     </h1>
   
 
         
-        <a href="/2019/05/19/数字签名算法/" class="archive-article-date">
-  	<time datetime="2019-05-19T09:16:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-19</time>
+        <a href="/2019/05/19/SpringBoot返回类型封装/" class="archive-article-date">
+  	<time datetime="2019-05-19T10:08:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-19</time>
 </a>
         
 		
@@ -564,8 +571,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><p>数字签名算法看以看做是一种带有密钥的消息摘要算法，并且这种算法包含了公钥和私钥。也就是说，数字签名算法是非对称加密算法和消息摘要算法的结合体。</p>
-<p>数字签名算法要求能够验证数据完整性、认证数据来源，并起到抗否认的作用。这三点与OSI参考模型中的数据完整性服务、认证服务和抗否认服务。消息摘要算法是验证数据完整性的最佳算法，因此，该算法成为数字签名算法中的必要组成部分。数字签名算法包含签名和验证两项操作，遵循”私钥签名，公钥验证”的签名、验证方式。<br>
+        <h1 id="返回类型封装的工具类"><a href="#返回类型封装的工具类" class="headerlink" title="返回类型封装的工具类"></a>返回类型封装的工具类</h1>
         
       
 	  
@@ -575,7 +581,7 @@
 		
 	  
       
-    </p></div>
+    </div>
 	
     <div class="article-info article-info-index">
       
@@ -585,11 +591,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">密码学基础</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">springboot</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">数字签名算法</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">返回类型封装</a>
         		</li>
       		
 		</ul>
@@ -599,7 +605,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/05/19/数字签名算法/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/05/19/SpringBoot返回类型封装/">展开全文 >></a>
         </p>
       
 
@@ -629,20 +635,20 @@
 
 
   
-    <article id="post-数字证书" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-SpringBoot通过注解的方式实现定时任务" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/05/19/数字证书/">数字证书</a>
+      <a class="article-title" href="/2019/05/19/SpringBoot通过注解的方式实现定时任务/">springboot通过注解的方式实现定时任务</a>
     </h1>
   
 
         
-        <a href="/2019/05/19/数字证书/" class="archive-article-date">
-  	<time datetime="2019-05-19T09:15:37.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-19</time>
+        <a href="/2019/05/19/SpringBoot通过注解的方式实现定时任务/" class="archive-article-date">
+  	<time datetime="2019-05-19T10:08:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-19</time>
 </a>
         
 		
@@ -656,9 +662,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>消息摘要算法用于验证数据完整性服务，对称加密算法和非对称加密算法用于保证数据保密性服务，数字签名算法用于抗否认服务。</p>
-<p>数字证书集合了多种密码学算法：自身带有公钥信息，可完成相应的加密/解密操作，同时，还带有数字签名，可鉴别消息来源；且自身带有消息摘由信息，可验证证书的完整性；由于证书本身含有用户身份信息，因而具有认证性。</p>
-<p>数字证书有多种文件编码格式，主要包含CER编码(变长模式)、DER编码(定长模式)和PKCS系列等<br>
+        <h2 id="实现步骤"><a href="#实现步骤" class="headerlink" title="实现步骤"></a>实现步骤</h2><p>1.搭建springBoot的启动类上添加注解@EnableScheduling<br>2.在注解类中添加线程池<br>3.在服务类中添加定时任务<br>
         
       
 	  
@@ -678,11 +682,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">密码学基础</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">springboot</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">数字证书</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">定时任务</a>
         		</li>
       		
 		</ul>
@@ -692,7 +696,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/05/19/数字证书/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/05/19/SpringBoot通过注解的方式实现定时任务/">展开全文 >></a>
         </p>
       
 
@@ -722,20 +726,20 @@
 
 
   
-    <article id="post-JCE加密和解密-基础篇" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-Java使用tss4j行图片文字识别（中文)" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/05/19/JCE加密和解密-基础篇/">JCE加密和解密(基础篇)</a>
+      <a class="article-title" href="/2019/05/19/Java使用tss4j行图片文字识别（中文)/">Java使用Tess4J进行图片文字识别</a>
     </h1>
   
 
         
-        <a href="/2019/05/19/JCE加密和解密-基础篇/" class="archive-article-date">
-  	<time datetime="2019-05-19T04:41:50.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-19</time>
+        <a href="/2019/05/19/Java使用tss4j行图片文字识别（中文)/" class="archive-article-date">
+  	<time datetime="2019-05-19T10:08:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-19</time>
 </a>
         
 		
@@ -749,7 +753,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="Cipher"><a href="#Cipher" class="headerlink" title="Cipher"></a>Cipher</h1><p>Cipher类为加密和解密提供密码功能。它构成了JCE框架的核心(引擎类)。<br>
+        <h2 id="tess4j中文材料准备"><a href="#tess4j中文材料准备" class="headerlink" title="tess4j中文材料准备"></a>tess4j中文材料准备</h2><p>tess4j下载: <a href="https://sourceforge.net/projects/tess4j/" target="_blank" rel="noopener">https://sourceforge.net/projects/tess4j/</a><br>中文解读包: <a href="https://github.com/tesseract-ocr/tessdata/blob/master/chi_sim.traineddata" target="_blank" rel="noopener">https://github.com/tesseract-ocr/tessdata/blob/master/chi_sim.traineddata</a><br>
         
       
 	  
@@ -769,11 +773,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">密码学基础</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Tess4J</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">加密与解密类</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">图文识别</a>
         		</li>
       		
 		</ul>
@@ -783,7 +787,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/05/19/JCE加密和解密-基础篇/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/05/19/Java使用tss4j行图片文字识别（中文)/">展开全文 >></a>
         </p>
       
 
@@ -813,20 +817,20 @@
 
 
   
-    <article id="post-KeyGenerator和KeyPairGenerator" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-java8新特性之Optional" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/05/19/KeyGenerator和KeyPairGenerator/">KeyGenerator和KeyPairGenerator</a>
+      <a class="article-title" href="/2019/05/19/java8新特性之Optional/">JAVA8新特性之stream</a>
     </h1>
   
 
         
-        <a href="/2019/05/19/KeyGenerator和KeyPairGenerator/" class="archive-article-date">
-  	<time datetime="2019-05-19T04:38:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-19</time>
+        <a href="/2019/05/19/java8新特性之Optional/" class="archive-article-date">
+  	<time datetime="2019-05-19T10:08:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-19</time>
 </a>
         
 		
@@ -840,7 +844,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="Key"><a href="#Key" class="headerlink" title="Key"></a>Key</h1><p><strong>接口介绍：</strong> Key接口是所有密钥接口的顶层接口，一切与加密有关的操作都离不开Key接口,其中SecrectKey、PublicKey()和PrivateKey()均继承自Key接口，定义了对称密钥和非对称密钥接口。<br>
+        <h2 id="Optional的简单介绍"><a href="#Optional的简单介绍" class="headerlink" title="Optional的简单介绍"></a>Optional的简单介绍</h2><p><strong>功能：</strong> 减少null值的判断<br><strong>逻辑：</strong> 变量存在时，Optional类只对类进行简单的封装;不存在时，缺失的值会被建模成一个”空”的Optional对象，由方法Optional.empty()返回<br>
         
       
 	  
@@ -860,11 +864,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">密码学基础</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">java8</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">密钥生成器</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Optional</a>
         		</li>
       		
 		</ul>
@@ -874,7 +878,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/05/19/KeyGenerator和KeyPairGenerator/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/05/19/java8新特性之Optional/">展开全文 >></a>
         </p>
       
 
@@ -904,20 +908,20 @@
 
 
   
-    <article id="post-证书和密钥的存储类" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-java8新特性之stream" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/05/19/证书和密钥的存储类/">证书和密钥的存储类</a>
+      <a class="article-title" href="/2019/05/19/java8新特性之stream/">JAVA8新特性之stream</a>
     </h1>
   
 
         
-        <a href="/2019/05/19/证书和密钥的存储类/" class="archive-article-date">
-  	<time datetime="2019-05-19T04:36:39.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-19</time>
+        <a href="/2019/05/19/java8新特性之stream/" class="archive-article-date">
+  	<time datetime="2019-05-19T10:08:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-19</time>
 </a>
         
 		
@@ -931,7 +935,10 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="KeyStore"><a href="#KeyStore" class="headerlink" title="KeyStore"></a>KeyStore</h1><p>KeyStore被称为密钥库，用于管理密钥和证书的存储(引擎类)，它提供一些相当完善的接口来访问和修改密钥仓库中的信息<br>
+        <h2 id="流的操作流程"><a href="#流的操作流程" class="headerlink" title="流的操作流程"></a>流的操作流程</h2><ol>
+<li>一个执行查询的数据源</li>
+<li>一个中间操作链，形成一条流的流水线</li>
+<li>一个终端操作，执行流水线，并能生成结果
         
       
 	  
@@ -941,7 +948,7 @@
 		
 	  
       
-    </p></div>
+    </li></ol></div>
 	
     <div class="article-info article-info-index">
       
@@ -951,11 +958,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">密码学基础</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">java8</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">证书和密钥的存储类</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">stream</a>
         		</li>
       		
 		</ul>
@@ -965,7 +972,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/05/19/证书和密钥的存储类/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/05/19/java8新特性之stream/">展开全文 >></a>
         </p>
       
 
@@ -995,20 +1002,20 @@
 
 
   
-    <article id="post-数字签名" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-设计模式之策略模式" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/05/19/数字签名/">数字签名算法</a>
+      <a class="article-title" href="/2019/05/19/设计模式之策略模式/">设计模式之策略模式</a>
     </h1>
   
 
         
-        <a href="/2019/05/19/数字签名/" class="archive-article-date">
-  	<time datetime="2019-05-19T04:33:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-19</time>
+        <a href="/2019/05/19/设计模式之策略模式/" class="archive-article-date">
+  	<time datetime="2019-05-19T10:08:08.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-19</time>
 </a>
         
 		
@@ -1022,7 +1029,10 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="Signature类"><a href="#Signature类" class="headerlink" title="Signature类"></a>Signature类</h1><p>Signature类用来生成和验证数字签名（引擎类）<br>
+        <h2 id="策略模式"><a href="#策略模式" class="headerlink" title="策略模式"></a>策略模式</h2><ol>
+<li><strong>核心思想</strong> ：代表了解决一类算法的通用解决方案，让你在运行时选择使用哪种方案（定义了一系列的算法，并将每一个算法封装起来，而且使它们还可以相互替换）</li>
+<li><strong>组成</strong>：Context(应用场景）、Strategy(抽象策略类)、ConcreteStrategy(Strategy的具体实现)<br><img src="https://raw.githubusercontent.com/javacfox/photos/master/Hexo%2BGithub%E5%AE%9E%E7%8E%B0%E7%9B%B8%E5%86%8C%E5%8A%9F%E8%83%BD/clipboard10.jpg" alt="image"></li>
+<li><strong>优点</strong>： 提供了一种替代继承的方法，而且既保持了继承的优点(代码重用)还比继承更灵活(算法独立，可以任意扩展)；程序中使用多重条件转移语句，使系统更灵活，并易于扩展；遵守大部分GRASP原则和常用设计原则，<br>高内聚、低偶合。
         
       
 	  
@@ -1032,7 +1042,7 @@
 		
 	  
       
-    </p></div>
+    </li></ol></div>
 	
     <div class="article-info article-info-index">
       
@@ -1042,11 +1052,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">密码学基础</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">设计模式</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">数字签名算法</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">策略模式</a>
         		</li>
       		
 		</ul>
@@ -1056,7 +1066,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/05/19/数字签名/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/05/19/设计模式之策略模式/">展开全文 >></a>
         </p>
       
 
@@ -1088,7 +1098,7 @@
   
   
     <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
     </nav>
   
 
@@ -1199,11 +1209,15 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">gitment评论系统</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">使用方法</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">gitment评论系统</a>
+                <a href="javascript:void(0)" class="js-tag color2">加密与解密类</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1211,7 +1225,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">加密与解密类</a>
+                <a href="javascript:void(0)" class="js-tag color1">日常bug</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">JDBC driver异常</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1220,6 +1238,18 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">java.security包</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">java8</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">默认接口实现</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">LifecycleException解决思路</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1235,18 +1265,6 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">日常bug</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">JDBC driver异常</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">LifecycleException解决思路</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">对称加密算法</a>
               </li>
              
@@ -1255,11 +1273,7 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">git</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">GIT 项目并托管到 GITHUB 仓库</a>
+                <a href="javascript:void(0)" class="js-tag color2">虚拟机的安装</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1267,7 +1281,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">虚拟机的安装</a>
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">GIT 项目并托管到 GITHUB 仓库</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1292,6 +1310,70 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">非对称加密算法</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Fork/Join框架</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">springboot</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">定时任务</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Tess4J</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">图文识别</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">返回类型封装</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">stream</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">时间API</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">设计模式</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">工厂方法</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Optional</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">java</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">多环境的配置</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">策略模式</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">适配器模式</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Monogdb</a>
               </li>
             
             <div class="clearfix"></div>
