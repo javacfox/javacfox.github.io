@@ -199,33 +199,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="Base64"><a href="#Base64" class="headerlink" title="Base64"></a>Base64</h1><p>Base64是一种基于64个字符的编码算法，，根据RFC 2045的定义：“Base64内容传送编码是以一种任意8位字节序列组合的描述形式，这种形式不易被人直接识别”。经过Base64编码后的数据会比原始数据略长，为原来的4/3倍。字符串的字符数是以4位单位的整数倍。</p>
-<h1 id="实现原理"><a href="#实现原理" class="headerlink" title="实现原理"></a>实现原理</h1><ol>
-<li>将给定的字符串以字符为单位，转换为对应的字符编码(ASCII)</li>
-<li>将获得的字符编码转换为二进制码</li>
-<li>对获得的二进制编码做分组操作，每3个8位二进制码为一组，转换为每4个6位二进制码为一组(不足6位时低位补0)</li>
-<li>对获得的4-6二进制码补位，向6位二进制码添加2位高位0，组成4个8位二进制码</li>
-<li>将获得的4-8二进制码转换为十进制码</li>
-<li>将获得的十进制码转换为Base64字符表中对应的字符</li>
-</ol>
-<h1 id="Base64字符映射表"><a href="#Base64字符映射表" class="headerlink" title="Base64字符映射表"></a>Base64字符映射表</h1><p><img src="https://raw.githubusercontent.com/javacfox/photos/master/Hexo%2BGithub%E5%AE%9E%E7%8E%B0%E7%9B%B8%E5%86%8C%E5%8A%9F%E8%83%BD/clipboard9.png" alt="image"></p>
-<h1 id="ASCII码加密推导演示"><a href="#ASCII码加密推导演示" class="headerlink" title="ASCII码加密推导演示"></a>ASCII码加密推导演示</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">字符          B</span><br><span class="line">ASCII码       <span class="number">66</span>（不足<span class="number">24</span>位）</span><br><span class="line">二进制码      <span class="number">01000010</span></span><br><span class="line"><span class="number">4</span>-<span class="number">6</span>二进制码   <span class="number">010000</span>     <span class="number">100000</span> (不足低位补<span class="number">0</span>)</span><br><span class="line"><span class="number">4</span>-<span class="number">8</span>二进制码   <span class="number">00010000</span>   <span class="number">00100000</span> (高位补<span class="number">0</span>)</span><br><span class="line">十进制码      <span class="number">16</span>         <span class="number">32</span></span><br><span class="line">字符表映射码  Q          g      =    =  (不足<span class="number">4</span>个的补=)</span><br></pre></td></tr></table></figure>
-<h1 id="UTF-8码介绍"><a href="#UTF-8码介绍" class="headerlink" title="UTF-8码介绍"></a>UTF-8码介绍</h1><p>UTF-8是一种变长字节编码方式。对于某一个字符的UTF-8编码，如果只有一个字节则其最高二进制位为0；如果是多字节，其第一个字节从最高位开始，连续的二进制位值为1的个数决定了其编码的位数，其余各字节均以10开头。UTF-8最多可用到6个字节。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">如表(补位)： </span><br><span class="line"><span class="number">1</span>字节 <span class="number">0</span>xxxxxxx </span><br><span class="line"><span class="number">2</span>字节 <span class="number">110</span>xxxxx <span class="number">10</span>xxxxxx </span><br><span class="line"><span class="number">3</span>字节 <span class="number">1110</span>xxxx <span class="number">10</span>xxxxxx <span class="number">10</span>xxxxxx </span><br><span class="line"><span class="number">4</span>字节 <span class="number">11110</span>xxx <span class="number">10</span>xxxxxx <span class="number">10</span>xxxxxx <span class="number">10</span>xxxxxx </span><br><span class="line"><span class="number">5</span>字节 <span class="number">111110</span>xx <span class="number">10</span>xxxxxx <span class="number">10</span>xxxxxx <span class="number">10</span>xxxxxx <span class="number">10</span>xxxxxx </span><br><span class="line"><span class="number">6</span>字节 <span class="number">1111110</span>x <span class="number">10</span>xxxxxx <span class="number">10</span>xxxxxx <span class="number">10</span>xxxxxx <span class="number">10</span>xxxxxx <span class="number">10</span>xxxxxx</span><br></pre></td></tr></table></figure></p>
-<h1 id="UTF-8加密推导演示"><a href="#UTF-8加密推导演示" class="headerlink" title="UTF-8加密推导演示"></a>UTF-8加密推导演示</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">字符          爱</span><br><span class="line">utf-<span class="number">8</span>         %u7231</span><br><span class="line">二进制转换    <span class="number">0111</span>(<span class="number">7</span>)    <span class="number">0010</span>(<span class="number">2</span>)    <span class="number">0011</span>(<span class="number">3</span>)    <span class="number">0001</span>(<span class="number">1</span>)  <span class="comment">//括号对应上面的utf-8码</span></span><br><span class="line">二进制码      (<span class="number">1110</span>)<span class="number">0111</span> (<span class="number">10</span>)<span class="number">001000</span> (<span class="number">10</span>)<span class="number">110001</span>  <span class="comment">//括号里为填充码</span></span><br><span class="line"><span class="number">4</span>-<span class="number">6</span>二进制码   <span class="number">111001</span>     <span class="number">111000</span>     <span class="number">100010</span>     <span class="number">110001</span></span><br><span class="line"><span class="number">4</span>-<span class="number">8</span>二进制码   <span class="number">00111001</span>   <span class="number">00111000</span>   <span class="number">00100010</span>   <span class="number">00110001</span></span><br><span class="line">十进制码      <span class="number">57</span>         <span class="number">56</span>         <span class="number">34</span>         <span class="number">49</span></span><br><span class="line">字符映射码    <span class="number">5</span>          <span class="number">4</span>          i          x</span><br></pre></td></tr></table></figure>
-<h1 id="Base64算法实现"><a href="#Base64算法实现" class="headerlink" title="Base64算法实现"></a>Base64算法实现</h1><p>Bouncy Castle和Commons Codec两大开源组件提供了一般Base64算法的实现。</p>
-<p><strong>区别：</strong> </p>
-<ol>
-<li>Bouncy Castle遵循的是一般Base64算法，也就是简单的根据字符映射表做了编码转换。</li>
-<li>Commons Codec遵循RFC 2045的相关定义，同时也支持一般Base64算法的实现。</li>
-<li>Commons Codec还提供了Base64算法的定制实现，可以自定义字符数和行末符号。</li>
-<li>Commons Codec还提供了输入输出流的实现</li>
-</ol>
-<p><strong>Bouncy Castle代码演示：</strong><br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//jar包引入</span></span><br><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;org.bouncycastle&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;bcprov-jdk15on&lt;/artifactId&gt;</span><br><span class="line">    &lt;version&gt;1.61&lt;/version&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment">//Castle工具类</span></span><br><span class="line"><span class="keyword">import</span> org.bouncycastle.util.encoders.Base64;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CastlesUtil</span> </span>&#123;</span><br><span class="line">    <span class="comment">//字符编码集</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> String ENCODING = <span class="string">"UTF-8"</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 将字符串类型进行Base64编码</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> data 明文</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span> 密文</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@throws</span> Exception</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">encode</span><span class="params">(String data)</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">        <span class="comment">//执行编码</span></span><br><span class="line">        <span class="keyword">byte</span>[] bytes = Base64.encode(data.getBytes(ENCODING));</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> String(bytes,ENCODING);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 解码</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> data 密文</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span> 明文</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@throws</span> Exception</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">decode</span><span class="params">(String data)</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">        <span class="comment">//执行解码</span></span><br><span class="line">        <span class="keyword">byte</span>[] bytes = Base64.decode(data);</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> String(bytes,ENCODING);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//单元测试</span></span><br><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">test</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        <span class="comment">//加密</span></span><br><span class="line">        String str = <span class="string">"梵如花"</span>;</span><br><span class="line">        System.out.println(<span class="string">"原文："</span>+str);</span><br><span class="line">        str = CastlesUtil.encode(str);</span><br><span class="line">        System.out.println(<span class="string">"密文："</span>+str);</span><br><span class="line">        <span class="comment">//解密</span></span><br><span class="line">        System.out.println(<span class="string">"解密："</span>+CastlesUtil.decode(str));</span><br><span class="line">    &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">        e.printStackTrace();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//打印结果</span></span><br><span class="line">原文：梵如花</span><br><span class="line">密文：<span class="number">5</span>qK15aaC6Iqx</span><br><span class="line">解密：梵如花</span><br></pre></td></tr></table></figure></p>
-<p><strong>Commons Codec代码演示：</strong><br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//引入jar包</span></span><br><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;commons-codec&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;commons-codec&lt;/artifactId&gt;</span><br><span class="line">    &lt;version&gt;1.12&lt;/version&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment">//Commons工具类</span></span><br><span class="line"><span class="keyword">import</span> org.apache.commons.codec.binary.Base64;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CommonsUntils</span> </span>&#123;</span><br><span class="line">    <span class="comment">//字符编码集</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> String ENCODING = <span class="string">"UTF-8"</span>;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">encode</span><span class="params">(String data)</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">        <span class="comment">//执行编码</span></span><br><span class="line">        <span class="keyword">byte</span>[] bytes = Base64.encodeBase64(data.getBytes(ENCODING));</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> String(bytes,ENCODING);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">encodeSafe</span><span class="params">(String data)</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">        <span class="comment">//执行编码</span></span><br><span class="line">        <span class="keyword">byte</span>[] bytes = Base64.encodeBase64(data.getBytes(ENCODING),<span class="keyword">true</span>);</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> String(bytes,ENCODING);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">decode</span><span class="params">(String data)</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">        <span class="comment">//执行解码</span></span><br><span class="line">        <span class="keyword">byte</span>[] bytes = Base64.decodeBase64(data);</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> String(bytes,ENCODING);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//单元测试</span></span><br><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">test</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        <span class="comment">//加密</span></span><br><span class="line">        String str = <span class="string">"梵如花是一个好的县令，没有错的哈哈哈哈哈哈哈哈哈哈或或"</span>;</span><br><span class="line">        System.out.println(<span class="string">"原文："</span>+str);</span><br><span class="line">        str = CommonsUntils.encode(str);</span><br><span class="line">        System.out.println(<span class="string">"普通加密："</span>+str);</span><br><span class="line">        str = <span class="string">"梵如花是一个好的县令，没有错的哈哈哈哈哈哈哈哈哈哈或或"</span>;</span><br><span class="line">        str = CommonsUntils.encodeSafe(str);</span><br><span class="line">        System.out.println(<span class="string">"安全加密："</span>+str);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//解密</span></span><br><span class="line">        System.out.println(<span class="string">"解密："</span>+CommonsUntils.decode(str));</span><br><span class="line">    &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">        e.printStackTrace();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//输出结果,注意的是，如果str比较短，则安全和非安全的输出结果是一致的</span></span><br><span class="line">原文：梵如花是一个好的县令，没有错的哈哈哈哈哈哈哈哈哈哈或或</span><br><span class="line">普通加密：<span class="number">5</span>qK15aaC6Iqx5piv5LiA5Liq5aW955qE5Y6/<span class="number">5L</span>uk77yM5rKh5pyJ6ZSZ55qE5ZOI5ZOI5ZOI5ZOI5ZOI5ZOI5ZOI5ZOI5ZOI5ZOI5oiW5oiW</span><br><span class="line">安全加密：<span class="number">5</span>qK15aaC6Iqx5piv5LiA5Liq5aW955qE5Y6/<span class="number">5L</span>uk77yM5rKh5pyJ6ZSZ55qE5ZOI5ZOI5ZOI5ZOI</span><br><span class="line"><span class="number">5</span>ZOI5ZOI5ZOI5ZOI5ZOI5ZOI5oiW5oiW</span><br></pre></td></tr></table></figure></p>
-<h1 id="Url-Base64算法"><a href="#Url-Base64算法" class="headerlink" title="Url Base64算法"></a>Url Base64算法</h1><p>Bouncy Castle遵从了RFC 4648的建议，使用”.”做填充符，构建定长Url Base64编码;</p>
-<p>Commons Codec舍弃了填充符，使用不定长Url Base64编码。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">byte</span>[] byts = Base64.encode(<span class="string">"梵如花是一个好的县令，没有错的哈哈哈哈哈哈哈哈哈哈或或"</span>.getBytes(<span class="string">"utf-8"</span>));</span><br><span class="line">System.out.println(<span class="string">"普通加密："</span>+<span class="keyword">new</span> String(byts,<span class="string">"utf-8"</span>));</span><br><span class="line"><span class="keyword">byte</span>[] bytes = UrlBase64.encode(<span class="string">"梵如花是一个好的县令，没有错的哈哈哈哈哈哈哈哈哈哈或或"</span>.getBytes(<span class="string">"utf-8"</span>));</span><br><span class="line">System.out.println(<span class="string">"url："</span>+<span class="keyword">new</span> String(bytes,<span class="string">"utf-8"</span>));</span><br><span class="line"></span><br><span class="line"><span class="comment">//打印结果:</span></span><br><span class="line">普通加密：<span class="number">5</span>qK15aaC6Iqx5piv5LiA5Liq5aW955qE5Y6/<span class="number">5L</span>uk77yM5rKh5pyJ6ZSZ55qE5ZOI5ZOI5ZOI5ZOI5ZOI5ZOI5ZOI5ZOI5ZOI5ZOI5oiW5oiW</span><br><span class="line">url：<span class="number">5</span>qK15aaC6Iqx5piv5LiA5Liq5aW955qE5Y6_5Luk77yM5rKh5pyJ6ZSZ55qE5ZOI5ZOI5ZOI5ZOI5ZOI5ZOI5ZOI5ZOI5ZOI5ZOI5oiW5oiW</span><br></pre></td></tr></table></figure></p>
-<h1 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景"></a>应用场景</h1><p>Base64算法广泛应用于电子邮件传输，网络信息传输，以及密钥和证书文件的文本式保存。在数据保密要求强度不高的情况下，可以使用Base64算法做简单的数据加密。</p>
-
+        <h1 id="Base64"><a href="#Base64" class="headerlink" title="Base64"></a>Base64</h1><p>Base64是一种基于64个字符的编码算法，，根据RFC 2045的定义：“Base64内容传送编码是以一种任意8位字节序列组合的描述形式，这种形式不易被人直接识别”。经过Base64编码后的数据会比原始数据略长，为原来的4/3倍。字符串的字符数是以4位单位的整数倍。<br>
+        
       
 	  
 	  
@@ -234,7 +209,7 @@
 		
 	  
       
-    </div>
+    </p></div>
 	
     <div class="article-info article-info-index">
       
@@ -1208,6 +1183,14 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">密码学基础</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Base64算法</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">yillia</a>
               </li>
              
@@ -1216,11 +1199,15 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">helper_live2d</a>
+                <a href="javascript:void(0)" class="js-tag color5">使用方法</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">密码学基础</a>
+                <a href="javascript:void(0)" class="js-tag color2">gitment评论系统</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">helper_live2d</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1228,31 +1215,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Base64算法</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">密钥生成器</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">使用方法</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">java.security包</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">日常bug</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">LifecycleException解决思路</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">gitment评论系统</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1268,11 +1235,23 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">日常bug记录</a>
+                <a href="javascript:void(0)" class="js-tag color1">日常bug</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">虚拟机的安装</a>
+                <a href="javascript:void(0)" class="js-tag color4">JDBC driver异常</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">LifecycleException解决思路</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">对称加密算法</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">日常bug记录</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1288,6 +1267,10 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">虚拟机的安装</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">github</a>
               </li>
              
@@ -1296,19 +1279,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">JDBC driver异常</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">对称加密算法</a>
+                <a href="javascript:void(0)" class="js-tag color5">slf4j引入异常</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">证书和密钥的存储类</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">slf4j引入异常</a>
               </li>
              
               <li class="article-tag-list-item">
