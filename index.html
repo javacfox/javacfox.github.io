@@ -406,11 +406,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">swagger2</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">java</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">java</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">swagger2</a>
         		</li>
       		
 		</ul>
@@ -1002,19 +1002,19 @@
 
 
   
-    <article id="post-设计模式之策略模式" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-适配器模式" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/05/19/设计模式之策略模式/">设计模式之策略模式</a>
+      <a class="article-title" href="/2019/05/19/适配器模式/">适配器模式</a>
     </h1>
   
 
         
-        <a href="/2019/05/19/设计模式之策略模式/" class="archive-article-date">
+        <a href="/2019/05/19/适配器模式/" class="archive-article-date">
   	<time datetime="2019-05-19T10:08:08.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-19</time>
 </a>
         
@@ -1029,10 +1029,13 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="策略模式"><a href="#策略模式" class="headerlink" title="策略模式"></a>策略模式</h2><ol>
-<li><strong>核心思想</strong> ：代表了解决一类算法的通用解决方案，让你在运行时选择使用哪种方案（定义了一系列的算法，并将每一个算法封装起来，而且使它们还可以相互替换）</li>
-<li><strong>组成</strong>：Context(应用场景）、Strategy(抽象策略类)、ConcreteStrategy(Strategy的具体实现)<br><img src="https://raw.githubusercontent.com/javacfox/photos/master/Hexo%2BGithub%E5%AE%9E%E7%8E%B0%E7%9B%B8%E5%86%8C%E5%8A%9F%E8%83%BD/clipboard10.jpg" alt="image"></li>
-<li><strong>优点</strong>： 提供了一种替代继承的方法，而且既保持了继承的优点(代码重用)还比继承更灵活(算法独立，可以任意扩展)；程序中使用多重条件转移语句，使系统更灵活，并易于扩展；遵守大部分GRASP原则和常用设计原则，<br>高内聚、低偶合。
+        <h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>将一个类的接口转换成客户希望的另外一个接口。Adapter 模式使得原本由于接口不兼容而不能一起工作的那些类可以一起工作。——Gang of Four</p>
+<ol>
+<li><strong>核心思想</strong> ：将类自己的接口包裹在一个已存在的类中，在两种接口之间创建一个混合接口，以达到组合两个不相干的类并兼容的目的；</li>
+<li><strong>组成</strong>：source类（拥有一个方法），Targetable（目标接口）</li>
+<li><strong>分类</strong>：根据适配器的实现方式，把适配器分成对象适配器和类适配器。<strong>对象适配器模式</strong>，依赖于对象的组合，都是采用对象组合的方式，也就是对象适配器实现的方式;<strong>类适配器</strong>，采用多重继承对一个接口与另一个接口进行匹配。由于 Java 不支持多重继承，所以到目前为止还没有涉及。但可以通过让适配器去实现 Target 接口的方式来实现。（<strong>双向适配器</strong>：同时实现了 Target 和 Adaptee 的接口，使得双向适配器可以在 Target 或 Adaptee 被使用的地方使用，以提供对所有客户的透明性。尤其在两个不同的客户需要用不同的地方查看同一个对象时，适合使用双向适配器。）</li>
+<li><strong>优点</strong>：适配器模式也是一种包装模式，它与装饰模式同样具有包装的功能，此外，对象适配器模式还具有委托的意思。总的来说，适配器模式属于补偿模式，专用来在系统后期扩展、修改时使用。将目标类和适配者类解耦，增加了类的透明性和复用性，另外灵活性和拓展性都非常好，符合开闭原则。</li>
+<li><strong>缺点</strong>：过多的使用适配器，会让系统非常零乱，不易整体进行把握。比如，明明调用的是 A 接口，其实内部被适配成了 B 接口的实现，一个系统如果太多出现这种情况，无异于一场灾难。因此如果不是很有必要，可以不使用适配器，而是直接对系统进行重构。
         
       
 	  
@@ -1056,7 +1059,7 @@
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">策略模式</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">适配器模式</a>
         		</li>
       		
 		</ul>
@@ -1066,7 +1069,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/05/19/设计模式之策略模式/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/05/19/适配器模式/">展开全文 >></a>
         </p>
       
 
@@ -1193,6 +1196,14 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">yilia</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">使用方法</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">密码学基础</a>
               </li>
              
@@ -1205,7 +1216,7 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">yilia</a>
+                <a href="javascript:void(0)" class="js-tag color4">helper_live2d</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1213,103 +1224,7 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">使用方法</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">加密与解密类</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">helper_live2d</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">日常bug</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">JDBC driver异常</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">密钥生成器</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">java.security包</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">java8</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">默认接口实现</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">LifecycleException解决思路</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">lombok</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">swagger2</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">devtools</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">对称加密算法</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">日常bug记录</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">虚拟机的安装</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">数字签名算法</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">git</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">GIT 项目并托管到 GITHUB 仓库</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">github</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">消息摘要算法</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">slf4j引入异常</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">证书和密钥的存储类</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">数字证书</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">非对称加密算法</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1317,11 +1232,19 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">加密与解密类</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">springboot</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">定时任务</a>
+                <a href="javascript:void(0)" class="js-tag color2">返回类型封装</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">密钥生成器</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1333,7 +1256,19 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">返回类型封装</a>
+                <a href="javascript:void(0)" class="js-tag color1">日常bug</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">JDBC driver异常</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Optional</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">定时任务</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1341,7 +1276,51 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">java.security包</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">LifecycleException解决思路</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">java</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">swagger2</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">lombok</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">devtools</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">时间API</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">日常bug记录</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">虚拟机的安装</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">多环境的配置</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">GIT 项目并托管到 GITHUB 仓库</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1353,15 +1332,27 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Optional</a>
+                <a href="javascript:void(0)" class="js-tag color2">对称加密算法</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">java</a>
+                <a href="javascript:void(0)" class="js-tag color2">默认接口实现</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">多环境的配置</a>
+                <a href="javascript:void(0)" class="js-tag color2">github</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">数字签名算法</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">消息摘要算法</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">slf4j引入异常</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1369,11 +1360,23 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">证书和密钥的存储类</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">适配器模式</a>
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">数字证书</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Monogdb</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">非对称加密算法</a>
               </li>
             
             <div class="clearfix"></div>

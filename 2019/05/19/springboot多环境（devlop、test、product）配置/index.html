@@ -16,13 +16,13 @@
 <meta property="og:site_name" content="胖胖">
 <meta property="og:description" content="多环境的配置定义一个获取配置文件的方法，让环境变量决定调用哪个配置文件 ：  核心思想： 定义一个私有方法，读取环境变量里的一个自定义属性，让这个属性决定服务器调用哪个配置文件，从而达到无需修改代码和配置文件就可以实现调用不同配置文件的目的； 基本组成：环境变量、tomcat启动入口、命令和jar包运行入口、配置文件选择器和配置文件； 优点：服务器调用不同的配置文件无需修改代码和配置文件，只需要配">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20190130204317163.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzkzNTkwNw==,size_16,color_FFFFFF,t_70">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20190130210618614.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzkzNTkwNw==,size_16,color_FFFFFF,t_70">
-<meta property="og:updated_time" content="2019-05-19T10:43:55.844Z">
+<meta property="og:image" content="https://raw.githubusercontent.com/javacfox/photos/master/Hexo%2BGithub%E5%AE%9E%E7%8E%B0%E7%9B%B8%E5%86%8C%E5%8A%9F%E8%83%BD/clipboard11.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/javacfox/photos/master/Hexo%2BGithub%E5%AE%9E%E7%8E%B0%E7%9B%B8%E5%86%8C%E5%8A%9F%E8%83%BD/clipboard12.png">
+<meta property="og:updated_time" content="2019-06-02T01:56:49.612Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SpringBoot返回类型封装">
 <meta name="twitter:description" content="多环境的配置定义一个获取配置文件的方法，让环境变量决定调用哪个配置文件 ：  核心思想： 定义一个私有方法，读取环境变量里的一个自定义属性，让这个属性决定服务器调用哪个配置文件，从而达到无需修改代码和配置文件就可以实现调用不同配置文件的目的； 基本组成：环境变量、tomcat启动入口、命令和jar包运行入口、配置文件选择器和配置文件； 优点：服务器调用不同的配置文件无需修改代码和配置文件，只需要配">
-<meta name="twitter:image" content="https://img-blog.csdnimg.cn/20190130204317163.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzkzNTkwNw==,size_16,color_FFFFFF,t_70">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/javacfox/photos/master/Hexo%2BGithub%E5%AE%9E%E7%8E%B0%E7%9B%B8%E5%86%8C%E5%8A%9F%E8%83%BD/clipboard11.png">
   
     <link rel="alternative" href="/atom.xml" title="胖胖" type="application/atom+xml">
   
@@ -233,8 +233,8 @@
 <h1 id="实例演示"><a href="#实例演示" class="headerlink" title="实例演示"></a>实例演示</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//启动类的编写</span></span><br><span class="line"><span class="meta">@SpringBootApplication</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ServiceApplication</span> <span class="keyword">extends</span> <span class="title">SpringBootServletInitializer</span> </span>&#123;</span><br><span class="line">	</span><br><span class="line">	<span class="comment">//服务器配置文件类型</span></span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> List&lt;String&gt; DEPLOY_ENV = Arrays.asList(<span class="string">"develop"</span>,<span class="string">"test"</span>,<span class="string">"product"</span>);</span><br><span class="line">	</span><br><span class="line">	<span class="comment">//通过tomcat容器托管的服务器入口，使用profiles方法来决定加载那一个配置文件</span></span><br><span class="line">	<span class="meta">@Override</span></span><br><span class="line">	<span class="function"><span class="keyword">protected</span> SpringApplicationBUilder <span class="title">configure</span><span class="params">(SpringApplicationBuilder application)</span></span>&#123;</span><br><span class="line">		<span class="keyword">return</span> application.sources(ServiceApplication.class).profiles(getProfile());</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//这个是通过命令或者打包成jar直接运行的入口，配置文件选择方式和上述一样</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">mian</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">		<span class="keyword">new</span> SpringApplicationBuilder()</span><br><span class="line">			.sources(ServiceApplication.class)</span><br><span class="line">			.profiles(getProfile())</span><br><span class="line">			.run(args);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//获取设置的系统环境变量，然后决定加载那一个配置文件</span></span><br><span class="line">	<span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> String <span class="title">getProfile</span><span class="params">()</span></span>&#123;</span><br><span class="line">		Map&lt;String,String&gt; environment = System.getEnv();</span><br><span class="line">		String env = environment.get(<span class="string">"PROFILE_OF_ENV"</span>);</span><br><span class="line">		String profile = (env!=<span class="keyword">null</span> &amp;&amp; DEPLOY_ENV.contains(env) ? env : <span class="string">"develop"</span>);</span><br><span class="line">		<span class="keyword">return</span> profile;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
-<p>application-dev.properties：开发环境<br>application-test.properties：测试环境<br>application-prod.properties：生产环境<br>具体调用哪个配置文件，由 profiles() 方法决定，可以通过 getProfile() 方法读取环境变量进行配置 。<br><img src="https://img-blog.csdnimg.cn/20190130204317163.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzkzNTkwNw==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//环境变量</span></span><br><span class="line">变量名(N): PROFILE_OF_ENV</span><br><span class="line">变量值(V): <span class="string">"develop"</span></span><br></pre></td></tr></table></figure></p>
-<h1 id="通用的多环境配置方式"><a href="#通用的多环境配置方式" class="headerlink" title="通用的多环境配置方式"></a>通用的多环境配置方式</h1><p>application-dev.properties：开发环境<br>application-test.properties：测试环境<br>application-prod.properties：生产环境<br>至于哪个具体的配置文件会被加载，需要在application.properties文件中通过spring.profiles.active属性来设置，其值对应{profile}值。<br><img src="https://img-blog.csdnimg.cn/20190130210618614.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzkzNTkwNw==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>如：spring.profiles.active=devlop就会加载application-develop.properties配置文件内容 ，这种每次配置一个新的环境都需要对application.properties文件进行修改，比较麻烦。</p>
+<p>application-dev.properties：开发环境<br>application-test.properties：测试环境<br>application-prod.properties：生产环境<br>具体调用哪个配置文件，由 profiles() 方法决定，可以通过 getProfile() 方法读取环境变量进行配置 。<br><img src="https://raw.githubusercontent.com/javacfox/photos/master/Hexo%2BGithub%E5%AE%9E%E7%8E%B0%E7%9B%B8%E5%86%8C%E5%8A%9F%E8%83%BD/clipboard11.png" alt="在这里插入图片描述"><br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//环境变量</span></span><br><span class="line">变量名(N): PROFILE_OF_ENV</span><br><span class="line">变量值(V): <span class="string">"develop"</span></span><br></pre></td></tr></table></figure></p>
+<h1 id="通用的多环境配置方式"><a href="#通用的多环境配置方式" class="headerlink" title="通用的多环境配置方式"></a>通用的多环境配置方式</h1><p>application-dev.properties：开发环境<br>application-test.properties：测试环境<br>application-prod.properties：生产环境<br>至于哪个具体的配置文件会被加载，需要在application.properties文件中通过spring.profiles.active属性来设置，其值对应{profile}值。<br><img src="https://raw.githubusercontent.com/javacfox/photos/master/Hexo%2BGithub%E5%AE%9E%E7%8E%B0%E7%9B%B8%E5%86%8C%E5%8A%9F%E8%83%BD/clipboard12.png" alt="在这里插入图片描述"><br>如：spring.profiles.active=devlop就会加载application-develop.properties配置文件内容 ，这种每次配置一个新的环境都需要对application.properties文件进行修改，比较麻烦。</p>
 <h1 id="个人总结和使用场景"><a href="#个人总结和使用场景" class="headerlink" title="个人总结和使用场景"></a>个人总结和使用场景</h1><p>在后端开发中,应用程序在不同的环境可能会有不同的配置，例如数据库连接、日志级别等，开发，测试，生产每个环境可能配置都不一致。<br>个人觉得通过环境变量来决定调用哪个配置文件比较方便，设置好后不需要对配置文件进行修改。</p>
 
       
@@ -528,6 +528,14 @@ gitment.render('gitment-ctn')
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">yilia</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">使用方法</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">密码学基础</a>
               </li>
              
@@ -540,7 +548,7 @@ gitment.render('gitment-ctn')
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">yilia</a>
+                <a href="javascript:void(0)" class="js-tag color4">helper_live2d</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -548,103 +556,7 @@ gitment.render('gitment-ctn')
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">使用方法</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">加密与解密类</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">helper_live2d</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">日常bug</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">JDBC driver异常</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">密钥生成器</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">java.security包</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">java8</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">默认接口实现</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">LifecycleException解决思路</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">lombok</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">swagger2</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">devtools</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">对称加密算法</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">日常bug记录</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">虚拟机的安装</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">数字签名算法</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">git</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">GIT 项目并托管到 GITHUB 仓库</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">github</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">消息摘要算法</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">slf4j引入异常</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">证书和密钥的存储类</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">数字证书</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">非对称加密算法</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -652,11 +564,19 @@ gitment.render('gitment-ctn')
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">加密与解密类</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">springboot</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">定时任务</a>
+                <a href="javascript:void(0)" class="js-tag color2">返回类型封装</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">密钥生成器</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -668,7 +588,19 @@ gitment.render('gitment-ctn')
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">返回类型封装</a>
+                <a href="javascript:void(0)" class="js-tag color1">日常bug</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">JDBC driver异常</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Optional</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">定时任务</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -676,7 +608,51 @@ gitment.render('gitment-ctn')
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">java.security包</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">LifecycleException解决思路</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">java</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">swagger2</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">lombok</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">devtools</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">时间API</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">日常bug记录</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">虚拟机的安装</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">多环境的配置</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">GIT 项目并托管到 GITHUB 仓库</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -688,15 +664,27 @@ gitment.render('gitment-ctn')
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Optional</a>
+                <a href="javascript:void(0)" class="js-tag color2">对称加密算法</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">java</a>
+                <a href="javascript:void(0)" class="js-tag color2">默认接口实现</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">多环境的配置</a>
+                <a href="javascript:void(0)" class="js-tag color2">github</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">数字签名算法</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">消息摘要算法</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">slf4j引入异常</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -704,11 +692,23 @@ gitment.render('gitment-ctn')
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">证书和密钥的存储类</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">适配器模式</a>
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">数字证书</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Monogdb</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">非对称加密算法</a>
               </li>
             
             <div class="clearfix"></div>
