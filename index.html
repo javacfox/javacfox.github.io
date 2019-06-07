@@ -200,14 +200,8 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h1 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h1><p>由于这次任务是和c语言合作编写的，刚开始使用ini4j来操作.ini文件，然后由于ini4j对存储的数据做了转义处理，导致c无法正常读取，他们也是采用开源的框架，然后由于java方只有我一个人，势单力薄，这个bug推给了java方来修改，然而时间又比较紧迫，一时之间也找不到合适的jar包，不得不撸起手来自己敲…然后勉强算是解决了bug，性能和安全问题没怎么考虑。</p>
-<h1 id="创建-ini文件"><a href="#创建-ini文件" class="headerlink" title="创建.ini文件"></a>创建.ini文件</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 创建新的ini文件</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> filePath 文件路径</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> fileContent 如果要保存存储顺序，建议使用LinkedHashMap</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return</span></span></span><br><span class="line"><span class="comment"> * <span class="doctag">@throws</span> IOException</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">boolean</span> <span class="title">createIniFile</span><span class="params">(String filePath, Map&lt;String,Map&lt;String,Object&gt;&gt; fileContent)</span> <span class="keyword">throws</span> IOException </span>&#123;</span><br><span class="line">    File file = <span class="keyword">new</span> File(filePath);</span><br><span class="line">    <span class="keyword">if</span>(file.exists())&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    Set&lt;String&gt; keys = <span class="keyword">null</span>;</span><br><span class="line">    <span class="keyword">try</span> (BufferedWriter bufferedWriter = <span class="keyword">new</span> BufferedWriter(<span class="keyword">new</span> FileWriter(file));)&#123;</span><br><span class="line">        <span class="keyword">for</span> (String section : fileContent.keySet())&#123;</span><br><span class="line">            bufferedWriter.write(<span class="string">"["</span>+section+<span class="string">"]"</span>+<span class="string">"\r\n"</span>);</span><br><span class="line">            keys = fileContent.get(section).keySet();</span><br><span class="line">            <span class="keyword">for</span> (String key : keys)&#123;</span><br><span class="line">                bufferedWriter.write(key+<span class="string">" = "</span>+fileContent.get(section).get(key)+<span class="string">"\r\n"</span>);</span><br><span class="line">            &#125;</span><br><span class="line">            bufferedWriter.newLine();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;<span class="keyword">catch</span> (Exception e)&#123;</span><br><span class="line">        e.printStackTrace();</span><br><span class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> IOException(<span class="string">"文件写出异常"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//测试代码</span></span><br><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testCreatIniFile</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">long</span> t2 = System.currentTimeMillis();</span><br><span class="line">    IniUtils.creatIniFile(<span class="string">"D:\\abc\\test.ini"</span>);</span><br><span class="line">    <span class="keyword">long</span> t3 = System.currentTimeMillis();</span><br><span class="line">    System.out.println(<span class="string">"一："</span>+(t3-t2));</span><br><span class="line"></span><br><span class="line">    Map&lt;String,Map&lt;String,Object&gt;&gt; fileContent = <span class="keyword">new</span> LinkedHashMap&lt;&gt;();</span><br><span class="line">    fileContent.put(<span class="string">"LDAP"</span>,<span class="keyword">new</span> LinkedHashMap&lt;String, Object&gt;()&#123;</span><br><span class="line">        <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">long</span> serialVersionUID = <span class="number">1L</span>;</span><br><span class="line">        &#123;</span><br><span class="line">            put(<span class="string">"ip"</span>,<span class="string">"1.1.1.1"</span>);</span><br><span class="line">            put(<span class="string">"port"</span>,<span class="string">"8569"</span>);</span><br><span class="line">            put(<span class="string">"pwd"</span>,<span class="string">""</span>);</span><br><span class="line">            put(<span class="string">"user"</span>,<span class="string">"javac"</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">    fileContent.put(<span class="string">"SAVE"</span>,<span class="keyword">new</span> LinkedHashMap&lt;String, Object&gt;()&#123;</span><br><span class="line">        <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">long</span> serialVersionUID = <span class="number">1L</span>;</span><br><span class="line">        &#123;</span><br><span class="line">            put(<span class="string">"savefiledir"</span>,<span class="string">""</span>);</span><br><span class="line">            put(<span class="string">"savefilesubdir"</span>,<span class="string">""</span>);</span><br><span class="line">            put(<span class="string">"savemode"</span>,<span class="string">""</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">    fileContent.put(<span class="string">"LOG"</span>,<span class="keyword">new</span> LinkedHashMap&lt;String, Object&gt;()&#123;</span><br><span class="line">        <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">long</span> serialVersionUID = <span class="number">1L</span>;</span><br><span class="line">        &#123;</span><br><span class="line">            put(<span class="string">"logDebugOpen"</span>,<span class="string">""</span>);</span><br><span class="line">            put(<span class="string">"logFileName"</span>,<span class="string">""</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">    fileContent.put(<span class="string">"SEARCH"</span>,<span class="keyword">new</span> LinkedHashMap&lt;String, Object&gt;()&#123;</span><br><span class="line">        <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">long</span> serialVersionUID = <span class="number">1L</span>;</span><br><span class="line">        &#123;</span><br><span class="line">            put(<span class="string">"searchbasedn"</span>,<span class="string">""</span>);</span><br><span class="line">            put(<span class="string">"searchfilter"</span>,<span class="string">""</span>);</span><br><span class="line">            put(<span class="string">"searchflag"</span>,<span class="string">""</span>);</span><br><span class="line">            put(<span class="string">"maxcrls"</span>,<span class="string">""</span>);</span><br><span class="line">            put(<span class="string">"postfix"</span>,<span class="string">""</span>);</span><br><span class="line">            put(<span class="string">"base64check"</span>,<span class="string">""</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">    fileContent.put(<span class="string">"SHECA"</span>,<span class="keyword">new</span> LinkedHashMap&lt;String, Object&gt;()&#123;</span><br><span class="line">        <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">long</span> serialVersionUID = <span class="number">1L</span>;</span><br><span class="line">        &#123;</span><br><span class="line">            put(<span class="string">"LibName"</span>,<span class="string">""</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">    fileContent.put(<span class="string">"TIMER"</span>,<span class="keyword">new</span> LinkedHashMap&lt;String, Object&gt;()&#123;</span><br><span class="line">        <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">long</span> serialVersionUID = <span class="number">1L</span>;</span><br><span class="line">        &#123;</span><br><span class="line">            put(<span class="string">"timermode"</span>,<span class="string">""</span>);</span><br><span class="line">            put(<span class="string">"timerspan"</span>,<span class="string">""</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">    <span class="keyword">long</span> t0 = System.currentTimeMillis();</span><br><span class="line">    FileUtils.createIniFile(<span class="string">"D:\\abc\\test0.ini"</span>,fileContent);</span><br><span class="line">    <span class="keyword">long</span> t1 = System.currentTimeMillis();</span><br><span class="line">    System.out.println(<span class="string">"二："</span>+(t1-t0));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>结果如下图（和使用ini4j生成的区别不大，只是没有转义的问题）：<br><img src="https://raw.githubusercontent.com/javacfox/photos/master/Hexo%2BGithub%E5%AE%9E%E7%8E%B0%E7%9B%B8%E5%86%8C%E5%8A%9F%E8%83%BD/clipboard13.png" alt="image"></p>
-<h1 id="查看-ini文件"><a href="#查看-ini文件" class="headerlink" title="查看.ini文件"></a>查看.ini文件</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">* 读取文件内容</span></span><br><span class="line"><span class="comment">* <span class="doctag">@param</span> file 文件</span></span><br><span class="line"><span class="comment">* <span class="doctag">@return</span></span></span><br><span class="line"><span class="comment">* <span class="doctag">@throws</span> IOException</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> Map&lt;String,Map&lt;String,String&gt;&gt; readIniFile(File file) <span class="keyword">throws</span> IOException &#123;</span><br><span class="line">    <span class="comment">//存放所有的数据</span></span><br><span class="line">    Map&lt;String,Map&lt;String,String&gt;&gt; dataMap = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">    <span class="comment">//存放session下的所有value值</span></span><br><span class="line">    Map&lt;String,String&gt; paramaters = <span class="keyword">null</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">try</span> (BufferedReader br = <span class="keyword">new</span> BufferedReader(<span class="keyword">new</span> FileReader(file));)&#123;</span><br><span class="line">    <span class="comment">//读取的行</span></span><br><span class="line">    String readLine = <span class="string">""</span>;</span><br><span class="line">    <span class="comment">//正则</span></span><br><span class="line">    String regex = <span class="string">"\\[\\w+\\]"</span>;</span><br><span class="line">    <span class="comment">//存放读取的session</span></span><br><span class="line">    String session = <span class="string">""</span>;</span><br><span class="line">    <span class="comment">//存放key和value值</span></span><br><span class="line">    String[] map = <span class="keyword">null</span>;</span><br><span class="line">    <span class="keyword">while</span> ((readLine = br.readLine()) != <span class="keyword">null</span>)&#123;</span><br><span class="line">    <span class="keyword">if</span>(<span class="keyword">null</span> != readLine &amp;&amp; !<span class="string">""</span>.equals(readLine))&#123;</span><br><span class="line">        <span class="keyword">if</span>(readLine.matches(regex))&#123;</span><br><span class="line">            <span class="keyword">if</span>(<span class="keyword">null</span> != session &amp;&amp; !<span class="string">""</span>.equals(session))&#123;</span><br><span class="line">                dataMap.put(session,paramaters);</span><br><span class="line">            &#125;</span><br><span class="line">            paramaters = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">            session = readLine.substring(<span class="number">1</span>,readLine.length()-<span class="number">1</span>);</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            map = readLine.split(<span class="string">" = "</span>);</span><br><span class="line">            paramaters.put(map[<span class="number">0</span>],map.length&gt;<span class="number">1</span> ? map[<span class="number">1</span>] : <span class="string">""</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            dataMap.put(session,paramaters);</span><br><span class="line">            <span class="keyword">return</span> dataMap;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-<p>测试代码及其输出结果<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testReadIniFile</span><span class="params">()</span></span>&#123;</span><br><span class="line">    Map&lt;String,Map&lt;String,String&gt;&gt; dataMap = FileUtils.readIniFile(<span class="keyword">new</span> File(<span class="string">"D:\\abc\\test0.ini"</span>));</span><br><span class="line">    dataMap.forEach((k,v)-&gt;&#123;</span><br><span class="line">        System.out.println(<span class="string">"["</span>+k+<span class="string">"]"</span>);</span><br><span class="line">        v.forEach((key,value)-&gt;&#123;</span><br><span class="line">            System.out.println(key+<span class="string">" = "</span>+value);</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//打印结果和图片里的内容是一致的</span></span><br><span class="line">[LDAP]</span><br><span class="line">port = <span class="number">8569</span></span><br><span class="line">ip = <span class="number">1.1</span>.1.1</span><br><span class="line">pwd = </span><br><span class="line">user = javac</span><br><span class="line">[LOG]</span><br><span class="line">logFileName = </span><br><span class="line">logDebugOpen = </span><br><span class="line">[SEARCH]</span><br><span class="line">searchbasedn = </span><br><span class="line">searchfilter = </span><br><span class="line">searchflag = </span><br><span class="line">postfix = </span><br><span class="line">base64check = </span><br><span class="line">maxcrls = </span><br><span class="line">[TIMER]</span><br><span class="line">timermode = </span><br><span class="line">timerspan = </span><br><span class="line">[SAVE]</span><br><span class="line">savemode = </span><br><span class="line">savefilesubdir = </span><br><span class="line">savefiledir = </span><br><span class="line">[SHECA]</span><br><span class="line">LibName = </span><br><span class="line"></span><br><span class="line">Process finished with exit code <span class="number">0</span></span><br></pre></td></tr></table></figure></p>
-<h1 id="单行写入"><a href="#单行写入" class="headerlink" title="单行写入"></a>单行写入</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">* 修改文件中某个值得属性</span></span><br><span class="line"><span class="comment">* <span class="doctag">@param</span> filePath 文件路径</span></span><br><span class="line"><span class="comment">* <span class="doctag">@param</span> section 区块</span></span><br><span class="line"><span class="comment">* <span class="doctag">@param</span> key 键</span></span><br><span class="line"><span class="comment">* <span class="doctag">@param</span> value 值</span></span><br><span class="line"><span class="comment">* <span class="doctag">@return</span> 保存是否成功</span></span><br><span class="line"><span class="comment">* <span class="doctag">@throws</span> IOException</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">boolean</span> <span class="title">setIniFileString</span><span class="params">(File file,String section,String key,Object value)</span> <span class="keyword">throws</span> IOException </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(!file.exists())&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    String readLine = <span class="string">""</span>;</span><br><span class="line">    StringBuilder sb = <span class="keyword">new</span> StringBuilder();</span><br><span class="line">    <span class="keyword">boolean</span> sectionFlag = <span class="keyword">false</span>;</span><br><span class="line">    <span class="keyword">boolean</span> changeFlag = <span class="keyword">false</span>;</span><br><span class="line">    String readKey = <span class="string">""</span>;</span><br><span class="line">    <span class="keyword">try</span>(BufferedReader bufferedReader = <span class="keyword">new</span> BufferedReader(<span class="keyword">new</span> FileReader(file));)&#123;</span><br><span class="line">        <span class="keyword">while</span> ((readLine=bufferedReader.readLine())!=<span class="keyword">null</span>) &#123;</span><br><span class="line">            <span class="keyword">if</span>(readLine.trim().equals(section))&#123;</span><br><span class="line">                sectionFlag = <span class="keyword">true</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span>(readLine.contains(<span class="string">"["</span>) &amp;&amp; readLine.contains(<span class="string">"]"</span>))&#123;</span><br><span class="line">                <span class="keyword">if</span>(!readLine.trim().equals(section))&#123;</span><br><span class="line">                    sectionFlag = <span class="keyword">false</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span>(sectionFlag &amp;&amp; readLine.contains(key))&#123;</span><br><span class="line">                readKey = readLine.substring(<span class="number">0</span>,readLine.indexOf(<span class="string">" "</span>));</span><br><span class="line">                <span class="keyword">if</span>(readKey.equals(key))&#123;</span><br><span class="line">                    readLine = readKey + <span class="string">" = "</span>+value;</span><br><span class="line">                    changeFlag = <span class="keyword">true</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            sb.append(readLine+<span class="string">"\r\n"</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(!changeFlag)&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125; <span class="keyword">catch</span> (Exception e)&#123;</span><br><span class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> IOException(<span class="string">"文件读取或写入异常"</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">try</span> (BufferedWriter bufferedWriter = <span class="keyword">new</span> BufferedWriter(<span class="keyword">new</span> FileWriter(file));)&#123;</span><br><span class="line">        bufferedWriter.write(sb.toString());</span><br><span class="line">        bufferedWriter.flush();</span><br><span class="line">    &#125;<span class="keyword">catch</span> (Exception e)&#123;</span><br><span class="line">        e.printStackTrace();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>测试代码及结果<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">test</span><span class="params">()</span></span>&#123;</span><br><span class="line">    File file = <span class="keyword">new</span> File(<span class="string">"D:\\abc\\test0.ini"</span>);</span><br><span class="line">    FileUtils.setIniFileString(file,<span class="string">"LDAP"</span>,<span class="string">"ip"</span>,<span class="string">"8.8.8.8"</span>);</span><br><span class="line"></span><br><span class="line">    Map&lt;String,Map&lt;String,String&gt;&gt; dataMap = FileUtils.readIniFile(<span class="keyword">new</span> File(<span class="string">"D:\\abc\\test0.ini"</span>));</span><br><span class="line">        dataMap.forEach((k,v)-&gt;&#123;</span><br><span class="line">            System.out.println(<span class="string">"["</span>+k+<span class="string">"]"</span>);</span><br><span class="line">            v.forEach((key,value)-&gt;&#123;</span><br><span class="line">                System.out.println(key+<span class="string">" = "</span>+value);</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;);  </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//打印结果</span></span><br><span class="line"> [LDAP]</span><br><span class="line">port = <span class="number">8569</span></span><br><span class="line">ip = <span class="number">8.8</span>.8.8</span><br><span class="line">pwd = </span><br><span class="line">user = javac</span><br><span class="line">[LOG]</span><br><span class="line">logFileName = </span><br><span class="line">logDebugOpen = </span><br><span class="line">[SEARCH]</span><br><span class="line">searchbasedn = </span><br><span class="line">searchfilter = </span><br><span class="line">searchflag = </span><br><span class="line">postfix = </span><br><span class="line">base64check = </span><br><span class="line">maxcrls = </span><br><span class="line">[TIMER]</span><br><span class="line">timermode = </span><br><span class="line">timerspan = </span><br><span class="line">[SAVE]</span><br><span class="line">savemode = </span><br><span class="line">savefilesubdir = </span><br><span class="line">savefiledir = </span><br><span class="line">[SHECA]</span><br><span class="line">LibName = </span><br><span class="line"></span><br><span class="line">Process finished with exit code <span class="number">0</span></span><br></pre></td></tr></table></figure></p>
-<p>这个和ini4j相比，有一个差距很大的地方就是写入的时候，一次只能写入一行，而且需要读取源文件，然后比对是否匹配，对上才修改。而Ini4j是可以同时修改一行或多行。目前没有想到什么可行的办法，只能去拜读源码了。日后继续更新！</p>
-
+<h1 id="创建-ini文件"><a href="#创建-ini文件" class="headerlink" title="创建.ini文件"></a>创建.ini文件</h1>
+        
       
 	  
 	  
@@ -737,97 +731,6 @@
 
 
   
-    <article id="post-SpringBoot通过注解的方式实现定时任务" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/05/19/SpringBoot通过注解的方式实现定时任务/">springboot通过注解的方式实现定时任务</a>
-    </h1>
-  
-
-        
-        <a href="/2019/05/19/SpringBoot通过注解的方式实现定时任务/" class="archive-article-date">
-  	<time datetime="2019-05-19T10:08:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-19</time>
-</a>
-        
-		
-		<!-- 目录内容 -->
-		
-		<!-- 目录内容结束 -->
-		
-		
-		
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="实现步骤"><a href="#实现步骤" class="headerlink" title="实现步骤"></a>实现步骤</h2><p>1.搭建springBoot的启动类上添加注解@EnableScheduling<br>2.在注解类中添加线程池<br>3.在服务类中添加定时任务<br>
-        
-      
-	  
-	  
-		
-		  <div class="declare" hidden="hidden"></div>
-		
-	  
-      
-    </p></div>
-	
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">springboot</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">定时任务</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/05/19/SpringBoot通过注解的方式实现定时任务/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
     <article id="post-SpringBoot返回类型封装" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -890,6 +793,97 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2019/05/19/SpringBoot返回类型封装/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-SpringBoot通过注解的方式实现定时任务" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/05/19/SpringBoot通过注解的方式实现定时任务/">springboot通过注解的方式实现定时任务</a>
+    </h1>
+  
+
+        
+        <a href="/2019/05/19/SpringBoot通过注解的方式实现定时任务/" class="archive-article-date">
+  	<time datetime="2019-05-19T10:08:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-19</time>
+</a>
+        
+		
+		<!-- 目录内容 -->
+		
+		<!-- 目录内容结束 -->
+		
+		
+		
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="实现步骤"><a href="#实现步骤" class="headerlink" title="实现步骤"></a>实现步骤</h2><p>1.搭建springBoot的启动类上添加注解@EnableScheduling<br>2.在注解类中添加线程池<br>3.在服务类中添加定时任务<br>
+        
+      
+	  
+	  
+		
+		  <div class="declare" hidden="hidden"></div>
+		
+	  
+      
+    </p></div>
+	
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">springboot</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">定时任务</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/05/19/SpringBoot通过注解的方式实现定时任务/">展开全文 >></a>
         </p>
       
 
@@ -1198,11 +1192,15 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">java8</a>
+                <a href="javascript:void(0)" class="js-tag color2">yillia</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Fork/Join框架</a>
+                <a href="javascript:void(0)" class="js-tag color1">yilia</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">helper_live2d</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1214,7 +1212,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">yilia</a>
+                <a href="javascript:void(0)" class="js-tag color1">java8</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Fork/Join框架</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1226,19 +1228,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">yillia</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Tess4J</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">图文识别</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">helper_live2d</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1254,11 +1248,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">返回类型封装</a>
+                <a href="javascript:void(0)" class="js-tag color5">定时任务</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">定时任务</a>
+                <a href="javascript:void(0)" class="js-tag color2">返回类型封装</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1270,7 +1264,15 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">java.security包</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">默认接口实现</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Optional</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1278,7 +1280,7 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">java.security包</a>
+                <a href="javascript:void(0)" class="js-tag color1">时间API</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1290,14 +1292,6 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Optional</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">时间API</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">LifecycleException解决思路</a>
               </li>
              
@@ -1306,15 +1300,19 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">lombok</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">swagger2</a>
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">lombok</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">devtools</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">对称加密算法</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1323,10 +1321,6 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">虚拟机的安装</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">对称加密算法</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1358,6 +1352,10 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">slf4j引入异常</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">证书和密钥的存储类</a>
               </li>
              
@@ -1367,10 +1365,6 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">适配器模式</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">slf4j引入异常</a>
               </li>
              
               <li class="article-tag-list-item">
