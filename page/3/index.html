@@ -172,20 +172,20 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-设计模式之策略模式" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-证书和密钥的存储类" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/05/19/设计模式之策略模式/">设计模式之策略模式</a>
+      <a class="article-title" href="/2019/05/19/证书和密钥的存储类/">证书和密钥的存储类</a>
     </h1>
   
 
         
-        <a href="/2019/05/19/设计模式之策略模式/" class="archive-article-date">
-  	<time datetime="2019-05-19T10:08:08.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-19</time>
+        <a href="/2019/05/19/证书和密钥的存储类/" class="archive-article-date">
+  	<time datetime="2019-05-19T04:36:39.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-19</time>
 </a>
         
 		
@@ -199,389 +199,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="策略模式"><a href="#策略模式" class="headerlink" title="策略模式"></a>策略模式</h2><ol>
-<li><strong>核心思想</strong> ：代表了解决一类算法的通用解决方案，让你在运行时选择使用哪种方案（定义了一系列的算法，并将每一个算法封装起来，而且使它们还可以相互替换）</li>
-<li><strong>组成</strong>：Context(应用场景）、Strategy(抽象策略类)、ConcreteStrategy(Strategy的具体实现)<br><img src="https://raw.githubusercontent.com/javacfox/photos/master/Hexo%2BGithub%E5%AE%9E%E7%8E%B0%E7%9B%B8%E5%86%8C%E5%8A%9F%E8%83%BD/clipboard10.jpg" alt="image"></li>
-<li><strong>优点</strong>： 提供了一种替代继承的方法，而且既保持了继承的优点(代码重用)还比继承更灵活(算法独立，可以任意扩展)；程序中使用多重条件转移语句，使系统更灵活，并易于扩展；遵守大部分GRASP原则和常用设计原则，<br>高内聚、低偶合。
-        
-      
-	  
-	  
-		
-		  <div class="declare" hidden="hidden"></div>
-		
-	  
-      
-    </li></ol></div>
-	
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">设计模式</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">策略模式</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/05/19/设计模式之策略模式/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-工厂方法学习笔记" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/05/19/工厂方法学习笔记/">工厂方法学习笔记</a>
-    </h1>
-  
-
-        
-        <a href="/2019/05/19/工厂方法学习笔记/" class="archive-article-date">
-  	<time datetime="2019-05-19T10:08:08.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-19</time>
-</a>
-        
-		
-		<!-- 目录内容 -->
-		
-		<!-- 目录内容结束 -->
-		
-		
-		
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="自我介绍"><a href="#自我介绍" class="headerlink" title="自我介绍"></a>自我介绍</h1><p>你好！ 这是我第一次使用CSDN发表文章 ，本人从事Java后端和基于Vue.js、ES6和Element-UI的前端开发，以后请大家多多指教，有出错或需要修改的地方麻烦你们指导出来，不胜感激。刚开始接触CSDN查询相关资料，我发现很多人基本上都省略了一些大家默认知道的东西，这对刚入行的新人来说是不清楚的，所以看起来特别费劲。我现在是以一个新人的视角去分享我的学习笔记，以便于自己学习和获得大家的指导。以后我会不定期分享我的学习笔记和工作中的出现的问题和解决办法。希望大家多多指导！！！</p>
-<h2 id="工厂方法"><a href="#工厂方法" class="headerlink" title="工厂方法"></a>工厂方法</h2><p>定义一个用于创建对象的接口，让子类决定实例化哪一个类 ：</p>
-<ol>
-<li><strong>核心思想</strong>： 将类中不变的部分抽象出来封装成接口，将其中个性化善变的部分为封装为独立类，通过依赖注入的方式以达到解耦、复用和方便后期维护和拓展的目的；</li>
-<li><strong>基本组成</strong>：抽象工厂、具体工厂、抽象产品和具体产品四个部分；</li>
-<li><strong>优点</strong>：多态，可以返回原类型的任何子类型；拓展性好，一定程度上减少了代码的修改量，添加一个新产品只需要添加一个产品类和一个实体类。符合“开闭原则”;</li>
-<li><strong>缺点</strong>:添加新的产品时，需要成对添加产品类和工厂类，一定程度上添加了系统的复杂度，增加了系统的抽象性和理解难度，且在实现可能需要引入DOM、反射等技术，一定程度上增加了系统的实现难度</li>
-</ol>
-<h2 id="实例演示"><a href="#实例演示" class="headerlink" title="实例演示"></a>实例演示</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//抽象产品，封装产品中公有的部分</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Player</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">play</span><span class="params">(File file)</span></span>; <span class="comment">// 播放</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//具体产品，定义个性化善变的部分，可以有一至多个</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">VideoPlayer</span> <span class="keyword">implements</span> <span class="title">Player</span> </span>&#123;</span><br><span class="line">	<span class="meta">@Override</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">play</span><span class="params">(File file)</span></span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"播放视频!!"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//具体产品，定义个性化善变的部分</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MusicPlayer</span> <span class="keyword">implements</span> <span class="title">Player</span> </span>&#123;</span><br><span class="line">	<span class="meta">@Override</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">play</span><span class="params">(File file)</span></span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"播放音乐!!"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 抽象工厂，封装工厂中公有的部分</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">PlayerFactory</span> </span>&#123;</span><br><span class="line">	<span class="function">Player <span class="title">createPlayer</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//具体工厂，与具体产品相对应</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">VideoPlayerFactory</span> <span class="keyword">implements</span> <span class="title">PlayerFactory</span> </span>&#123;</span><br><span class="line">	<span class="meta">@Override</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> Player <span class="title">createPlayer</span><span class="params">()</span></span>&#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="keyword">new</span> VideoPlayer();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//具体工厂，与具体产品相对应</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MusicPlayerFactory</span> <span class="keyword">implements</span> <span class="title">MusicPlayerFactory</span> </span>&#123;</span><br><span class="line">	<span class="meta">@Override</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> Player <span class="title">createPlayer</span><span class="params">()</span></span>&#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="keyword">new</span> MusicPlayer();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//主类，具体调用</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">		VideoPlayerFactory videoFactory = <span class="keyword">new</span> VideoPlayerFactory();</span><br><span class="line">		Player videoPlayer = videoFactory .createPlayer();</span><br><span class="line">		File file = <span class="keyword">new</span> File(<span class="string">"csdn.mp4"</span>);</span><br><span class="line">		videoPlayer.play(file);</span><br><span class="line">		MusicPlayerFactory musicFactory = <span class="keyword">new</span> MusicPlayerFactory();</span><br><span class="line">		Player musicPlayer = musicFactory.createPlayer();</span><br><span class="line">		File musicFile = <span class="keyword">new</span> File(<span class="string">"lsr.mp3"</span>);</span><br><span class="line">		musicPlayer.play(musicFile );</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="个人总结和使用场景"><a href="#个人总结和使用场景" class="headerlink" title="个人总结和使用场景"></a>个人总结和使用场景</h2><p>一句话总结工厂模式：便于创建 同种产品不同类型的 复杂参数 对象，降低创建和调用难度<br>工厂模式适用于构建同产品的不同类型（实现了同一个基类）的不同对象时，对象构造器很复杂（有很多的参数），而且这些参数中大部分都是固定的，这时就可以用工厂模式进行封装。</p>
-
-      
-	  
-	  
-		
-		  <div class="declare" hidden="hidden"></div>
-		
-	  
-      
-    </div>
-	
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">设计模式</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">工厂方法</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/05/19/工厂方法学习笔记/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-java8新特性之时间API" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/05/19/java8新特性之时间API/">java8新特性之时间API</a>
-    </h1>
-  
-
-        
-        <a href="/2019/05/19/java8新特性之时间API/" class="archive-article-date">
-  	<time datetime="2019-05-19T10:08:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-19</time>
-</a>
-        
-		
-		<!-- 目录内容 -->
-		
-		<!-- 目录内容结束 -->
-		
-		
-		
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="为什么需要在Java8中引入新的日期和时间库"><a href="#为什么需要在Java8中引入新的日期和时间库" class="headerlink" title="为什么需要在Java8中引入新的日期和时间库?"></a>为什么需要在Java8中引入新的日期和时间库?</h2><ol>
-<li>在java1.0中，对时间和日期的支持只能依赖 java.util.date 类，但这个类无法表示日期，只能以毫秒的精度表示时间，易用性也较低。<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Date date = <span class="keyword">new</span> Date(<span class="number">114</span>,<span class="number">2</span>,<span class="number">18</span>);</span><br><span class="line"><span class="comment">//打印结果</span></span><br><span class="line">Tue Mar <span class="number">18</span> <span class="number">00</span>:<span class="number">00</span>:<span class="number">00</span> CST <span class="number">2014</span></span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-        
-      
-	  
-	  
-		
-		  <div class="declare" hidden="hidden"></div>
-		
-	  
-      
-    </div>
-	
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">java8</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">时间API</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/05/19/java8新特性之时间API/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-java8之默认接口实现" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/05/19/java8之默认接口实现/">java8之默认接口实现</a>
-    </h1>
-  
-
-        
-        <a href="/2019/05/19/java8之默认接口实现/" class="archive-article-date">
-  	<time datetime="2019-05-19T10:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-19</time>
-</a>
-        
-		
-		<!-- 目录内容 -->
-		
-		<!-- 目录内容结束 -->
-		
-		
-		
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p><strong>定义：申明方法的同时提供实现</strong></p>
-<ol>
-<li>允许在接口内声明静态方法</li>
-<li>指定接口方法的默认实现
-        
-      
-	  
-	  
-		
-		  <div class="declare" hidden="hidden"></div>
-		
-	  
-      
-    </li></ol></div>
-	
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">java8</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">默认接口实现</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/05/19/java8之默认接口实现/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Base64算法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/05/19/Base64算法/">Base64算法</a>
-    </h1>
-  
-
-        
-        <a href="/2019/05/19/Base64算法/" class="archive-article-date">
-  	<time datetime="2019-05-19T09:18:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-19</time>
-</a>
-        
-		
-		<!-- 目录内容 -->
-		
-		<!-- 目录内容结束 -->
-		
-		
-		
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="Base64"><a href="#Base64" class="headerlink" title="Base64"></a>Base64</h1><p>Base64是一种基于64个字符的编码算法，，根据RFC 2045的定义：“Base64内容传送编码是以一种任意8位字节序列组合的描述形式，这种形式不易被人直接识别”。经过Base64编码后的数据会比原始数据略长，为原来的4/3倍。字符串的字符数是以4位单位的整数倍。<br>
+        <h1 id="KeyStore"><a href="#KeyStore" class="headerlink" title="KeyStore"></a>KeyStore</h1><p>KeyStore被称为密钥库，用于管理密钥和证书的存储(引擎类)，它提供一些相当完善的接口来访问和修改密钥仓库中的信息<br>
         
       
 	  
@@ -605,7 +223,7 @@
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Base64算法</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">证书和密钥的存储类</a>
         		</li>
       		
 		</ul>
@@ -615,7 +233,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/05/19/Base64算法/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/05/19/证书和密钥的存储类/">展开全文 >></a>
         </p>
       
 
@@ -645,20 +263,20 @@
 
 
   
-    <article id="post-消息摘要算法-进阶" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-数字签名" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/05/19/消息摘要算法-进阶/">消息摘要算法(进阶)</a>
+      <a class="article-title" href="/2019/05/19/数字签名/">数字签名算法</a>
     </h1>
   
 
         
-        <a href="/2019/05/19/消息摘要算法-进阶/" class="archive-article-date">
-  	<time datetime="2019-05-19T09:17:55.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-19</time>
+        <a href="/2019/05/19/数字签名/" class="archive-article-date">
+  	<time datetime="2019-05-19T04:33:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-19</time>
 </a>
         
 		
@@ -672,282 +290,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="定义："><a href="#定义：" class="headerlink" title="定义："></a>定义：</h1><p>消息摘要算法又称为散列算法，其核心在于散列函数的单向性。即通过散列函数可获得对应的散列值，但不可通过该散列值反推其原始数据信息，这是消息摘要算法的安全性的根本所在。<br>
-        
-      
-	  
-	  
-		
-		  <div class="declare" hidden="hidden"></div>
-		
-	  
-      
-    </p></div>
-	
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">密码学基础</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">消息摘要算法</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/05/19/消息摘要算法-进阶/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-初等数据加密-对称加密算法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/05/19/初等数据加密-对称加密算法/">初等数据加密--对称加密算法</a>
-    </h1>
-  
-
-        
-        <a href="/2019/05/19/初等数据加密-对称加密算法/" class="archive-article-date">
-  	<time datetime="2019-05-19T09:16:57.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-19</time>
-</a>
-        
-		
-		<!-- 目录内容 -->
-		
-		<!-- 目录内容结束 -->
-		
-		
-		
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>对称加密算法的核心：加密和解密操作使用同一套密钥。<br>
-        
-      
-	  
-	  
-		
-		  <div class="declare" hidden="hidden"></div>
-		
-	  
-      
-    </p></div>
-	
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">密码学基础</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">对称加密算法</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/05/19/初等数据加密-对称加密算法/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-高等数据加密-非对称加密算法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/05/19/高等数据加密-非对称加密算法/">高等数据加密--非对称加密算法</a>
-    </h1>
-  
-
-        
-        <a href="/2019/05/19/高等数据加密-非对称加密算法/" class="archive-article-date">
-  	<time datetime="2019-05-19T09:16:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-19</time>
-</a>
-        
-		
-		<!-- 目录内容 -->
-		
-		<!-- 目录内容结束 -->
-		
-		
-		
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>非对称加密算法与对称加密算法的主要区别在于非对称加密算法用于加密和解密的密钥不同，一个公开，称为公钥；一个保密，称为私钥。因此，非对称密码算法也称为双钥和公钥加密算法。</p>
-<p>非对称加密算法解决了对称加密算法密钥分配问题，并极大的提高了算法的安全性。多种B2C或B2B应用均使用非对称加密算法作为数据加密的核心算法。解决了对称加密算法的密钥存储问题。<br>
-        
-      
-	  
-	  
-		
-		  <div class="declare" hidden="hidden"></div>
-		
-	  
-      
-    </p></div>
-	
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">密码学基础</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">非对称加密算法</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/05/19/高等数据加密-非对称加密算法/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-数字签名算法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/05/19/数字签名算法/">数字签名算法</a>
-    </h1>
-  
-
-        
-        <a href="/2019/05/19/数字签名算法/" class="archive-article-date">
-  	<time datetime="2019-05-19T09:16:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-19</time>
-</a>
-        
-		
-		<!-- 目录内容 -->
-		
-		<!-- 目录内容结束 -->
-		
-		
-		
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><p>数字签名算法看以看做是一种带有密钥的消息摘要算法，并且这种算法包含了公钥和私钥。也就是说，数字签名算法是非对称加密算法和消息摘要算法的结合体。</p>
-<p>数字签名算法要求能够验证数据完整性、认证数据来源，并起到抗否认的作用。这三点与OSI参考模型中的数据完整性服务、认证服务和抗否认服务。消息摘要算法是验证数据完整性的最佳算法，因此，该算法成为数字签名算法中的必要组成部分。数字签名算法包含签名和验证两项操作，遵循”私钥签名，公钥验证”的签名、验证方式。<br>
+        <h1 id="Signature类"><a href="#Signature类" class="headerlink" title="Signature类"></a>Signature类</h1><p>Signature类用来生成和验证数字签名（引擎类）<br>
         
       
 	  
@@ -981,7 +324,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/05/19/数字签名算法/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/05/19/数字签名/">展开全文 >></a>
         </p>
       
 
@@ -1011,20 +354,20 @@
 
 
   
-    <article id="post-数字证书" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-java-security包的部分类详解" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/05/19/数字证书/">数字证书</a>
+      <a class="article-title" href="/2019/05/19/java-security包的部分类详解/">java.security包的部分类详解</a>
     </h1>
   
 
         
-        <a href="/2019/05/19/数字证书/" class="archive-article-date">
-  	<time datetime="2019-05-19T09:15:37.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-19</time>
+        <a href="/2019/05/19/java-security包的部分类详解/" class="archive-article-date">
+  	<time datetime="2019-05-19T04:28:59.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-19</time>
 </a>
         
 		
@@ -1038,9 +381,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>消息摘要算法用于验证数据完整性服务，对称加密算法和非对称加密算法用于保证数据保密性服务，数字签名算法用于抗否认服务。</p>
-<p>数字证书集合了多种密码学算法：自身带有公钥信息，可完成相应的加密/解密操作，同时，还带有数字签名，可鉴别消息来源；且自身带有消息摘由信息，可验证证书的完整性；由于证书本身含有用户身份信息，因而具有认证性。</p>
-<p>数字证书有多种文件编码格式，主要包含CER编码(变长模式)、DER编码(定长模式)和PKCS系列等<br>
+        <h1 id="Security类介绍"><a href="#Security类介绍" class="headerlink" title="Security类介绍"></a>Security类介绍</h1><p>  Security类的任务就是管理Java程序中所用到的提供者类。它是一个终态类，除了它的私有构造方法，其余均为静态方法。<br>
         
       
 	  
@@ -1064,7 +405,7 @@
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">数字证书</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">java.security包</a>
         		</li>
       		
 		</ul>
@@ -1074,7 +415,652 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/05/19/数字证书/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/05/19/java-security包的部分类详解/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-消息摘要算法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/05/19/消息摘要算法/">消息摘要算法</a>
+    </h1>
+  
+
+        
+        <a href="/2019/05/19/消息摘要算法/" class="archive-article-date">
+  	<time datetime="2019-05-19T04:26:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-19</time>
+</a>
+        
+		
+		<!-- 目录内容 -->
+		
+		<!-- 目录内容结束 -->
+		
+		
+		
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="java-security包详解"><a href="#java-security包详解" class="headerlink" title="java.security包详解"></a>java.security包详解</h1><p><strong>功能</strong>：为安全框架提供类和接口，通过该包的实现，只能够完成消息摘要算法的实现（MessageDigest、DigestInputStream和DigestOutputStream类）<br>
+        
+      
+	  
+	  
+		
+		  <div class="declare" hidden="hidden"></div>
+		
+	  
+      
+    </p></div>
+	
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">密码学基础</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">消息摘要算法</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/05/19/消息摘要算法/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-密码学基础" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/05/19/密码学基础/">密码学基础</a>
+    </h1>
+  
+
+        
+        <a href="/2019/05/19/密码学基础/" class="archive-article-date">
+  	<time datetime="2019-05-19T04:24:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-19</time>
+</a>
+        
+		
+		<!-- 目录内容 -->
+		
+		<!-- 目录内容结束 -->
+		
+		
+		
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="密码学（基础）"><a href="#密码学（基础）" class="headerlink" title="密码学（基础）"></a>密码学（基础）</h1><p><strong>定义</strong>：主要研究保密通信和信息保密的问题，包括信息保密传输和加密存储等。密码学包含密码编码学和密码解析学两个分支。</p>
+<p><strong>密码编码学</strong>：主要研究对信息进行编码，实现对信息的隐蔽</p>
+<p><strong>密码分析学</strong>：主要研究加密消息的破译或消息的伪造<br>
+        
+      
+	  
+	  
+		
+		  <div class="declare" hidden="hidden"></div>
+		
+	  
+      
+    </p></div>
+	
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">密码学基础</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/05/19/密码学基础/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-三个简化开发的小技巧" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/05/19/三个简化开发的小技巧/">三个简化开发的小技巧</a>
+    </h1>
+  
+
+        
+        <a href="/2019/05/19/三个简化开发的小技巧/" class="archive-article-date">
+  	<time datetime="2019-05-19T04:18:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-19</time>
+</a>
+        
+		
+		<!-- 目录内容 -->
+		
+		<!-- 目录内容结束 -->
+		
+		
+		
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="lombok"><a href="#lombok" class="headerlink" title="lombok"></a>lombok</h1><p>在接触lombok之前，需要我们使用快捷键生成get/set方法，有参无参构造和toString方法，一个简单的entity类看起来代码量却很多。<br>
+        
+      
+	  
+	  
+		
+		  <div class="declare" hidden="hidden"></div>
+		
+	  
+      
+    </p></div>
+	
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">lombok</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">swagger2</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">devtools</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/05/19/三个简化开发的小技巧/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-You-must-configure-either-the-server-or-JDBC-driver-via-the-serverTimezone-conf解决办法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/05/19/You-must-configure-either-the-server-or-JDBC-driver-via-the-serverTimezone-conf解决办法/">You must configure either the server or JDBC driver (via the serverTimezone conf解决办法</a>
+    </h1>
+  
+
+        
+        <a href="/2019/05/19/You-must-configure-either-the-server-or-JDBC-driver-via-the-serverTimezone-conf解决办法/" class="archive-article-date">
+  	<time datetime="2019-05-19T04:11:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-19</time>
+</a>
+        
+		
+		<!-- 目录内容 -->
+		
+		<!-- 目录内容结束 -->
+		
+		
+		
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="错误提示"><a href="#错误提示" class="headerlink" title="错误提示"></a>错误提示</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">Fri May <span class="number">17</span> <span class="number">14</span>:<span class="number">55</span>:<span class="number">39</span> CST <span class="number">2019</span></span><br><span class="line"><span class="function">There was an unexpected <span class="title">error</span> <span class="params">(type=Internal Server Error, status=<span class="number">500</span>)</span>.</span></span><br><span class="line">nested exception is org.apache.ibatis.exceptions.PersistenceException: ### Error querying database. Cause: org.springframework.jdbc.CannotGetJdbcConnectionException: Failed to obtain JDBC Connection; nested exception is java.sql.SQLSyntaxErrorException: Identifier name 'netsafe&amp;useunicode=true&amp;characterencoding=utf-8&amp;allowmultiqueries=true&amp;usessl=false' is too long ### The error may exist in com/infosec/netsafess/mapper/UserMapper.java (best guess) ### The error may involve com.infosec.netsafess.mapper.UserMapper.getAllUser ### The error occurred while executing a query ### Cause: org.springframework.jdbc.CannotGetJdbcConnectionException: Failed to obtain JDBC Connection; nested exception is java.sql.SQLSyntaxErrorException: Identifier name 'netsafe&amp;useunicode=true&amp;characterencoding=utf-8&amp;allowmultiqueries=true&amp;usessl=false' is too long</span><br><span class="line">org.mybatis.spring.MyBatisSystemException: nested exception is org.apache.ibatis.exceptions.PersistenceException: </span><br><span class="line">### Error querying database.  Cause: org.springframework.jdbc.CannotGetJdbcConnectionException: Failed to obtain JDBC Connection; nested exception is java.sql.SQLSyntaxErrorException: Identifier name 'netsafe&amp;useunicode=true&amp;characterencoding=utf-8&amp;allowmultiqueries=true&amp;usessl=false' is too long</span><br><span class="line">### The error may exist in com/infosec/netsafess/mapper/UserMapper.java (best guess)</span><br><span class="line">### The error may involve com.infosec.netsafess.mapper.UserMapper.getAllUser</span><br><span class="line">### The error occurred while executing a query</span><br><span class="line">### Cause: org.springframework.jdbc.CannotGetJdbcConnectionException: Failed to obtain JDBC Connection; nested exception is java.sql.SQLSyntaxErrorException: Identifier name 'netsafe&amp;useunicode=true&amp;characterencoding=utf-8&amp;allowmultiqueries=true&amp;usessl=false' is too long</span><br><span class="line">	at org.mybatis.spring.MyBatisExceptionTranslator.translateExceptionIfPossible(MyBatisExceptionTranslator.java:<span class="number">77</span>)</span><br><span class="line">	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:<span class="number">446</span>)</span><br><span class="line">	at com.sun.proxy.$Proxy60.selectList(Unknown Source)</span><br><span class="line">	at org.mybatis.spring.SqlSessionTemplate.selectList(SqlSessionTemplate.java:<span class="number">230</span>)</span><br><span class="line">	at org.apache.ibatis.binding.MapperMethod.executeForMany(MapperMethod.java:<span class="number">147</span>)</span><br><span class="line">	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:<span class="number">80</span>)</span><br><span class="line">	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:<span class="number">58</span>)</span><br><span class="line">	at com.sun.proxy.$Proxy64.getAllUser(Unknown Source)</span><br><span class="line">	at com.infosec.netsafess.service.impl.UserServiceImpl.getAllUser(UserServiceImpl.java:<span class="number">19</span>)</span><br><span class="line">	at com.infosec.netsafess.controller.HelloController.getAllUser(HelloController.java:<span class="number">25</span>)</span><br><span class="line">	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)</span><br><span class="line">	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:<span class="number">62</span>)</span><br><span class="line">	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:<span class="number">43</span>)</span><br></pre></td></tr></table></figure>
+        
+      
+	  
+	  
+		
+		  <div class="declare" hidden="hidden"></div>
+		
+	  
+      
+    </div>
+	
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">日常bug</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">JDBC driver异常</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/05/19/You-must-configure-either-the-server-or-JDBC-driver-via-the-serverTimezone-conf解决办法/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-org-apache-catalina-LifecycleException解决办法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/05/19/org-apache-catalina-LifecycleException解决办法/">org.apache.catalina.LifecycleException解决办法</a>
+    </h1>
+  
+
+        
+        <a href="/2019/05/19/org-apache-catalina-LifecycleException解决办法/" class="archive-article-date">
+  	<time datetime="2019-05-19T04:07:41.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-19</time>
+</a>
+        
+		
+		<!-- 目录内容 -->
+		
+		<!-- 目录内容结束 -->
+		
+		
+		
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line">严重: ContainerBase.addChild: start: </span><br><span class="line">org.apache.catalina.LifecycleException: Failed to start component [StandardEngine[Catalina].StandardHost[localhost].StandardContext[/MAuthManage]]</span><br><span class="line">	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:<span class="number">167</span>)</span><br><span class="line">	at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:<span class="number">754</span>)</span><br><span class="line">	at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:<span class="number">730</span>)</span><br><span class="line">	at org.apache.catalina.core.StandardHost.addChild(StandardHost.java:<span class="number">734</span>)</span><br><span class="line">	at org.apache.catalina.startup.HostConfig.deployDescriptor(HostConfig.java:<span class="number">624</span>)</span><br><span class="line">	at org.apache.catalina.startup.HostConfig$DeployDescriptor.run(HostConfig.java:<span class="number">1833</span>)</span><br><span class="line">	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:<span class="number">511</span>)</span><br><span class="line">	at java.util.concurrent.FutureTask.run(FutureTask.java:<span class="number">266</span>)</span><br><span class="line">	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:<span class="number">1149</span>)</span><br><span class="line">	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:<span class="number">624</span>)</span><br><span class="line">	at java.lang.Thread.run(Thread.java:<span class="number">748</span>)</span><br><span class="line">Caused by: java.lang.NoClassDefFoundError: com/sun/istack/localization/Localizable</span><br><span class="line">	at java.lang.ClassLoader.defineClass1(Native Method)</span><br><span class="line">	at java.lang.ClassLoader.defineClass(ClassLoader.java:<span class="number">763</span>)</span><br><span class="line">	at java.security.SecureClassLoader.defineClass(SecureClassLoader.java:<span class="number">142</span>)</span><br><span class="line">	at org.apache.catalina.loader.WebappClassLoaderBase.findClassInternal(WebappClassLoaderBase.java:<span class="number">2401</span>)</span><br><span class="line">	at org.apache.catalina.loader.WebappClassLoaderBase.findClass(WebappClassLoaderBase.java:<span class="number">859</span>)</span><br><span class="line">	at org.apache.catalina.loader.WebappClassLoaderBase.loadClass(WebappClassLoaderBase.java:<span class="number">1333</span>)</span><br><span class="line">	at org.apache.catalina.loader.WebappClassLoaderBase.loadClass(WebappClassLoaderBase.java:<span class="number">1185</span>)</span><br><span class="line">	at java.lang.ClassLoader.defineClass1(Native Method)</span><br><span class="line">	at java.lang.ClassLoader.defineClass(ClassLoader.java:<span class="number">763</span>)</span><br><span class="line">	at java.security.SecureClassLoader.defineClass(SecureClassLoader.java:<span class="number">142</span>)</span><br><span class="line">	at org.apache.catalina.loader.WebappClassLoaderBase.findClassInternal(WebappClassLoaderBase.java:<span class="number">2401</span>)</span><br><span class="line">	at org.apache.catalina.loader.WebappClassLoaderBase.findClass(WebappClassLoaderBase.java:<span class="number">859</span>)</span><br><span class="line">	at org.apache.catalina.loader.WebappClassLoaderBase.loadClass(WebappClassLoaderBase.java:<span class="number">1333</span>)</span><br><span class="line">	at org.apache.catalina.loader.WebappClassLoaderBase.loadClass(WebappClassLoaderBase.java:<span class="number">1185</span>)</span><br><span class="line">	at com.sun.xml.ws.transport.http.servlet.WSServletContainerInitializer.onStartup(WSServletContainerInitializer.java:<span class="number">64</span>)</span><br><span class="line">	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:<span class="number">5225</span>)</span><br><span class="line">	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:<span class="number">150</span>)</span><br><span class="line">	... <span class="number">10</span> more</span><br><span class="line">Caused by: java.lang.ClassNotFoundException: com.sun.istack.localization.Localizable</span><br><span class="line">	at org.apache.catalina.loader.WebappClassLoaderBase.loadClass(WebappClassLoaderBase.java:<span class="number">1364</span>)</span><br><span class="line">	at org.apache.catalina.loader.WebappClassLoaderBase.loadClass(WebappClassLoaderBase.java:<span class="number">1185</span>)</span><br><span class="line">	... <span class="number">27</span> more</span><br><span class="line"></span><br><span class="line">四月 <span class="number">29</span>, <span class="number">2019</span> <span class="number">9</span>:<span class="number">51</span>:<span class="number">05</span> 上午 org.apache.catalina.startup.HostConfig deployDescriptor</span><br><span class="line">严重: Error deploying configuration descriptor [D:\Users\Javacfox\eclipse-workspace\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\conf\Catalina\localhost\MAuthManage.xml]</span><br><span class="line">java.lang.IllegalStateException: ContainerBase.addChild: start: org.apache.catalina.LifecycleException: Failed to start component [StandardEngine[Catalina].StandardHost[localhost].StandardContext[/MAuthManage]]</span><br><span class="line">	at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:<span class="number">758</span>)</span><br><span class="line">	at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:<span class="number">730</span>)</span><br><span class="line">	at org.apache.catalina.core.StandardHost.addChild(StandardHost.java:<span class="number">734</span>)</span><br><span class="line">	at org.apache.catalina.startup.HostConfig.deployDescriptor(HostConfig.java:<span class="number">624</span>)</span><br><span class="line">	at org.apache.catalina.startup.HostConfig$DeployDescriptor.run(HostConfig.java:<span class="number">1833</span>)</span><br><span class="line">	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:<span class="number">511</span>)</span><br><span class="line">	at java.util.concurrent.FutureTask.run(FutureTask.java:<span class="number">266</span>)</span><br><span class="line">	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:<span class="number">1149</span>)</span><br><span class="line">	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:<span class="number">624</span>)</span><br><span class="line">	at java.lang.Thread.run(Thread.java:<span class="number">748</span>)</span><br><span class="line"></span><br><span class="line">四月 <span class="number">29</span>, <span class="number">2019</span> <span class="number">9</span>:<span class="number">51</span>:<span class="number">05</span> 上午 org.apache.catalina.startup.HostConfig deployDescriptor</span><br><span class="line">信息: Deployment of configuration descriptor [D:\Users\Javacfox\eclipse-workspace\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\conf\Catalina\localhost\MAuthManage.xml] has finished in [<span class="number">10</span>,<span class="number">512</span>] ms</span><br><span class="line">四月 <span class="number">29</span>, <span class="number">2019</span> <span class="number">9</span>:<span class="number">51</span>:<span class="number">05</span> 上午 org.apache.coyote.AbstractProtocol start</span><br><span class="line">信息: Starting ProtocolHandler [<span class="string">"http-nio-8080"</span>]</span><br><span class="line">四月 <span class="number">29</span>, <span class="number">2019</span> <span class="number">9</span>:<span class="number">51</span>:<span class="number">05</span> 上午 org.apache.coyote.AbstractProtocol start</span><br><span class="line">信息: Starting ProtocolHandler [<span class="string">"ajp-nio-8009"</span>]</span><br><span class="line">四月 <span class="number">29</span>, <span class="number">2019</span> <span class="number">9</span>:<span class="number">51</span>:<span class="number">05</span> 上午 org.apache.catalina.startup.Catalina start</span><br><span class="line">信息: Server startup in <span class="number">14048</span> ms</span><br></pre></td></tr></table></figure>
+        
+      
+	  
+	  
+		
+		  <div class="declare" hidden="hidden"></div>
+		
+	  
+      
+    </div>
+	
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">日常bug</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">LifecycleException解决思路</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/05/19/org-apache-catalina-LifecycleException解决办法/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-安装虚拟机时趟过的坑" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/05/19/安装虚拟机时趟过的坑/">安装虚拟机时趟过的坑</a>
+    </h1>
+  
+
+        
+        <a href="/2019/05/19/安装虚拟机时趟过的坑/" class="archive-article-date">
+  	<time datetime="2019-05-19T03:08:41.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-19</time>
+</a>
+        
+		
+		<!-- 目录内容 -->
+		
+		<!-- 目录内容结束 -->
+		
+		
+		
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="1、Intel-VT-x禁用"><a href="#1、Intel-VT-x禁用" class="headerlink" title="1、Intel VT-x禁用"></a>1、Intel VT-x禁用</h1><ol>
+<li>重启电脑，在开机动画之前，连续按F2</li>
+<li>进入bios界面，点击上方菜单栏处的【Advanced】</li>
+<li>进入advanced界面，点击列表中的【CPU Configuration】或者CPU-Setup</li>
+<li>找到【Intel Virtualization Technology】选项，点击回车选项</li>
+<li>该选项默认的是Disabled关闭状态，进入设置栏将Enabled勾选</li>
+<li>此时点击键盘上的F10选项，进行保存，在弹出的保存界面，点击YES保存，重启电脑
+        
+      
+	  
+	  
+		
+		  <div class="declare" hidden="hidden"></div>
+		
+	  
+      
+    </li></ol></div>
+	
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">日常bug</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">虚拟机的安装</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/05/19/安装虚拟机时趟过的坑/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-解决slf4j导入失败" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/05/19/解决slf4j导入失败/">解决slf4j导入失败</a>
+    </h1>
+  
+
+        
+        <a href="/2019/05/19/解决slf4j导入失败/" class="archive-article-date">
+  	<time datetime="2019-05-19T03:01:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-19</time>
+</a>
+        
+		
+		<!-- 目录内容 -->
+		
+		<!-- 目录内容结束 -->
+		
+		
+		
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>报错内容：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".</span><br><span class="line">SLF4J: Defaulting to no-operation (NOP) logger implementation</span><br><span class="line">SLF4J: See http:<span class="comment">//www.slf4j.org/codes.html#StaticLoggerBinder for further details.</span></span><br></pre></td></tr></table></figure></p>
+        
+      
+	  
+	  
+		
+		  <div class="declare" hidden="hidden"></div>
+		
+	  
+      
+    </div>
+	
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">日常bug</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">slf4j引入异常</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/05/19/解决slf4j导入失败/">展开全文 >></a>
         </p>
       
 
@@ -1106,7 +1092,7 @@
   
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/2/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/4/">Next &raquo;</a>
+      <a class="extend prev" rel="prev" href="/page/2/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/4/">Next &raquo;</a>
     </nav>
   
 
@@ -1201,19 +1187,11 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">java8</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Fork/Join框架</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">yillia</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">yilia</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">gitment评论系统</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1225,19 +1203,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Base64算法</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">加密与解密类</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">gitment评论系统</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">使用方法</a>
+                <a href="javascript:void(0)" class="js-tag color1">密钥生成器</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1245,7 +1215,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">返回类型封装</a>
+                <a href="javascript:void(0)" class="js-tag color3">SpEL表达式</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">yillia</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1261,43 +1235,7 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Tess4J</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">图文识别</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">定时任务</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Optional</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">密钥生成器</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">默认接口实现</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">vue</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">vue组件介绍</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">vue父子组件间传值</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">vue项目的搭建</a>
+                <a href="javascript:void(0)" class="js-tag color1">java8</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1305,7 +1243,7 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">时间API</a>
+                <a href="javascript:void(0)" class="js-tag color5">使用方法</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1313,39 +1251,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">swagger2</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">LifecycleException解决思路</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">lombok</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">devtools</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">ini4j的使用</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">日常bug记录</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">添加依赖</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">mongodb进阶</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">多数据源</a>
+                <a href="javascript:void(0)" class="js-tag color4">Base64算法</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1357,6 +1267,58 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">LifecycleException解决思路</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">vue</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">vue项目的搭建</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">对称加密算法</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">日常bug记录</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">lombok</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">swagger2</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">devtools</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">mongodb进阶</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">多数据源</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">vue组件介绍</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">vue父子组件间传值</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">添加依赖</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">git</a>
               </li>
              
@@ -1365,19 +1327,7 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">设计模式</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">工厂方法</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">数字签名算法</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">github</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1385,15 +1335,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">策略模式</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">多环境的配置</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">虚拟机的安装</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">github</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1401,15 +1347,7 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">适配器模式</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">证书和密钥的存储类</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">对称加密算法</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1430,10 +1368,6 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">数字证书</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Monogdb</a>
               </li>
              
               <li class="article-tag-list-item">

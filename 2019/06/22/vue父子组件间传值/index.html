@@ -226,7 +226,7 @@
       
         <h1 id="子组件"><a href="#子组件" class="headerlink" title="子组件"></a>子组件</h1><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"confirm_button"</span>&gt;</span><br><span class="line">    &lt;el-button type=<span class="string">"primary"</span> @click=<span class="string">"getButtonClick"</span>&gt;&#123;&#123;text || 确定&#125;&#125;&lt;<span class="regexp">/el-button&gt;</span></span><br><span class="line"><span class="regexp">  &lt;/</span>div&gt;</span><br><span class="line">&lt;<span class="regexp">/template&gt;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">&lt;script&gt;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">export default &#123;</span></span><br><span class="line"><span class="regexp">  name: "confirm-button",</span></span><br><span class="line"><span class="regexp">  props:["text"],</span></span><br><span class="line"><span class="regexp">  watch: &#123;&#125;,</span></span><br><span class="line"><span class="regexp">  data: function()&#123;</span></span><br><span class="line"><span class="regexp">      return&#123;</span></span><br><span class="line"><span class="regexp">        msg: this.text=="提交"?"提交成功":true</span></span><br><span class="line"><span class="regexp">      &#125;</span></span><br><span class="line"><span class="regexp">   &#125;,</span></span><br><span class="line"><span class="regexp">    /</span><span class="regexp">/方法集</span></span><br><span class="line"><span class="regexp">   methods:&#123;</span></span><br><span class="line"><span class="regexp">      getButtonClick()&#123;</span></span><br><span class="line"><span class="regexp">          this.$emit("message",this.msg)</span></span><br><span class="line"><span class="regexp">      &#125;</span></span><br><span class="line"><span class="regexp">   &#125;,</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br><span class="line"><span class="regexp">&lt;/</span>script&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- Add <span class="string">"scoped"</span> attribute to limit CSS to <span class="keyword">this</span> component only --&gt;</span><br><span class="line">&lt;style scoped&gt;</span><br><span class="line"></span><br><span class="line">&lt;<span class="regexp">/style&gt;</span></span><br></pre></td></tr></table></figure>
 <a id="more"></a>
-<h1 id="父组件"><a href="#父组件" class="headerlink" title="父组件"></a>父组件</h1><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"hello"</span>&gt;</span><br><span class="line">    &#123;&#123;msg&#125;&#125;</span><br><span class="line">    &lt;confirm text=<span class="string">"提交"</span> @message=<span class="string">"getMessage"</span>&gt;&lt;/confirm&gt;</span><br><span class="line">    &lt;ul id=<span class="string">"treeDemo"</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">"ztree"</span>&gt;&lt;/ul&gt;</span><br><span class="line">    &lt;!-- &lt;div id="jq" @click="initZtreeMethod"&gt;hello world&lt;/div&gt; --&gt;</span><br><span class="line">  &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">&lt;/</span>template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line"><span class="keyword">import</span> $ <span class="keyword">from</span> <span class="string">'../assets/jquery-vendor.js'</span></span><br><span class="line"><span class="keyword">import</span> <span class="string">'ztree/js/jquery.ztree.core'</span></span><br><span class="line"><span class="keyword">import</span> <span class="string">'ztree/js/jquery.ztree.excheck'</span></span><br><span class="line"><span class="keyword">import</span> <span class="string">'ztree/css/zTreeStyle/zTreeStyle.css'</span></span><br><span class="line"><span class="keyword">import</span> confirm <span class="keyword">from</span> <span class="string">'./sub/Confirm'</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">  name: <span class="string">"hello"</span>,</span><br><span class="line">  components:&#123;</span><br><span class="line">    confirm</span><br><span class="line">  &#125;,</span><br><span class="line">  data: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">      <span class="keyword">return</span>&#123;</span><br><span class="line">        zNodes:[</span><br><span class="line">          &#123;<span class="attr">id</span>:<span class="number">0</span>,<span class="attr">pId</span>:<span class="literal">null</span>,<span class="attr">name</span>:<span class="string">"root"</span>&#125;,</span><br><span class="line">          &#123;<span class="attr">id</span>:<span class="number">1</span>,<span class="attr">pId</span>:<span class="number">0</span>,<span class="attr">name</span>:<span class="string">"child"</span>&#125;  </span><br><span class="line">        ],</span><br><span class="line">        setting:&#123;</span><br><span class="line">          data:&#123;</span><br><span class="line">            keep:&#123;</span><br><span class="line">              leaf: <span class="literal">false</span>,</span><br><span class="line">              parent: <span class="literal">false</span></span><br><span class="line">            &#125;,</span><br><span class="line">            simpleData:&#123;</span><br><span class="line">              enable: <span class="literal">true</span>,</span><br><span class="line">              idKey: <span class="string">'id'</span>,</span><br><span class="line">              pIdKey: <span class="string">'pId'</span>,</span><br><span class="line">              rootPId: <span class="literal">null</span></span><br><span class="line">            &#125;,</span><br><span class="line">          &#125;</span><br><span class="line">        &#125;,</span><br><span class="line">        msg: <span class="string">"Welcome to my first app"</span></span><br><span class="line">      &#125;</span><br><span class="line">   &#125;,</span><br><span class="line">    <span class="comment">//方法集</span></span><br><span class="line">   methods:&#123;</span><br><span class="line">    initZtreeMethod()&#123;</span><br><span class="line">      $.fn.zTree.init($(<span class="string">"#treeDemo"</span>), <span class="keyword">this</span>.setting, <span class="keyword">this</span>.zNodes);</span><br><span class="line">    &#125;,</span><br><span class="line">    getMessage(val)&#123;</span><br><span class="line">      <span class="keyword">this</span>.$message(val+<span class="string">""</span>);</span><br><span class="line">    &#125;</span><br><span class="line">   &#125;,</span><br><span class="line">   mounted()&#123;</span><br><span class="line">     <span class="keyword">this</span>.initZtreeMethod();</span><br><span class="line">   &#125;,</span><br><span class="line">   created()&#123;</span><br><span class="line">     </span><br><span class="line">   &#125;,</span><br><span class="line">&#125;</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">&lt;!-- Add "scoped" attribute to limit CSS to this component only --&gt;</span></span><br><span class="line"><span class="regexp">&lt;style scoped&gt;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">&lt;/</span>style&gt;</span><br></pre></td></tr></table></figure>
+<h1 id="父组件"><a href="#父组件" class="headerlink" title="父组件"></a>父组件</h1><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"hello"</span>&gt;</span><br><span class="line">    &#123;&#123;msg&#125;&#125;</span><br><span class="line">    &lt;confirm text=<span class="string">"提交"</span> @message=<span class="string">"getMessage"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">confirm</span>&gt;</span></span></span><br><span class="line">    &lt;ul id=<span class="string">"treeDemo"</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">"ztree"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span></span><br><span class="line">    &lt;!-- <span class="xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"jq"</span> @<span class="attr">click</span>=<span class="string">"initZtreeMethod"</span>&gt;</span>hello world<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span> --&gt;</span><br><span class="line">  &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">&lt;/</span>template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line"><span class="keyword">import</span> $ <span class="keyword">from</span> <span class="string">'../assets/jquery-vendor.js'</span></span><br><span class="line"><span class="keyword">import</span> <span class="string">'ztree/js/jquery.ztree.core'</span></span><br><span class="line"><span class="keyword">import</span> <span class="string">'ztree/js/jquery.ztree.excheck'</span></span><br><span class="line"><span class="keyword">import</span> <span class="string">'ztree/css/zTreeStyle/zTreeStyle.css'</span></span><br><span class="line"><span class="keyword">import</span> confirm <span class="keyword">from</span> <span class="string">'./sub/Confirm'</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">  name: <span class="string">"hello"</span>,</span><br><span class="line">  components:&#123;</span><br><span class="line">    confirm</span><br><span class="line">  &#125;,</span><br><span class="line">  data: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">      <span class="keyword">return</span>&#123;</span><br><span class="line">        zNodes:[</span><br><span class="line">          &#123;<span class="attr">id</span>:<span class="number">0</span>,<span class="attr">pId</span>:<span class="literal">null</span>,<span class="attr">name</span>:<span class="string">"root"</span>&#125;,</span><br><span class="line">          &#123;<span class="attr">id</span>:<span class="number">1</span>,<span class="attr">pId</span>:<span class="number">0</span>,<span class="attr">name</span>:<span class="string">"child"</span>&#125;  </span><br><span class="line">        ],</span><br><span class="line">        setting:&#123;</span><br><span class="line">          data:&#123;</span><br><span class="line">            keep:&#123;</span><br><span class="line">              leaf: <span class="literal">false</span>,</span><br><span class="line">              parent: <span class="literal">false</span></span><br><span class="line">            &#125;,</span><br><span class="line">            simpleData:&#123;</span><br><span class="line">              enable: <span class="literal">true</span>,</span><br><span class="line">              idKey: <span class="string">'id'</span>,</span><br><span class="line">              pIdKey: <span class="string">'pId'</span>,</span><br><span class="line">              rootPId: <span class="literal">null</span></span><br><span class="line">            &#125;,</span><br><span class="line">          &#125;</span><br><span class="line">        &#125;,</span><br><span class="line">        msg: <span class="string">"Welcome to my first app"</span></span><br><span class="line">      &#125;</span><br><span class="line">   &#125;,</span><br><span class="line">    <span class="comment">//方法集</span></span><br><span class="line">   methods:&#123;</span><br><span class="line">    initZtreeMethod()&#123;</span><br><span class="line">      $.fn.zTree.init($(<span class="string">"#treeDemo"</span>), <span class="keyword">this</span>.setting, <span class="keyword">this</span>.zNodes);</span><br><span class="line">    &#125;,</span><br><span class="line">    getMessage(val)&#123;</span><br><span class="line">      <span class="keyword">this</span>.$message(val+<span class="string">""</span>);</span><br><span class="line">    &#125;</span><br><span class="line">   &#125;,</span><br><span class="line">   mounted()&#123;</span><br><span class="line">     <span class="keyword">this</span>.initZtreeMethod();</span><br><span class="line">   &#125;,</span><br><span class="line">   created()&#123;</span><br><span class="line">     </span><br><span class="line">   &#125;,</span><br><span class="line">&#125;</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">&lt;!-- Add "scoped" attribute to limit CSS to this component only --&gt;</span></span><br><span class="line"><span class="regexp">&lt;style scoped&gt;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">&lt;/</span>style&gt;</span><br></pre></td></tr></table></figure>
 <h1 id="效果展示"><a href="#效果展示" class="headerlink" title="效果展示"></a>效果展示</h1><p><img src="https://raw.githubusercontent.com/javacfox/photos/master/Hexo%2BGithub%E5%AE%9E%E7%8E%B0%E7%9B%B8%E5%86%8C%E5%8A%9F%E8%83%BD/clipboard20.png" alt="image"></p>
 <h1 id="讲解"><a href="#讲解" class="headerlink" title="讲解"></a>讲解</h1><ul>
 <li>父组件向子组件传值使用props<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//一些props使用的语法</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//静态</span></span><br><span class="line">props: [<span class="string">"for-child-msg"</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment">//动态props</span></span><br><span class="line">props: &#123;</span><br><span class="line">  <span class="comment">// 基础类型检测, null意味着任何类型都行</span></span><br><span class="line">  propA: <span class="built_in">Number</span>,</span><br><span class="line">  <span class="comment">// 多种类型</span></span><br><span class="line">  propB: [<span class="built_in">String</span>, <span class="built_in">Number</span>],</span><br><span class="line">  <span class="comment">// 必传且是String</span></span><br><span class="line">  propC: &#123;</span><br><span class="line">   type: <span class="built_in">String</span>,</span><br><span class="line">   required: <span class="literal">true</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="comment">// 数字有默认值</span></span><br><span class="line">  propD: &#123;</span><br><span class="line">   type: <span class="built_in">Number</span>,</span><br><span class="line">   <span class="keyword">default</span>: <span class="number">101</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="comment">// 数组、默认值是一个工厂函数返回对象</span></span><br><span class="line">  propE: &#123;</span><br><span class="line">   type: <span class="built_in">Object</span>,</span><br><span class="line">   <span class="keyword">default</span>: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"propE default invoked."</span>);</span><br><span class="line">    <span class="keyword">return</span> &#123; <span class="attr">message</span>: <span class="string">"I am from propE."</span> &#125;;</span><br><span class="line">   &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="comment">// 自定义验证函数</span></span><br><span class="line">  propF: &#123;</span><br><span class="line">   isValid: <span class="function"><span class="keyword">function</span>(<span class="params">value</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> value &gt; <span class="number">100</span>;</span><br><span class="line">   &#125;</span><br><span class="line">  &#125;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
@@ -537,19 +537,11 @@ gitment.render('gitment-ctn')
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">java8</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Fork/Join框架</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">yillia</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">yilia</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">gitment评论系统</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -561,19 +553,11 @@ gitment.render('gitment-ctn')
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Base64算法</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">加密与解密类</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">gitment评论系统</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">使用方法</a>
+                <a href="javascript:void(0)" class="js-tag color1">密钥生成器</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -581,7 +565,11 @@ gitment.render('gitment-ctn')
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">返回类型封装</a>
+                <a href="javascript:void(0)" class="js-tag color3">SpEL表达式</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">yillia</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -597,43 +585,7 @@ gitment.render('gitment-ctn')
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Tess4J</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">图文识别</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">定时任务</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Optional</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">密钥生成器</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">默认接口实现</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">vue</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">vue组件介绍</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">vue父子组件间传值</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">vue项目的搭建</a>
+                <a href="javascript:void(0)" class="js-tag color1">java8</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -641,7 +593,7 @@ gitment.render('gitment-ctn')
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">时间API</a>
+                <a href="javascript:void(0)" class="js-tag color5">使用方法</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -649,39 +601,11 @@ gitment.render('gitment-ctn')
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">swagger2</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">LifecycleException解决思路</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">lombok</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">devtools</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">ini4j的使用</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">日常bug记录</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">添加依赖</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">mongodb进阶</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">多数据源</a>
+                <a href="javascript:void(0)" class="js-tag color4">Base64算法</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -693,6 +617,58 @@ gitment.render('gitment-ctn')
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">LifecycleException解决思路</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">vue</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">vue项目的搭建</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">对称加密算法</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">日常bug记录</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">lombok</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">swagger2</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">devtools</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">mongodb进阶</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">多数据源</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">vue组件介绍</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">vue父子组件间传值</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">添加依赖</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">git</a>
               </li>
              
@@ -701,19 +677,7 @@ gitment.render('gitment-ctn')
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">设计模式</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">工厂方法</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">数字签名算法</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">github</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -721,15 +685,11 @@ gitment.render('gitment-ctn')
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">策略模式</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">多环境的配置</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">虚拟机的安装</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">github</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -737,15 +697,7 @@ gitment.render('gitment-ctn')
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">适配器模式</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">证书和密钥的存储类</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">对称加密算法</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -766,10 +718,6 @@ gitment.render('gitment-ctn')
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">数字证书</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Monogdb</a>
               </li>
              
               <li class="article-tag-list-item">
