@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/2019/07/18/ASN-1%E5%85%A5%E9%97%A8%EF%BC%88%E8%B6%85%E8%AF%A6%E7%BB%86%EF%BC%89/</loc>
+    
+    <lastmod>2019-07-18T15:27:22.174Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2019/07/17/SpringBoot%E7%9A%84%E9%9D%99%E6%80%81%E8%B5%84%E6%BA%90%E6%98%A0%E5%B0%84%E8%A7%84%E5%88%99/</loc>
     
     <lastmod>2019-07-16T16:19:26.362Z</lastmod>
@@ -296,14 +303,14 @@
   </url>
   
   <url>
-    <loc>http://yoursite.com/photos/index.html</loc>
+    <loc>http://yoursite.com/photos/video.html</loc>
     
     <lastmod>2018-05-30T15:24:35.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite.com/photos/video.html</loc>
+    <loc>http://yoursite.com/photos/index.html</loc>
     
     <lastmod>2018-05-30T15:24:35.000Z</lastmod>
     

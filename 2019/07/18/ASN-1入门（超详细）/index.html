@@ -6,19 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2019 | 胖胖</title>
+  <title>ASN.1入门（超详细） | 胖胖</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="个人技术博客">
-<meta name="keywords" content="前端博客，后端博客，java,vue.js,jquery,html5,springboot,springcloud">
-<meta property="og:type" content="website">
-<meta property="og:title" content="胖胖">
-<meta property="og:url" content="http://yoursite.com/archives/2019/page/4/index.html">
+  <meta name="description" content="ASN.1简介ASN.1(Abstract Syntax Notation dotone),抽象语法标记1。是定义抽象数据类型形式的标准，描绘了与任何表示数据的编码技术无关的通用数据结构。抽象语法使得人们能够定义数据类型，并指明这些类型的值。抽象语法只描述数据的结构形式，与具体的编码格式无关，同时也不涉及这些数据结构在计算机内如何存放。">
+<meta name="keywords" content="ASN.1">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ASN.1入门（超详细）">
+<meta property="og:url" content="http://yoursite.com/2019/07/18/ASN-1入门（超详细）/index.html">
 <meta property="og:site_name" content="胖胖">
-<meta property="og:description" content="个人技术博客">
+<meta property="og:description" content="ASN.1简介ASN.1(Abstract Syntax Notation dotone),抽象语法标记1。是定义抽象数据类型形式的标准，描绘了与任何表示数据的编码技术无关的通用数据结构。抽象语法使得人们能够定义数据类型，并指明这些类型的值。抽象语法只描述数据的结构形式，与具体的编码格式无关，同时也不涉及这些数据结构在计算机内如何存放。">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-07-18T15:27:22.174Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="胖胖">
-<meta name="twitter:description" content="个人技术博客">
+<meta name="twitter:title" content="ASN.1入门（超详细）">
+<meta name="twitter:description" content="ASN.1简介ASN.1(Abstract Syntax Notation dotone),抽象语法标记1。是定义抽象数据类型形式的标准，描绘了与任何表示数据的编码技术无关的通用数据结构。抽象语法使得人们能够定义数据类型，并指明这些类型的值。抽象语法只描述数据的结构形式，与具体的编码格式无关，同时也不涉及这些数据结构在计算机内如何存放。">
   
     <link rel="alternative" href="/atom.xml" title="胖胖" type="application/atom+xml">
   
@@ -170,433 +171,394 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-ASN-1入门（超详细）" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      ASN.1入门（超详细）
+    </h1>
+  
+
+        
+        <a href="/2019/07/18/ASN-1入门（超详细）/" class="archive-article-date">
+  	<time datetime="2019-07-18T15:10:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-18</time>
+</a>
+        
+		
+		<!-- 目录内容 -->
+		
+			<p class="show-toc-btn" id="show-toc-btn" onclick="showToc();" style="display:none">
+				<span class="btn-bg"></span>
+				<span class="btn-text">文章导航</span>
+			</p>
+			<div id="toc-article" class="toc-article">
+				<span id="toc-close" class="toc-close" title="隐藏导航" onclick="showBtn();">×</span>
+				<strong class="toc-title">文章目录</strong>
+				   <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#ASN-1简介"><span class="toc-number">1.</span> <span class="toc-text">ASN.1简介</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#ASN-1基本语法规则"><span class="toc-number">2.</span> <span class="toc-text">ASN.1基本语法规则</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#ASN-1中类型"><span class="toc-number">3.</span> <span class="toc-text">ASN.1中类型</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#基本类型"><span class="toc-number">3.1.</span> <span class="toc-text">基本类型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#组合类型"><span class="toc-number">3.2.</span> <span class="toc-text">组合类型</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#类型的定义及赋值"><span class="toc-number">4.</span> <span class="toc-text">类型的定义及赋值</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#子类型定义"><span class="toc-number">4.1.</span> <span class="toc-text">子类型定义</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ASN-1信息对象类和信息对象"><span class="toc-number">4.2.</span> <span class="toc-text">ASN.1信息对象类和信息对象</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ASN-1模块定义"><span class="toc-number">4.3.</span> <span class="toc-text">ASN.1模块定义</span></a></li></ol></li></ol>
+				 </div>
+		   <script type="text/javascript">
+			function showToc(){
+				var toc_article = document.getElementById("toc-article");
+				var show_toc_btn = document.getElementById("show-toc-btn");
+				toc_article.setAttribute("style","display:block");
+				show_toc_btn.setAttribute("style","display:none");
+				};
+			function showBtn(){
+				var toc_article = document.getElementById("toc-article");
+				var show_toc_btn = document.getElementById("show-toc-btn");
+				toc_article.setAttribute("style","display:none");
+				show_toc_btn.setAttribute("style","display:block");
+				};
+		   </script>
+			  
+		<!-- 目录内容结束 -->
+		
+		
+		
+      </header>
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="ASN-1简介"><a href="#ASN-1简介" class="headerlink" title="ASN.1简介"></a>ASN.1简介</h1><p>ASN.1(Abstract Syntax Notation dotone),抽象语法标记1。是定义抽象数据类型形式的标准，描绘了与任何表示数据的编码技术无关的通用数据结构。抽象语法使得人们能够定义数据类型，并指明这些类型的值。抽象语法只描述数据的结构形式，与具体的编码格式无关，同时也不涉及这些数据结构在计算机内如何存放。<br><a id="more"></a></p>
+<h1 id="ASN-1基本语法规则"><a href="#ASN-1基本语法规则" class="headerlink" title="ASN.1基本语法规则"></a>ASN.1基本语法规则</h1><ol>
+<li>在ASN.1中，符号的 定义没有先后次序，只要能够找到该符号的定义即可，而不必担心在使用它之前是否被定义过。如：</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">age Age ::= 18   创建Age的实例</span><br><span class="line">Age ::= INTEGER  定义了Age这个类型</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>标识符、参考、关键字都要以一个字母开头，后接字母、数字或者连字符‘-’ 而不是下划线。同时不能以连字符结尾，也不能连续出现两个连字符</li>
+<li>关键字全部大写</li>
+<li>在标识符中，只有类型和模块名字是以大写字母开头的，其他标识符都是以小写字母开头</li>
+<li>字符串有三种形式，具体请参考下面的类型</li>
+<li>带小数点的小数形式不能在ASN.1中直接使用，ASN.1中实数的实际定义为:尾数、基数和指数</li>
+<li>注释以<strong>两个连字符“–”</strong>开始，结束于行的末尾或者该行中另一个双连字符</li>
+<li>ASN.1不对空格、制表符、换行符和注释做翻译。但是在定义符号 “::=” 中不能有空格，否则不能正确处理</li>
+</ol>
+<h1 id="ASN-1中类型"><a href="#ASN-1中类型" class="headerlink" title="ASN.1中类型"></a>ASN.1中类型</h1><h2 id="基本类型"><a href="#基本类型" class="headerlink" title="基本类型"></a>基本类型</h2><table>
+<thead>
+<tr>
+<th>类型</th>
+<th>含义</th>
+<th>和java对应的数据类型</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>NULL</td>
+<td>只有一个值NULL,用于传送一个报告或者作为CHOICE类型中的值</td>
+<td>null</td>
+</tr>
+<tr>
+<td>INTEGER</td>
+<td>整数类型</td>
+<td>int/Integer</td>
+</tr>
+<tr>
+<td>REAL</td>
+<td>实数，表示浮点数</td>
+<td>double/Double/Float/float</td>
+</tr>
+<tr>
+<td>ENUMERATED</td>
+<td>标识符的枚举（实例状态机的状态）</td>
+<td>enum</td>
+</tr>
+<tr>
+<td>BITSTRING</td>
+<td>比特串</td>
+<td>略</td>
+</tr>
+<tr>
+<td>OCTETSTRING</td>
+<td>字节串</td>
+<td>略</td>
+</tr>
+<tr>
+<td>OBJECT IDENTIFIER,RELATIVE-OID</td>
+<td>一个实体的标识符</td>
+<td>略</td>
+</tr>
+<tr>
+<td>EXTERNAL,EMBEDDED PDV</td>
+<td>表示层上下文交换类型</td>
+<td>略</td>
+</tr>
+<tr>
+<td>String(除了BITSTRING、OCTETSTRING外)</td>
+<td>各种字符串，有NumericString、PrintableString、VisibleStirng、ISO64String、IA5String、TeletexStirng、T61String、VideotexString、GraphicString、GeneralString、UniversalString、BMPString和UTF8String</td>
+<td>String</td>
+</tr>
+<tr>
+<td>CHARACTERSTRING</td>
+<td>允许为字符串协商一个明确的字符表</td>
+<td></td>
+</tr>
+<tr>
+<td>UTCTime,GeneralizedTime</td>
+<td>日期</td>
+<td>Date</td>
+</tr>
+<tr>
+<td>BOOLEAN</td>
+<td>布尔类型</td>
+<td>Boolean/boolean</td>
+</tr>
+</tbody>
+</table>
+<h2 id="组合类型"><a href="#组合类型" class="headerlink" title="组合类型"></a>组合类型</h2><table>
+<thead>
+<tr>
+<th>类型</th>
+<th>含义</th>
+<th>和java对应的数据类型</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CHOICE</td>
+<td>选择类型,该字段可能有多重不同的类型来表示</td>
+<td></td>
+</tr>
+<tr>
+<td>SEQUENCE</td>
+<td>由不同类型的值组成一个有序的集合</td>
+<td>List</td>
+</tr>
+<tr>
+<td>SET</td>
+<td>无序集合(不同类型的值)</td>
+<td>Set</td>
+</tr>
+<tr>
+<td>SEQUENCEOF</td>
+<td>由相同类型的值组成一个有序的集合</td>
+<td>List(存储相同的类型)</td>
+</tr>
+<tr>
+<td>SETOF</td>
+<td>无序集合(相同类型的值)</td>
+<td>Set(存储相同类型)</td>
+</tr>
+</tbody>
+</table>
+<h1 id="类型的定义及赋值"><a href="#类型的定义及赋值" class="headerlink" title="类型的定义及赋值"></a>类型的定义及赋值</h1><ol>
+<li>&lt;新类型的名字&gt;::= &lt;类型描述&gt;<ol>
+<li>&lt;新类型的名字&gt;是一个类型的名字，也可以是类型描述</li>
+<li>&lt;类型描述&gt;基本类型、组合类型</li>
+</ol>
+</li>
+<li>&lt;新的值的名字&gt;&lt;该值的类型&gt; ::= &lt;值描述&gt;<ol>
+<li>&lt;新的值的名字&gt;是以小写字母开头的标识符；</li>
+<li>&lt;该值的类型&gt;可以是一个类型的名字，也可以是类型描述;</li>
+<li>&lt;值描述&gt;是基于整数、字符串、标识符的组合<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br></pre></td><td class="code"><pre><span class="line">**基本类型--</span><br><span class="line"></span><br><span class="line">**1.整数类型--</span><br><span class="line">Age::=INTEGER</span><br><span class="line">age AGE::=18</span><br><span class="line"></span><br><span class="line">VehicleType::=INTEGER&#123;</span><br><span class="line">    car(0),</span><br><span class="line">    bus(1),</span><br><span class="line">    taxi(2)</span><br><span class="line">&#125;</span><br><span class="line">vehicleA VehicleType::=0</span><br><span class="line"></span><br><span class="line">**2.布尔类型--</span><br><span class="line">Flag::=BOOLEAN</span><br><span class="line">isCheck Flag::=FALSE</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">**3.枚举类型--</span><br><span class="line">Week::=ENUMERATED&#123;</span><br><span class="line">    Monday(1),</span><br><span class="line">    Tuesday(2),</span><br><span class="line">    Wednesday(3),</span><br><span class="line">    Thursday(4),</span><br><span class="line">    FriDay(5),</span><br><span class="line">    Saturday(6),</span><br><span class="line">    Sunday(7)</span><br><span class="line">&#125;</span><br><span class="line">bestWeek::=Saturday</span><br><span class="line"></span><br><span class="line">**4.实数类型ASN.1对实数的精度没有限制。每个实数可以用M×BE表示,即三元组。&#123;M,B,E&#125;--</span><br><span class="line">AngleInRadians::=REAL</span><br><span class="line">pi AngleInRadians::=&#123;31415926,10,-7&#125;  即31415926-10^-7=3.1415926</span><br><span class="line"></span><br><span class="line">**5.位串类型--</span><br><span class="line">Occupation::=BIT STRING&#123;</span><br><span class="line">    clerk (0),</span><br><span class="line">    editor (1),</span><br><span class="line">    artist (2),</span><br><span class="line">    publisher (3),</span><br><span class="line">    manager(4)</span><br><span class="line">&#125;</span><br><span class="line">tom Occupation::=&#123;editor,artist&#125;</span><br><span class="line"></span><br><span class="line">**6.字节串类型,八位位组串,由0个或多个8位位组组成的有序串。可用十进制(0-255)。二进制和十六进制表示。如:1101000100011010B或D11AH--</span><br><span class="line">IpAdress::=OCTET STRING(SIZE(6))</span><br><span class="line">ip IpAdress::=11H1D001E001A</span><br><span class="line"></span><br><span class="line">**7.对象标识符。从对象树派生出的一系列点分数字串的形式,用来表示对象。</span><br><span class="line">object OBJECT IDENTIFIER::=&#123;pc(1) mac(2) vm(3) mobile(4)&#125;</span><br><span class="line">computer OBJECT IDENTIFIER::=&#123;object 1&#125;</span><br><span class="line">macComputer OBJECT IDENTIFIER::=&#123;object 2&#125;</span><br><span class="line">vmComputer OBJECT IDENTIFIER::=&#123;object 3&#125;</span><br><span class="line">mobilePhone OBJECT IDENTIFIER::=&#123;object 4&#125;</span><br><span class="line"></span><br><span class="line">**8.空值类型:空值类型,当某时刻无法知道数据的标准值,可将值为NUL--</span><br><span class="line">RoomRenter::=SEQUENCE&#123;</span><br><span class="line">    name Visiblestring --取自IA5的图形字符组成,不含控制字符</span><br><span class="line">    roomNumber CHOICE&#123;</span><br><span class="line">        INTEGER</span><br><span class="line">        NULL</span><br><span class="line">    &#125; </span><br><span class="line">    --代表可选项，可是INTEGER或者NULL</span><br><span class="line">&#125;</span><br><span class="line">roomRenter1 RoomRenter::=&#123;name &quot;Tom&quot;,roomNumber 301&#125;</span><br><span class="line">roomRenter1 RoomRenter::=&#123;name &quot;Jerry&quot;,roomNumber NULL&#125;</span><br><span class="line"></span><br><span class="line">**9.字符串类型--</span><br><span class="line">NumString::=NnmericString</span><br><span class="line">numStr NumString::=&quot;12345678&quot;</span><br><span class="line">UserName::=PrintableString</span><br><span class="line">user UserName::=&quot;Tom&quot;</span><br><span class="line"></span><br><span class="line">**组合类型--</span><br><span class="line"></span><br><span class="line">**SEQUENCE--</span><br><span class="line">AirlineFlight::=SEQUENCE&#123;</span><br><span class="line">    airline IA5string,</span><br><span class="line">    --取自IA5的字符组成,它与ASCII码基本相同</span><br><span class="line">    flight Numericstring, --包含数据0到9以及空格,不包含控制字符集</span><br><span class="line">    seats SEQUENCE&#123; --座位</span><br><span class="line">        maximum INTEGER,</span><br><span class="line">        occupied INTEGER,</span><br><span class="line">        vacant INTEGER</span><br><span class="line">    &#125;,</span><br><span class="line">    airport SEQUENCE &#123; --机场</span><br><span class="line">        origin IA5string,</span><br><span class="line">        stop1 [0] IA5string OPTIONAL,</span><br><span class="line">        stop2 [1] IA5string OPTIONAL,</span><br><span class="line">        destination IA5string</span><br><span class="line">    &#125;,</span><br><span class="line">    crewsize ENUMERATED &#123;  --工作人员数目，枚举</span><br><span class="line">        six (6),</span><br><span class="line">        eight (8),</span><br><span class="line">        ten (10) </span><br><span class="line">    &#125;,</span><br><span class="line">    cancle BOOLEAN DEFAULT FALSE --是否取消航班，默认否</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">airplane AirlineFlight::=&#123;</span><br><span class="line">    airline &quot;china&quot;,</span><br><span class="line">    flight &quot;1106&quot;,</span><br><span class="line">    seats &#123;320,280,40&#125;,</span><br><span class="line">    airport &#123;origin &quot;Beijing&quot;, destination</span><br><span class="line">    &quot;Shanghai&quot;&#125;,</span><br><span class="line">    crewsize ten</span><br><span class="line">&#125;</span><br><span class="line">**10.SEQUENCE OF、SET 和SET OF基本类似，可以参考上面的--</span><br><span class="line"></span><br><span class="line">**11.标签类型--</span><br><span class="line">Art::=[UNIVERSAL 0] INTEGER</span><br><span class="line">art Art ::=9</span><br><span class="line">Gym::=[APPLICATION 1] INTEGER</span><br><span class="line">gym Gym::=10</span><br><span class="line">Excont::= SET&#123; type1 [0] INTEGER OPTIONAL,</span><br><span class="line">type2 [1] INTEGER OPTIONAL &#125;</span><br><span class="line"></span><br><span class="line">**12.CHOICE 选择类型--</span><br><span class="line">Prize::=CHOICE&#123; </span><br><span class="line">    car IA5string,</span><br><span class="line">    cash INTEGER,</span><br><span class="line">    nothing BOOLEAN</span><br><span class="line">&#125;</span><br><span class="line">peter Prize::=TRUE 或者</span><br><span class="line">John Prize::= &quot;Lincoln&quot; 或者</span><br><span class="line">Sam Prize::= 25000</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+</li>
+</ol>
+<h2 id="子类型定义"><a href="#子类型定义" class="headerlink" title="子类型定义"></a>子类型定义</h2><p>通过对某些类型加以限制,可以定义它们的子类型(subtype)。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br></pre></td><td class="code"><pre><span class="line">通过对某些类型加以限制,可以定义它们的子类型(subtype)。子</span><br><span class="line">类型的值集合是其父类型值集合的子集。</span><br><span class="line">(1) 单个值</span><br><span class="line">在定义中列举出所有可能的取值</span><br><span class="line">TestResult ::=INTEGER(1|2|3|4)</span><br><span class="line">sp1 TestResult ::= 2</span><br><span class="line">(2) 大小限制</span><br><span class="line">通过限制父类型中元素的个数定义新类型或规模。</span><br><span class="line">WorkstationNumber::=OCTET STRING(SIZE(6))</span><br><span class="line">BitField ::= BIT STRING(SIZE(12))</span><br><span class="line">map1 BitField ::= &quot;100110100100&quot;B</span><br><span class="line">map2 BitField ::= &quot;9A4&quot;H</span><br><span class="line">(3) 取值范围(值区间)</span><br><span class="line">只适用于整数和实数类型,</span><br><span class="line">NoID::=INTEGER(1..100)</span><br><span class="line">PositiveInteger ::=INTEGER(0&lt;..MAX)</span><br><span class="line">PositiveInteger ::=INTEGER(1..MAX)</span><br><span class="line">(4) 可用字符</span><br><span class="line">只用于字符串类型,限制字符集的取值范围。</span><br><span class="line">DigitString ::=IA5String(FROM(2)|(3)|(4)|5|(6)|(7))</span><br><span class="line">str2 DigitString ::= &quot;46732&quot;</span><br><span class="line">(5) Inner Subtyping (内部类型)</span><br><span class="line">适用于SEQUENCE,SEQUENCE OF,SET,SET OF和CHOICE类,主要用于对</span><br><span class="line">这些结构类型的元素项进行限制。</span><br><span class="line">PDU::=set&#123; </span><br><span class="line">    alpha [0] INTEGER,</span><br><span class="line">    beta [1] IA5striong OPTIONAL,</span><br><span class="line">    gamma [2] SEQUENCE OF parameter,</span><br><span class="line">    delta [3] BOOLEAN </span><br><span class="line">&#125;</span><br><span class="line">TestPDU::=PDU(WITH COMPONENTS&#123;</span><br><span class="line">    alpha(min..&lt;0),...,delta(FALSE)</span><br><span class="line">&#125;)</span><br><span class="line">(6) 包含子类型</span><br><span class="line">要用到关键字INCLUDES,说明被定义的新子类型包含原子类型的全部可能值。</span><br><span class="line">Months::=ENUMERATED&#123;</span><br><span class="line">    jaunary(1),</span><br><span class="line">    february(2),</span><br><span class="line">    ...,</span><br><span class="line">    december(12)</span><br><span class="line">&#125;</span><br><span class="line">First-quarter::=Months(january,february,march);</span><br><span class="line">Second-quarter::=Months(april,may,june)</span><br><span class="line">First-half::=Months (INCLUDES First-quarter|INCLUDE Second-quarter)</span><br><span class="line">jan First-quarter ::= 1</span><br><span class="line">4.2.5 应用类型</span><br><span class="line">ASN.1中的应用类型与特定的应用有关,根据网络管理的实际特点,</span><br><span class="line">RFC1155定义了6种SNMP应用类型。</span><br><span class="line">(1) NetworkAddress::=CHOICE&#123;internet IpAddress&#125; --可从各种网络地</span><br><span class="line">址中选择一种,目前只有Internet地址,即IP地址。</span><br><span class="line">(2) IpAddress::=[APPLICATION 0] IMPLICIT OCTET STRING(SIZE(4))</span><br><span class="line">(3) Counter::= [APPLICATION 1] IMPLICIT INTEGER(0..4294967295)</span><br><span class="line">(4) Gauge::=[APPLICATION 2] IMPLICIT INTEGER(0..4294967295)</span><br><span class="line">(5) TimeTicks::=[APPLICATION 3] IMPLICIT INTEGER(0..4294967295)</span><br><span class="line">(6) Opaque::= [APPLICATION 4] OCTET STRING --arbitrary ASN.1</span><br><span class="line">value 不透明类型</span><br><span class="line">4.3 基本编码规则</span><br><span class="line">用ASN.1语言书写的变量必须转换为串行的字节流才能在网络中传输。为此,</span><br><span class="line">ASN.1又提供了基本编码规则(BER)来描述传输过程中内容的表示。约定</span><br><span class="line"></span><br><span class="line">八位位组:八比特组成</span><br><span class="line">八位位组的二进制位编号从8到1,第8位为最高有效位,第1位位最低有效位</span><br><span class="line">编码结构</span><br><span class="line">标签八位位组</span><br><span class="line">长度八位位组</span><br><span class="line">1. 标签(tag)字段:关于标签类别和编码格式的信息。</span><br><span class="line">2. 长度(Length)字段:定义内容字段的长度。</span><br><span class="line">3. 值(Value)字段:包含实际的数据 。</span><br><span class="line"></span><br><span class="line">= 标签号</span><br><span class="line">UNIVERSAL 10 编码:00 0 01010</span><br><span class="line">APPLICATION 35 (构造类型) 编码:01 1 11111 0 0 100011</span><br><span class="line">2. 长度字段</span><br><span class="line">用来表示值字段的八位位组数。</span><br><span class="line">确定格式。(编码时知道长度;长格式和短格式)</span><br><span class="line">长度字段分类</span><br><span class="line">不确定格式。</span><br><span class="line">规则如下:</span><br><span class="line">2.1.若编码是简单类型,则使用确定格式;</span><br><span class="line">2.2.若编码是构造的,并且编码立即可用,既可以使用确定格式,也可以使用不</span><br><span class="line">确定格式,由发送者选择;</span><br><span class="line">2.3.若编码是构造的,但编码不是立即可用,则使用不确定格式。</span><br><span class="line">短格式: L=38 编码:00100110</span><br><span class="line">长格式: L=201 编码: 10000001 11001001</span><br><span class="line">不确定格式:10000000</span><br><span class="line">3. 值字段</span><br><span class="line">由零个或多个八位位组组成,并按不同类型数据值的不同规定对它们进行编</span><br><span class="line">码。</span><br><span class="line">(1) 布尔值的编码</span><br><span class="line">由1个字节组成。FALSE为00;TRUE为FF。</span><br><span class="line">TRUE的编码:01 01 FF</span><br><span class="line">FALSE 的编码:01 01 00</span><br><span class="line">(2) 整数编码</span><br><span class="line">值字段一个或多个八位位组组成,整数值采用二进制补码形式编码。</span><br><span class="line">0 编码 02 01 00</span><br><span class="line">127 编码 02 01 7F</span><br><span class="line">256 编码 02 02 01 00</span><br><span class="line">-129 编码 02 02 FF 7F</span><br><span class="line">(3) 空值的编码</span><br><span class="line">空值的标签 UNIVERSAL 5, 编码 05 00</span><br><span class="line">(4) 位串值的编码</span><br><span class="line">简单类型</span><br><span class="line">构造类型</span><br><span class="line">(0A3B5F291CD)16</span><br><span class="line">简单类型编码:03 07 04 0A3B5F291CD0</span><br><span class="line">构造类型编码:将位串值拆为(0A3B)16和(5F291CD)16</span><br><span class="line">23 80</span><br><span class="line">03 03 000A3B</span><br><span class="line">03 05 04 5F291CD0</span><br><span class="line">00 00</span><br><span class="line">(5) 对象标识符的编码</span><br><span class="line">对象标识符值的编码是简单类型。</span><br><span class="line">第一个编码子标识符的数值:(X*40)+Y</span><br><span class="line">对象标识符 &#123;joint-iso-ccitt 100 2&#125;,即&#123;2,100,3&#125;</span><br><span class="line">编码:06 03 813403 H</span><br><span class="line">(6) 八位位组串和字符串类型值的编码</span><br><span class="line">IA5String类型字符串“ACE” 编码 16 03 41 43 45 H</span><br><span class="line">八位位组串“ACE0” 编码 04 02 AC E0 H</span><br><span class="line">(7) 序列值的编码</span><br><span class="line">序列值的编码是构造类型。</span><br><span class="line">序列类型&#123;name IAString, ok BOOLEAN&#125;,值&#123;name “smith”, ok</span><br><span class="line">TRUE&#125;</span><br><span class="line">编码:30 0A</span><br><span class="line">16 05 73 6D 69 74 68</span><br><span class="line">01 01 FF</span><br><span class="line">(8) 集合值的编码</span><br><span class="line">集合类型的元素是无序的,有多种编码。</span><br><span class="line">SET&#123;breadth INTEGER, bent BOOLEAN&#125;, 值&#123;breadth 7, bent</span><br><span class="line">FALSE&#125;</span><br><span class="line">编码:31 06</span><br><span class="line">02 01 07</span><br><span class="line">01 01 00</span><br></pre></td></tr></table></figure></p>
+<h2 id="ASN-1信息对象类和信息对象"><a href="#ASN-1信息对象类和信息对象" class="headerlink" title="ASN.1信息对象类和信息对象"></a>ASN.1信息对象类和信息对象</h2><p>&lt;信息对象类&gt;::= CLASS &lt;类描述&gt; WITHSYNTAX &lt;信息描述&gt;</p>
+<p>用于表达比注释更为正式的一些信息</p>
+<h2 id="ASN-1模块定义"><a href="#ASN-1模块定义" class="headerlink" title="ASN.1模块定义"></a>ASN.1模块定义</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">&lt;模块名字&gt; DEFINITIONS &lt;缺省Tag&gt;::=</span><br><span class="line">BEGIN</span><br><span class="line">EXPORTS &lt;导出描述&gt;</span><br><span class="line">IMPORTS &lt;导入描述&gt;</span><br><span class="line">&lt;模块体描述&gt;</span><br><span class="line">END</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">Module2 &#123; isomember-body(2) f(250) type-org(1) ft(16)</span><br><span class="line">asn1-book(9)chapter5(0) module2(1) &#125;</span><br><span class="line">DEFINITIONS             </span><br><span class="line">AUTOMATICTAGS ::=</span><br><span class="line">BEGIN</span><br><span class="line">EXPORTS Type2;</span><br><span class="line">IMPORTS Type1, valueFROM Module1 &#123;iso member-body(2)</span><br><span class="line">f(250) type-org(1)ft(16) asn1-book(9) chapter5(0) module1(0)&#125;;</span><br><span class="line">Type2 ::= SEQUENCE OFChoice</span><br><span class="line">Choice ::= CHOICE</span><br><span class="line">&#123;</span><br><span class="line">    a INTEGER (0..value),</span><br><span class="line">    b Type1</span><br><span class="line">&#125;</span><br><span class="line">END</span><br></pre></td></tr></table></figure>
+<p>1).AUTOMATICTAGS是指缺省Tag，说明不关注模块的Tag。</p>
+<p>2).IMPORTS声明在其它模块定义但在本模块会用到的类型或者值。<br>EXPORT声明在本模块之外可以访问的类型或者值。<br>IMPORTS的语法为：IMPORTS &lt;名字&gt;,value FROM &lt;其它模块的ObjectIdentifier&gt;;<br>EXPORTS的语法为：<br>EXPORTS&lt;名字&gt;;</p>
+<p>3).对象标识符(OBJECTIDENTIFIER,OID)类型用层次的形式来表示标准规范。标识符树通过一个点分的十进制符号来定义，这个符号以组织，子部分然后是标准的类型和各自的子标识符开始．</p>
+
+      
+	  
+	  
+		
+		  <div class="declare">
+			<strong>本文作者：</strong>
+			
+			  Lujianlong
+			
+			<br>
+			<strong>本文链接：</strong>
+			http://yoursite.com/2019/07/18/ASN-1入门（超详细）/
+			<br>
+			<span>
+				<strong>本文访问量：</strong><span id="busuanzi_value_page_pv"></span>
+			</span>次
+			<br>
+			<strong>版权声明：</strong>
+			本作品采用
+			<a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>
+			进行许可。转载请注明出处！
+			
+			  <br>
+			  <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"></a>
+			
+			
+		
+	
+		  </div>
+		
+	  
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/apply.png">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/wechat.png">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+	
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/05/19/org-apache-catalina-LifecycleException解决办法/" class="archive-article-date">
-  	<time datetime="2019-05-19T04:07:41.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-19</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/05/19/org-apache-catalina-LifecycleException解决办法/">org.apache.catalina.LifecycleException解决办法</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">日常bug</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">LifecycleException解决思路</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">ASN.1</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/07/18/ASN-1入门（超详细）/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/05/19/安装虚拟机时趟过的坑/" class="archive-article-date">
-  	<time datetime="2019-05-19T03:08:41.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-19</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2019/07/17/SpringBoot的静态资源映射规则/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">SpringBoot的静态资源映射规则</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/05/19/安装虚拟机时趟过的坑/">安装虚拟机时趟过的坑</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">日常bug</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">虚拟机的安装</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/05/19/解决slf4j导入失败/" class="archive-article-date">
-  	<time datetime="2019-05-19T03:01:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-19</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/05/19/解决slf4j导入失败/">解决slf4j导入失败</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">日常bug</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">slf4j引入异常</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/05/19/将一个已存在的目录转换为一个-GIT-项目并托管到-GITHUB-仓库/" class="archive-article-date">
-  	<time datetime="2019-05-19T02:51:14.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-19</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/05/19/将一个已存在的目录转换为一个-GIT-项目并托管到-GITHUB-仓库/">将一个已存在的目录转换为一个 GIT 项目并托管到 GITHUB 仓库</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">git</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">GIT 项目并托管到 GITHUB 仓库</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/05/19/Hexo-yilia主题的使用方法/" class="archive-article-date">
-  	<time datetime="2019-05-19T02:41:59.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-19</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/05/19/Hexo-yilia主题的使用方法/">Hexo yilia主题的使用方法</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">yilia</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">使用方法</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/05/19/Hexo博客yilia主题添加Gitment评论系统/" class="archive-article-date">
-  	<time datetime="2019-05-19T02:30:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-19</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/05/19/Hexo博客yilia主题添加Gitment评论系统/">Hexo博客yilia主题添加Gitment评论系统</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">yilia</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">gitment评论系统</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/05/19/Hexo-yilia添加helper-live2d插件实现宠物动画/" class="archive-article-date">
-  	<time datetime="2019-05-19T02:20:51.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-19</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/05/19/Hexo-yilia添加helper-live2d插件实现宠物动画/">Hexo+yilia添加helper-live2d插件实现宠物动画</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">yilia</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">helper_live2d</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/05/12/Hexo-Github实现相册功能/" class="archive-article-date">
-  	<time datetime="2019-05-12T03:17:38.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-12</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/05/12/Hexo-Github实现相册功能/">Hexo+Github实现相册功能</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">yillia</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/05/09/无法登陆github官网的解决办法/" class="archive-article-date">
-  	<time datetime="2019-05-09T09:52:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-09</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/05/09/无法登陆github官网的解决办法/">无法登陆github官网的解决办法</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">github</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/05/09/前端开发兼容ie9趟过的坑/" class="archive-article-date">
-  	<time datetime="2019-05-09T07:29:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-09</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/05/09/前端开发兼容ie9趟过的坑/">前端开发兼容ie9趟过的坑</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">日常bug记录</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/archives/2019/page/3/">&laquo; Prev</a><a class="page-number" href="/archives/2019/">1</a><a class="page-number" href="/archives/2019/page/2/">2</a><a class="page-number" href="/archives/2019/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/archives/2019/page/5/">5</a><a class="extend next" rel="next" href="/archives/2019/page/5/">Next &raquo;</a>
-    </nav>
+  <div id="gitment-ctn"></div> 
+<link rel="stylesheet" href="https://jjeejj.github.io/css/gitment.css">
+<script src="https://www.wenjunjiang.win/js/gitment.js"></script>
+<script>
+var gitment = new Gitment({
+  id: "http://yoursite.com/2019/07/18/ASN-1入门（超详细）/",
+  owner: 'javacfox',
+  repo: 'javacfox.github.io',
+  oauth: {
+    client_id: '23e433c3cfc76c050ba3',
+    client_secret: '697e555db09c2e181f24fbe071de2e02156dc255',
+  },
+})
+gitment.render('gitment-ctn')
+</script>
   
 
 
@@ -622,8 +584,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
