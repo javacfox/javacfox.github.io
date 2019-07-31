@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/2019/07/31/Markdown%E8%AF%AD%E6%B3%95%E6%95%B4%E7%90%86/</loc>
+    
+    <lastmod>2019-07-31T14:52:31.938Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2019/07/24/SpringBoot%E4%B8%ADservlet%E4%B8%89%E5%A4%A7%E7%BB%84%E4%BB%B6%E7%9A%84%E6%B3%A8%E5%86%8C-Servlet-Filter-Listener/</loc>
     
     <lastmod>2019-07-24T16:02:28.460Z</lastmod>
@@ -310,14 +317,14 @@
   </url>
   
   <url>
-    <loc>http://yoursite.com/photos/index.html</loc>
+    <loc>http://yoursite.com/photos/video.html</loc>
     
     <lastmod>2018-05-30T15:24:35.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite.com/photos/video.html</loc>
+    <loc>http://yoursite.com/photos/index.html</loc>
     
     <lastmod>2018-05-30T15:24:35.000Z</lastmod>
     

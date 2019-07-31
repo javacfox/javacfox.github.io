@@ -6,19 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Tag: java | 胖胖</title>
+  <title>Markdown语法整理(超详细) | 胖胖</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="个人技术博客">
-<meta name="keywords" content="前端博客，后端博客，java,vue.js,jquery,html5,springboot,springcloud">
-<meta property="og:type" content="website">
-<meta property="og:title" content="胖胖">
-<meta property="og:url" content="http://yoursite.com/tags/java/index.html">
+  <meta name="description" content="Markdown简介Markdown是一种在网络上控制文本样式的方法，通过它可以控制文本样式；给文本添加格式，比如加粗、斜体、添加图片和创建列表只需要做一些很简单的设置通过markdown就可以完成。 标题12345# 一级标题## 二级标题### 三级标题...###### 六级标题">
+<meta name="keywords" content="markdown">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Markdown语法整理(超详细)">
+<meta property="og:url" content="http://yoursite.com/2019/07/31/Markdown语法整理/index.html">
 <meta property="og:site_name" content="胖胖">
-<meta property="og:description" content="个人技术博客">
+<meta property="og:description" content="Markdown简介Markdown是一种在网络上控制文本样式的方法，通过它可以控制文本样式；给文本添加格式，比如加粗、斜体、添加图片和创建列表只需要做一些很简单的设置通过markdown就可以完成。 标题12345# 一级标题## 二级标题### 三级标题...###### 六级标题">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://raw.githubusercontent.com/javacfox/photos/master/Hexo%2BGithub%E5%AE%9E%E7%8E%B0%E7%9B%B8%E5%86%8C%E5%8A%9F%E8%83%BD/clipboard5.png">
+<meta property="og:updated_time" content="2019-07-31T14:52:31.938Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="胖胖">
-<meta name="twitter:description" content="个人技术博客">
+<meta name="twitter:title" content="Markdown语法整理(超详细)">
+<meta name="twitter:description" content="Markdown简介Markdown是一种在网络上控制文本样式的方法，通过它可以控制文本样式；给文本添加格式，比如加粗、斜体、添加图片和创建列表只需要做一些很简单的设置通过markdown就可以完成。 标题12345# 一级标题## 二级标题### 三级标题...###### 六级标题">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/javacfox/photos/master/Hexo%2BGithub%E5%AE%9E%E7%8E%B0%E7%9B%B8%E5%86%8C%E5%8A%9F%E8%83%BD/clipboard5.png">
   
     <link rel="alternative" href="/atom.xml" title="胖胖" type="application/atom+xml">
   
@@ -170,106 +173,380 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-Markdown语法整理" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/06/07/手把手教你实现类似ini4j的方式创建读取和修改-ini文件（支持section）/" class="archive-article-date">
-  	<time datetime="2019-06-07T08:41:42.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-07</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/06/07/手把手教你实现类似ini4j的方式创建读取和修改-ini文件（支持section）/">手把手教你实现类似ini4j的方式创建读取和修改.ini文件（支持section）</a>
+    <h1 class="article-title" itemprop="name">
+      Markdown语法整理(超详细)
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2019/07/31/Markdown语法整理/" class="archive-article-date">
+  	<time datetime="2019-07-31T14:43:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-31</time>
+</a>
+        
+		
+		<!-- 目录内容 -->
+		
+			<p class="show-toc-btn" id="show-toc-btn" onclick="showToc();" style="display:none">
+				<span class="btn-bg"></span>
+				<span class="btn-text">文章导航</span>
+			</p>
+			<div id="toc-article" class="toc-article">
+				<span id="toc-close" class="toc-close" title="隐藏导航" onclick="showBtn();">×</span>
+				<strong class="toc-title">文章目录</strong>
+				   <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Markdown简介"><span class="toc-number">1.</span> <span class="toc-text">Markdown简介</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#标题"><span class="toc-number">2.</span> <span class="toc-text">标题</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#加粗和斜体"><span class="toc-number">3.</span> <span class="toc-text">加粗和斜体</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#列表"><span class="toc-number">4.</span> <span class="toc-text">列表</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-无序列表"><span class="toc-number">4.1.</span> <span class="toc-text">1. 无序列表</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2、有序列表"><span class="toc-number">4.2.</span> <span class="toc-text">2、有序列表</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#图片"><span class="toc-number">5.</span> <span class="toc-text">图片</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#添加链接"><span class="toc-number">6.</span> <span class="toc-text">添加链接</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#引用名人名言"><span class="toc-number">7.</span> <span class="toc-text">引用名人名言</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#行内代码块"><span class="toc-number">8.</span> <span class="toc-text">行内代码块</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#代码块"><span class="toc-number">9.</span> <span class="toc-text">代码块</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#表情"><span class="toc-number">10.</span> <span class="toc-text">表情</span></a></li></ol>
+				 </div>
+		   <script type="text/javascript">
+			function showToc(){
+				var toc_article = document.getElementById("toc-article");
+				var show_toc_btn = document.getElementById("show-toc-btn");
+				toc_article.setAttribute("style","display:block");
+				show_toc_btn.setAttribute("style","display:none");
+				};
+			function showBtn(){
+				var toc_article = document.getElementById("toc-article");
+				var show_toc_btn = document.getElementById("show-toc-btn");
+				toc_article.setAttribute("style","display:none");
+				show_toc_btn.setAttribute("style","display:block");
+				};
+		   </script>
+			  
+		<!-- 目录内容结束 -->
+		
+		
+		
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Markdown简介"><a href="#Markdown简介" class="headerlink" title="Markdown简介"></a>Markdown简介</h1><p>Markdown是一种在网络上控制文本样式的方法，通过它可以控制文本样式；给文本添加格式，比如加粗、斜体、添加图片和创建列表只需要做一些很简单的设置通过markdown就可以完成。</p>
+<h1 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># 一级标题</span><br><span class="line">## 二级标题</span><br><span class="line">### 三级标题</span><br><span class="line">...</span><br><span class="line">###### 六级标题</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+<h1 id="加粗和斜体"><a href="#加粗和斜体" class="headerlink" title="加粗和斜体"></a>加粗和斜体</h1><ol>
+<li><strong>加粗</strong>文本</li>
+<li><strong>加粗</strong></li>
+<li><em>斜体</em>文本</li>
+<li>_斜体_</li>
+<li><em>混合使用<strong>加粗</strong>和斜体</em></li>
+<li><del>删除线</del></li>
+<li>++下划线++</li>
+<li>==颜色标记==<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">1. **加粗**文本</span><br><span class="line">2. __加粗__</span><br><span class="line">3. *斜体*文本</span><br><span class="line">4. _斜体_</span><br><span class="line">5. _混合使用**加粗**和斜体_ （混合使用时不能同时使用梅星或下划线，需要两种表示不同）</span><br><span class="line">6. ~~删除线~~</span><br><span class="line">7. ++下划线++</span><br><span class="line">8. ==颜色标记==</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h1 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h1><h2 id="1-无序列表"><a href="#1-无序列表" class="headerlink" title="1. 无序列表"></a>1. 无序列表</h2><ul>
+<li>荤菜<ul>
+<li>鸡<ul>
+<li>公鸡</li>
+<li>母鸡</li>
+<li>战斗机</li>
+</ul>
+</li>
+<li>鸭</li>
+</ul>
+</li>
+<li>素菜<ul>
+<li>小白菜</li>
+<li>油麦菜</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">* 荤菜</span><br><span class="line">    * 鸡</span><br><span class="line">        * 公鸡</span><br><span class="line">        * 母鸡</span><br><span class="line">        * 战斗机</span><br><span class="line">    * 鸭</span><br><span class="line">* 素菜</span><br><span class="line">    * 小白菜</span><br><span class="line">    * 油麦菜</span><br><span class="line">    </span><br><span class="line">*和_效果是一样的</span><br></pre></td></tr></table></figure>
+<h2 id="2、有序列表"><a href="#2、有序列表" class="headerlink" title="2、有序列表"></a>2、有序列表</h2><ol>
+<li>电器<ol>
+<li>电视机</li>
+<li>冰箱</li>
+<li>空调</li>
+</ol>
+</li>
+<li>生活用品<ol>
+<li>锅<ol>
+<li>普通锅</li>
+<li>平底锅</li>
+<li>火锅</li>
+</ol>
+</li>
+<li>碗</li>
+<li>盆</li>
+</ol>
+</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">1. 电器</span><br><span class="line">    1. 电视机</span><br><span class="line">    2. 冰箱</span><br><span class="line">    3. 空调</span><br><span class="line">2. 生活用品</span><br><span class="line">    1. 锅</span><br><span class="line">        1. 普通锅</span><br><span class="line">        2. 平底锅</span><br><span class="line">        3. 火锅</span><br><span class="line">    2. 碗</span><br><span class="line">    3. 盆</span><br></pre></td></tr></table></figure>
+<h1 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h1><p><img src="https://raw.githubusercontent.com/javacfox/photos/master/Hexo%2BGithub%E5%AE%9E%E7%8E%B0%E7%9B%B8%E5%86%8C%E5%8A%9F%E8%83%BD/clipboard5.png" alt="图片加载中..."></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">![图片加载时显示的提示语](图片的路径，可以是图片路径和图片网络地址)</span><br><span class="line"></span><br><span class="line">![图片加载中...](https://raw.githubusercontent.com/javacfox/photos/master/Hexo%2BGithub%E5%AE%9E%E7%8E%B0%E7%9B%B8%E5%86%8C%E5%8A%9F%E8%83%BD/clipboard5.png)</span><br></pre></td></tr></table></figure>
+<h1 id="添加链接"><a href="#添加链接" class="headerlink" title="添加链接"></a>添加链接</h1><ol>
+<li><a href="https://javacfox.github.io" target="_blank" rel="noopener">https://javacfox.github.io</a></li>
+<li><a href="https://javacfox.github.io" target="_blank" rel="noopener">个人博客主页</a></li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">1. 直接写网络链接</span><br><span class="line">https://javacfox.github.io</span><br><span class="line">2. [地址描述](地址)</span><br><span class="line">[个人博客主页](https://javacfox.github.io)</span><br></pre></td></tr></table></figure>
+<h1 id="引用名人名言"><a href="#引用名人名言" class="headerlink" title="引用名人名言"></a>引用名人名言</h1><p>周恩来说过：</p>
+<blockquote>
+<p>为中华之崛起而读书</p>
+</blockquote>
+<p>李白说过：</p>
+<blockquote>
+<p>举杯邀明月，对影成三人</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">周恩来说过：</span><br><span class="line">&gt; 为中华之崛起而读书</span><br><span class="line"></span><br><span class="line">李白说过：</span><br><span class="line">&gt; 举杯邀明月，对影成三人</span><br></pre></td></tr></table></figure>
+<h1 id="行内代码块"><a href="#行内代码块" class="headerlink" title="行内代码块"></a>行内代码块</h1><p>下载docker的linux命令：<code>yum install docker</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">下载docker的linux命令：`yum install docker`</span><br></pre></td></tr></table></figure></p>
+<h1 id="代码块"><a href="#代码块" class="headerlink" title="代码块"></a>代码块</h1><p>各类语言的关键字高亮显示<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> &lt;T&gt; <span class="function">T <span class="title">selectOne</span><span class="params">(String statement, Object parameter)</span> </span>&#123;</span><br><span class="line">    List&lt;T&gt; list = <span class="keyword">this</span>.selectList(statement, parameter);</span><br><span class="line">    <span class="keyword">if</span> (list.size() == <span class="number">1</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> list.get(<span class="number">0</span>);</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (list.size() &gt; <span class="number">1</span>) &#123;</span><br><span class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> TooManyResultsException(<span class="string">"Expected one result (or null) to be returned by selectOne(), but found: "</span> + list.size());</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>语法如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">```java(这里写语言的种类)</span><br><span class="line">    public &lt;T&gt; T selectOne(String statement, Object parameter) &#123;</span><br><span class="line">    List&lt;T&gt; list = this.selectList(statement, parameter);</span><br><span class="line">    if (list.size() == 1) &#123;</span><br><span class="line">        return list.get(0);</span><br><span class="line">    &#125; else if (list.size() &gt; 1) &#123;</span><br><span class="line">        throw new TooManyResultsException(&quot;Expected one result (or null) to be returned by selectOne(), but found: &quot; + list.size());</span><br><span class="line">    &#125; else &#123;</span><br><span class="line">        return null;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># 任务列表</span><br><span class="line">- [x] 学习jpa和oracle</span><br><span class="line">- [x] 学习并实践ASN.1标记语言</span><br><span class="line">- [ ] 系统学习springboot</span><br></pre></td></tr></table></figure>
+<ul>
+<li style="list-style: none"><input type="checkbox" checked> 学习jpa和oracle</li>
+<li style="list-style: none"><input type="checkbox" checked> 学习并实践ASN.1标记语言</li>
+<li style="list-style: none"><input type="checkbox"> 系统学习springboot<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># 表格</span><br><span class="line"></span><br><span class="line">生活 | 工作</span><br><span class="line">---|---</span><br><span class="line">吃饭 | 学习编程技术</span><br><span class="line">睡觉 | 编码</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>生活</th>
+<th>工作</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>吃饭</td>
+<td>学习编程技术</td>
+</tr>
+<tr>
+<td>睡觉</td>
+<td>编码</td>
+</tr>
+</tbody>
+</table>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># SHA引用</span><br><span class="line">16c999e8c71134401a78d4d46435517b2271d6ac</span><br><span class="line"></span><br><span class="line">mojombo@16c999e8c71134401a78d4d46435517b2271d6ac</span><br></pre></td></tr></table></figure>
+<p>对提交的SHA-1哈希的任何引用都将自动转换为GitHub上该提交的链接<br>16c999e8c71134401a78d4d46435517b2271d6ac</p>
+<p>mojombo@16c999e8c71134401a78d4d46435517b2271d6ac<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"># 在存储库中发出引用</span><br><span class="line">任何引用Issue或Pull Request的数字都将自动转换为链接</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># 用户名</span><br><span class="line">输入一个@符，然后后面紧跟着用户名，就会提示这个用户查看这个评论。也可以提示一个组织。</span><br><span class="line"></span><br><span class="line">@javacfox</span><br><span class="line"></span><br><span class="line"># 添加html代码块</span><br><span class="line">&lt;html&gt;</span><br><span class="line">    &lt;a href=&quot;https://javacfox.github.io&quot;&gt;个人技术博客&lt;/a&gt;</span><br><span class="line">    &lt;p&gt;欢迎点击&lt;/p&gt;</span><br><span class="line">    &lt;hr&gt;</span><br><span class="line">    &lt;span&gt;</span><br><span class="line">    html：用来勾勒出网页的结构和内容，是一种超文本标记语言</span><br><span class="line">    &lt;/span&gt;</span><br><span class="line">    &lt;hr&gt;</span><br><span class="line">    &lt;h1&gt;标签&lt;/h1&gt;</span><br><span class="line">    &lt;pre&gt;</span><br><span class="line">    &lt;div&gt;&lt;!DOCTYPE HTML&gt;：文档申明，告诉浏览器使用最新的html5解析&lt;div&gt;</span><br><span class="line">    &lt;div&gt;&lt;head&gt;&lt;/head&gt;：头标签，给浏览器的一些解读约定&lt;/div&gt;</span><br><span class="line">    &lt;div&gt;&lt;meta charset=&quot;utf-8&quot;&gt;：告知浏览器使用utf-8编码解析内容&lt;/div&gt;</span><br><span class="line">    &lt;div&gt;&lt;meta keyword=&quot;html5 标签&quot;&gt;：告知浏览器使用utf-8编码解析内容&lt;/div&gt;</span><br><span class="line">    &lt;div&gt;&lt;title&gt;&lt;/title&gt;：网页标题，必备&lt;/div&gt;</span><br><span class="line">    &lt;div&gt;&lt;body&gt;&lt;/body&gt;：网页内容，展示给用户看的&lt;/div&gt;</span><br><span class="line">    &lt;/pre&gt;</span><br><span class="line">    &lt;h3&gt;段落标签&lt;/h3&gt;</span><br><span class="line">    &amp;ltp&amp;gt段落标签&amp;lt/p&amp;gt</span><br><span class="line">    &lt;h3&gt;列表标签&lt;/h3&gt;</span><br><span class="line">    &lt;dl&gt;</span><br><span class="line">        &lt;dt&gt;层级列表&lt;/dt&gt;</span><br><span class="line">        &lt;dd&gt;</span><br><span class="line">            &lt;ul&gt;</span><br><span class="line">                &lt;li&gt;无序列表&lt;/li&gt;</span><br><span class="line">                &lt;ul&gt;</span><br><span class="line">                    &lt;li&gt;无序列表1&lt;/li&gt;</span><br><span class="line">                    &lt;li&gt;无序列表2&lt;/li&gt;</span><br><span class="line">                    &lt;li&gt;无序列表3&lt;/li&gt;</span><br><span class="line">                &lt;/ul&gt;</span><br><span class="line">            &lt;/ul&gt;</span><br><span class="line">        &lt;/dd&gt;</span><br><span class="line">        &lt;dd&gt;</span><br><span class="line">            &lt;ol&gt;</span><br><span class="line">               &lt;li&gt;有序列表&lt;/li&gt;</span><br><span class="line">               &lt;ol&gt;</span><br><span class="line">                    &lt;li&gt;有序列表1&lt;/li&gt;</span><br><span class="line">                    &lt;li&gt;有序列表2&lt;/li&gt;</span><br><span class="line">                    &lt;li&gt;有序列表3&lt;/li&gt;</span><br><span class="line">                &lt;/ol&gt; </span><br><span class="line">            &lt;/ol&gt;</span><br><span class="line">        &lt;/dd&gt;</span><br><span class="line">    &lt;/dl&gt;</span><br><span class="line">    &lt;hr&gt;</span><br><span class="line">    &lt;div&gt;</span><br><span class="line">        &lt;div&gt;块级元素：&lt;span&gt;独占一行的元素，有div、p、h1-h6和hr&lt;/span&gt;&lt;/div&gt;</span><br><span class="line">        &lt;span&gt;行内元素：&lt;span&gt;共享一行，有span、i、em、b和strong、u、del和s&lt;/span&gt;&lt;/span&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">    &lt;hr&gt;</span><br><span class="line">    &lt;div&gt;</span><br><span class="line">        &lt;pre&gt;</span><br><span class="line">需要注意的是，行内元素存在空格折叠现象，多个空格会合并成一个空格。如果我们需要多个空格</span><br><span class="line">可以使用&amp;+nbsp(中间的加号不用，由于转义问题)替代,小于号用&amp;+lt(老铁),大于号是&amp;+gt(干他)</span><br><span class="line">，大小于号合起来就是老铁干他</span><br><span class="line">        &lt;/pre&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">    &lt;h3&gt;HTML5新增的标签&lt;/h3&gt;</span><br><span class="line">    &lt;pre&gt;</span><br><span class="line">        &lt;div&gt;header：头部&lt;/div&gt;</span><br><span class="line">        &lt;div&gt;article: 正文&lt;/div&gt;</span><br><span class="line">        &lt;div&gt;footer: 脚部&lt;/div&gt;</span><br><span class="line">    &lt;/pre&gt;</span><br><span class="line">    &lt;a href=&quot;#&quot;&gt;未完待续...&lt;/a&gt;</span><br><span class="line">&lt;/html&gt; </span><br><span class="line"></span><br><span class="line">```html</span><br><span class="line">&lt;html&gt;</span><br><span class="line">    &lt;a href=&quot;https://javacfox.github.io&quot;&gt;个人技术博客&lt;/a&gt;</span><br><span class="line">    &lt;p&gt;欢迎点击&lt;/p&gt;</span><br><span class="line">    &lt;hr&gt;</span><br><span class="line">    &lt;span&gt;</span><br><span class="line">    html：用来勾勒出网页的结构和内容，是一种超文本标记语言</span><br><span class="line">    &lt;/span&gt;</span><br><span class="line">    &lt;hr&gt;</span><br><span class="line">    &lt;h1&gt;标签&lt;/h1&gt;</span><br><span class="line">    &lt;pre&gt;</span><br><span class="line">    &lt;div&gt;&lt;!DOCTYPE HTML&gt;：文档申明，告诉浏览器使用最新的html5解析&lt;div&gt;</span><br><span class="line">    &lt;div&gt;&lt;head&gt;&lt;/head&gt;：头标签，给浏览器的一些解读约定&lt;/div&gt;</span><br><span class="line">    &lt;div&gt;&lt;meta charset=&quot;utf-8&quot;&gt;：告知浏览器使用utf-8编码解析内容&lt;/div&gt;</span><br><span class="line">    &lt;div&gt;&lt;meta keyword=&quot;html5 标签&quot;&gt;：告知浏览器使用utf-8编码解析内容&lt;/div&gt;</span><br><span class="line">    &lt;div&gt;&lt;title&gt;&lt;/title&gt;：网页标题，必备&lt;/div&gt;</span><br><span class="line">    &lt;div&gt;&lt;body&gt;&lt;/body&gt;：网页内容，展示给用户看的&lt;/div&gt;</span><br><span class="line">    &lt;/pre&gt;</span><br><span class="line">    &lt;h3&gt;段落标签&lt;/h3&gt;</span><br><span class="line">    &amp;ltp&amp;gt段落标签&amp;lt/p&amp;gt</span><br><span class="line">    &lt;h3&gt;列表标签&lt;/h3&gt;</span><br><span class="line">    &lt;dl&gt;</span><br><span class="line">        &lt;dt&gt;层级列表&lt;/dt&gt;</span><br><span class="line">        &lt;dd&gt;</span><br><span class="line">            &lt;ul&gt;</span><br><span class="line">                &lt;li&gt;无序列表&lt;/li&gt;</span><br><span class="line">                &lt;ul&gt;</span><br><span class="line">                    &lt;li&gt;无序列表1&lt;/li&gt;</span><br><span class="line">                    &lt;li&gt;无序列表2&lt;/li&gt;</span><br><span class="line">                    &lt;li&gt;无序列表3&lt;/li&gt;</span><br><span class="line">                &lt;/ul&gt;</span><br><span class="line">            &lt;/ul&gt;</span><br><span class="line">        &lt;/dd&gt;</span><br><span class="line">        &lt;dd&gt;</span><br><span class="line">            &lt;ol&gt;</span><br><span class="line">               &lt;li&gt;有序列表&lt;/li&gt;</span><br><span class="line">               &lt;ol&gt;</span><br><span class="line">                    &lt;li&gt;有序列表1&lt;/li&gt;</span><br><span class="line">                    &lt;li&gt;有序列表2&lt;/li&gt;</span><br><span class="line">                    &lt;li&gt;有序列表3&lt;/li&gt;</span><br><span class="line">                &lt;/ol&gt; </span><br><span class="line">            &lt;/ol&gt;</span><br><span class="line">        &lt;/dd&gt;</span><br><span class="line">    &lt;/dl&gt;</span><br><span class="line">    &lt;hr&gt;</span><br><span class="line">    &lt;div&gt;</span><br><span class="line">        &lt;div&gt;块级元素：&lt;span&gt;独占一行的元素，有div、p、h1-h6和hr&lt;/span&gt;&lt;/div&gt;</span><br><span class="line">        &lt;span&gt;行内元素：&lt;span&gt;共享一行，有span、i、em、b和strong、u、del和s&lt;/span&gt;&lt;/span&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">    &lt;hr&gt;</span><br><span class="line">    &lt;div&gt;</span><br><span class="line">        &lt;pre&gt;</span><br><span class="line">需要注意的是，行内元素存在空格折叠现象，多个空格会合并成一个空格。如果我们需要多个空格</span><br><span class="line">可以使用&amp;+nbsp(中间的加号不用，由于转义问题)替代,小于号用&amp;+lt(老铁),大于号是&amp;+gt(干他)</span><br><span class="line">，大小于号合起来就是老铁干他</span><br><span class="line">        &lt;/pre&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">    &lt;h3&gt;HTML5新增的标签&lt;/h3&gt;</span><br><span class="line">    &lt;pre&gt;</span><br><span class="line">        &lt;div&gt;header：头部&lt;/div&gt;</span><br><span class="line">        &lt;div&gt;article: 正文&lt;/div&gt;</span><br><span class="line">        &lt;div&gt;footer: 脚部&lt;/div&gt;</span><br><span class="line">    &lt;/pre&gt;</span><br><span class="line">    &lt;a href=&quot;#&quot;&gt;未完待续...&lt;/a&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure></p>
+<h1 id="表情"><a href="#表情" class="headerlink" title="表情"></a>表情</h1><p>@javacfox :stuck_out_tongue:</p>
+<table>
+<thead>
+<tr>
+<th>表情</th>
+<th>代码</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>🏄</td>
+<td><code>:surfer:</code></td>
+</tr>
+<tr>
+<td>😗</td>
+<td><code>:kissing:</code></td>
+</tr>
+<tr>
+<td>😛</td>
+<td><code>:stuck_out_tongue:</code></td>
+</tr>
+<tr>
+<td>…</td>
+<td>…</td>
+</tr>
+</tbody>
+</table>
+
+      
+	  
+	  
+		
+		  <div class="declare">
+			<strong>本文作者：</strong>
+			
+			  Lujianlong
+			
+			<br>
+			<strong>本文链接：</strong>
+			http://yoursite.com/2019/07/31/Markdown语法整理/
+			<br>
+			<span>
+				<strong>本文访问量：</strong><span id="busuanzi_value_page_pv"></span>
+			</span>次
+			<br>
+			<strong>版权声明：</strong>
+			本作品采用
+			<a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>
+			进行许可。转载请注明出处！
+			
+			  <br>
+			  <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"></a>
+			
+			
+		
+	
+		  </div>
+		
+	  
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/apply.png">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/wechat.png">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+	
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">java</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">手撸ini文件的读写和修改</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">markdown</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/07/31/Markdown语法整理/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/06/07/java使用ini4j读写和修改ini配置文件（支持section）/" class="archive-article-date">
-  	<time datetime="2019-06-07T08:33:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-07</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2019/07/24/SpringBoot中servlet三大组件的注册-Servlet-Filter-Listener/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">SpringBoot中servlet三大组件的注册[Servlet,Filter,Listener]</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/06/07/java使用ini4j读写和修改ini配置文件（支持section）/">java使用ini4j读写和修改ini配置文件（支持section）</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">java</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">ini4j的使用</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
   
 
-    
+  
+
+  
+  <div id="gitment-ctn"></div> 
+<link rel="stylesheet" href="https://jjeejj.github.io/css/gitment.css">
+<script src="https://www.wenjunjiang.win/js/gitment.js"></script>
+<script>
+var gitment = new Gitment({
+  id: "http://yoursite.com/2019/07/31/Markdown语法整理/",
+  owner: 'javacfox',
+  repo: 'javacfox.github.io',
+  oauth: {
+    client_id: '23e433c3cfc76c050ba3',
+    client_secret: '697e555db09c2e181f24fbe071de2e02156dc255',
+  },
+})
+gitment.render('gitment-ctn')
+</script>
+  
 
 
           </div>
@@ -294,9 +571,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
