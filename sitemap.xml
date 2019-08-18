@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/2019/08/18/Spring-Boot%E4%B8%AD%E6%95%B4%E5%90%88Druid%E5%92%8CJpa%E5%AE%9E%E7%8E%B0%E7%AE%80%E5%8D%95%E7%9A%84curd/</loc>
+    
+    <lastmod>2019-08-18T07:20:20.008Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2019/08/16/springboot%E4%B8%AD%E9%9B%86%E6%88%90druid%E5%92%8Cmybatits/</loc>
     
     <lastmod>2019-08-15T16:27:26.945Z</lastmod>
