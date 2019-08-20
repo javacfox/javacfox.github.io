@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/2019/08/21/Springboot%E4%B8%AD%E5%9F%BA%E4%BA%8E%E6%B3%A8%E8%A7%A3%E4%BD%BF%E7%94%A8%E7%BC%93%E5%AD%98/</loc>
+    
+    <lastmod>2019-08-20T16:15:30.448Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2019/08/18/Spring-Boot%E4%B8%AD%E6%95%B4%E5%90%88Druid%E5%92%8CJpa%E5%AE%9E%E7%8E%B0%E7%AE%80%E5%8D%95%E7%9A%84curd/</loc>
     
     <lastmod>2019-08-18T07:20:20.008Z</lastmod>
