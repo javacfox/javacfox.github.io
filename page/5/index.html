@@ -172,6 +172,285 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-org-apache-catalina-LifecycleException解决办法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/05/19/org-apache-catalina-LifecycleException解决办法/">org.apache.catalina.LifecycleException解决办法</a>
+    </h1>
+  
+
+        
+        <a href="/2019/05/19/org-apache-catalina-LifecycleException解决办法/" class="archive-article-date">
+  	<time datetime="2019-05-19T04:07:41.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-19</time>
+</a>
+        
+		
+		<!-- 目录内容 -->
+		
+		<!-- 目录内容结束 -->
+		
+		
+		
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line">严重: ContainerBase.addChild: start: </span><br><span class="line">org.apache.catalina.LifecycleException: Failed to start component [StandardEngine[Catalina].StandardHost[localhost].StandardContext[/MAuthManage]]</span><br><span class="line">	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:<span class="number">167</span>)</span><br><span class="line">	at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:<span class="number">754</span>)</span><br><span class="line">	at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:<span class="number">730</span>)</span><br><span class="line">	at org.apache.catalina.core.StandardHost.addChild(StandardHost.java:<span class="number">734</span>)</span><br><span class="line">	at org.apache.catalina.startup.HostConfig.deployDescriptor(HostConfig.java:<span class="number">624</span>)</span><br><span class="line">	at org.apache.catalina.startup.HostConfig$DeployDescriptor.run(HostConfig.java:<span class="number">1833</span>)</span><br><span class="line">	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:<span class="number">511</span>)</span><br><span class="line">	at java.util.concurrent.FutureTask.run(FutureTask.java:<span class="number">266</span>)</span><br><span class="line">	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:<span class="number">1149</span>)</span><br><span class="line">	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:<span class="number">624</span>)</span><br><span class="line">	at java.lang.Thread.run(Thread.java:<span class="number">748</span>)</span><br><span class="line">Caused by: java.lang.NoClassDefFoundError: com/sun/istack/localization/Localizable</span><br><span class="line">	at java.lang.ClassLoader.defineClass1(Native Method)</span><br><span class="line">	at java.lang.ClassLoader.defineClass(ClassLoader.java:<span class="number">763</span>)</span><br><span class="line">	at java.security.SecureClassLoader.defineClass(SecureClassLoader.java:<span class="number">142</span>)</span><br><span class="line">	at org.apache.catalina.loader.WebappClassLoaderBase.findClassInternal(WebappClassLoaderBase.java:<span class="number">2401</span>)</span><br><span class="line">	at org.apache.catalina.loader.WebappClassLoaderBase.findClass(WebappClassLoaderBase.java:<span class="number">859</span>)</span><br><span class="line">	at org.apache.catalina.loader.WebappClassLoaderBase.loadClass(WebappClassLoaderBase.java:<span class="number">1333</span>)</span><br><span class="line">	at org.apache.catalina.loader.WebappClassLoaderBase.loadClass(WebappClassLoaderBase.java:<span class="number">1185</span>)</span><br><span class="line">	at java.lang.ClassLoader.defineClass1(Native Method)</span><br><span class="line">	at java.lang.ClassLoader.defineClass(ClassLoader.java:<span class="number">763</span>)</span><br><span class="line">	at java.security.SecureClassLoader.defineClass(SecureClassLoader.java:<span class="number">142</span>)</span><br><span class="line">	at org.apache.catalina.loader.WebappClassLoaderBase.findClassInternal(WebappClassLoaderBase.java:<span class="number">2401</span>)</span><br><span class="line">	at org.apache.catalina.loader.WebappClassLoaderBase.findClass(WebappClassLoaderBase.java:<span class="number">859</span>)</span><br><span class="line">	at org.apache.catalina.loader.WebappClassLoaderBase.loadClass(WebappClassLoaderBase.java:<span class="number">1333</span>)</span><br><span class="line">	at org.apache.catalina.loader.WebappClassLoaderBase.loadClass(WebappClassLoaderBase.java:<span class="number">1185</span>)</span><br><span class="line">	at com.sun.xml.ws.transport.http.servlet.WSServletContainerInitializer.onStartup(WSServletContainerInitializer.java:<span class="number">64</span>)</span><br><span class="line">	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:<span class="number">5225</span>)</span><br><span class="line">	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:<span class="number">150</span>)</span><br><span class="line">	... <span class="number">10</span> more</span><br><span class="line">Caused by: java.lang.ClassNotFoundException: com.sun.istack.localization.Localizable</span><br><span class="line">	at org.apache.catalina.loader.WebappClassLoaderBase.loadClass(WebappClassLoaderBase.java:<span class="number">1364</span>)</span><br><span class="line">	at org.apache.catalina.loader.WebappClassLoaderBase.loadClass(WebappClassLoaderBase.java:<span class="number">1185</span>)</span><br><span class="line">	... <span class="number">27</span> more</span><br><span class="line"></span><br><span class="line">四月 <span class="number">29</span>, <span class="number">2019</span> <span class="number">9</span>:<span class="number">51</span>:<span class="number">05</span> 上午 org.apache.catalina.startup.HostConfig deployDescriptor</span><br><span class="line">严重: Error deploying configuration descriptor [D:\Users\Javacfox\eclipse-workspace\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\conf\Catalina\localhost\MAuthManage.xml]</span><br><span class="line">java.lang.IllegalStateException: ContainerBase.addChild: start: org.apache.catalina.LifecycleException: Failed to start component [StandardEngine[Catalina].StandardHost[localhost].StandardContext[/MAuthManage]]</span><br><span class="line">	at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:<span class="number">758</span>)</span><br><span class="line">	at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:<span class="number">730</span>)</span><br><span class="line">	at org.apache.catalina.core.StandardHost.addChild(StandardHost.java:<span class="number">734</span>)</span><br><span class="line">	at org.apache.catalina.startup.HostConfig.deployDescriptor(HostConfig.java:<span class="number">624</span>)</span><br><span class="line">	at org.apache.catalina.startup.HostConfig$DeployDescriptor.run(HostConfig.java:<span class="number">1833</span>)</span><br><span class="line">	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:<span class="number">511</span>)</span><br><span class="line">	at java.util.concurrent.FutureTask.run(FutureTask.java:<span class="number">266</span>)</span><br><span class="line">	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:<span class="number">1149</span>)</span><br><span class="line">	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:<span class="number">624</span>)</span><br><span class="line">	at java.lang.Thread.run(Thread.java:<span class="number">748</span>)</span><br><span class="line"></span><br><span class="line">四月 <span class="number">29</span>, <span class="number">2019</span> <span class="number">9</span>:<span class="number">51</span>:<span class="number">05</span> 上午 org.apache.catalina.startup.HostConfig deployDescriptor</span><br><span class="line">信息: Deployment of configuration descriptor [D:\Users\Javacfox\eclipse-workspace\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\conf\Catalina\localhost\MAuthManage.xml] has finished in [<span class="number">10</span>,<span class="number">512</span>] ms</span><br><span class="line">四月 <span class="number">29</span>, <span class="number">2019</span> <span class="number">9</span>:<span class="number">51</span>:<span class="number">05</span> 上午 org.apache.coyote.AbstractProtocol start</span><br><span class="line">信息: Starting ProtocolHandler [<span class="string">"http-nio-8080"</span>]</span><br><span class="line">四月 <span class="number">29</span>, <span class="number">2019</span> <span class="number">9</span>:<span class="number">51</span>:<span class="number">05</span> 上午 org.apache.coyote.AbstractProtocol start</span><br><span class="line">信息: Starting ProtocolHandler [<span class="string">"ajp-nio-8009"</span>]</span><br><span class="line">四月 <span class="number">29</span>, <span class="number">2019</span> <span class="number">9</span>:<span class="number">51</span>:<span class="number">05</span> 上午 org.apache.catalina.startup.Catalina start</span><br><span class="line">信息: Server startup in <span class="number">14048</span> ms</span><br></pre></td></tr></table></figure>
+        
+      
+	  
+	  
+		
+		  <div class="declare" hidden="hidden"></div>
+		
+	  
+      
+    </div>
+	
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">日常bug</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">LifecycleException解决思路</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/05/19/org-apache-catalina-LifecycleException解决办法/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-安装虚拟机时趟过的坑" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/05/19/安装虚拟机时趟过的坑/">安装虚拟机时趟过的坑</a>
+    </h1>
+  
+
+        
+        <a href="/2019/05/19/安装虚拟机时趟过的坑/" class="archive-article-date">
+  	<time datetime="2019-05-19T03:08:41.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-19</time>
+</a>
+        
+		
+		<!-- 目录内容 -->
+		
+		<!-- 目录内容结束 -->
+		
+		
+		
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="1、Intel-VT-x禁用"><a href="#1、Intel-VT-x禁用" class="headerlink" title="1、Intel VT-x禁用"></a>1、Intel VT-x禁用</h1><ol>
+<li>重启电脑，在开机动画之前，连续按F2</li>
+<li>进入bios界面，点击上方菜单栏处的【Advanced】</li>
+<li>进入advanced界面，点击列表中的【CPU Configuration】或者CPU-Setup</li>
+<li>找到【Intel Virtualization Technology】选项，点击回车选项</li>
+<li>该选项默认的是Disabled关闭状态，进入设置栏将Enabled勾选</li>
+<li>此时点击键盘上的F10选项，进行保存，在弹出的保存界面，点击YES保存，重启电脑
+        
+      
+	  
+	  
+		
+		  <div class="declare" hidden="hidden"></div>
+		
+	  
+      
+    </li></ol></div>
+	
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">日常bug</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">虚拟机的安装</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/05/19/安装虚拟机时趟过的坑/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-解决slf4j导入失败" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/05/19/解决slf4j导入失败/">解决slf4j导入失败</a>
+    </h1>
+  
+
+        
+        <a href="/2019/05/19/解决slf4j导入失败/" class="archive-article-date">
+  	<time datetime="2019-05-19T03:01:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-19</time>
+</a>
+        
+		
+		<!-- 目录内容 -->
+		
+		<!-- 目录内容结束 -->
+		
+		
+		
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>报错内容：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".</span><br><span class="line">SLF4J: Defaulting to no-operation (NOP) logger implementation</span><br><span class="line">SLF4J: See http:<span class="comment">//www.slf4j.org/codes.html#StaticLoggerBinder for further details.</span></span><br></pre></td></tr></table></figure></p>
+        
+      
+	  
+	  
+		
+		  <div class="declare" hidden="hidden"></div>
+		
+	  
+      
+    </div>
+	
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">日常bug</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">slf4j引入异常</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/05/19/解决slf4j导入失败/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-将一个已存在的目录转换为一个-GIT-项目并托管到-GITHUB-仓库" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -815,86 +1094,9 @@
 
 
   
-    <article id="post-hello-world" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/04/15/hello-world/">Hello World</a>
-    </h1>
-  
-
-        
-        <a href="/2019/04/15/hello-world/" class="archive-article-date">
-  	<time datetime="2019-04-15T09:25:33.321Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-15</time>
-</a>
-        
-		
-		<!-- 目录内容 -->
-		
-		<!-- 目录内容结束 -->
-		
-		
-		
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-        
-      
-	  
-	  
-		
-		  <div class="declare" hidden="hidden"></div>
-		
-	  
-      
-    </div>
-	
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/04/15/hello-world/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/4/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span>
+      <a class="extend prev" rel="prev" href="/page/4/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/6/">Next &raquo;</a>
     </nav>
   
 
@@ -989,6 +1191,14 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">密码学基础</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Base64算法</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">yillia</a>
               </li>
              
@@ -1001,7 +1211,19 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">mysql</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">gitment评论系统</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">加密与解密类</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">密钥生成器</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1009,35 +1231,15 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">SpEL表达式</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">使用方法</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">密码学基础</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Base64算法</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">servlet三大组件的注册</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">静态资源映射规则</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">caching</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">加密与解密类</a>
+                <a href="javascript:void(0)" class="js-tag color3">SpEL表达式</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">静态资源映射规则</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1046,6 +1248,46 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">JDBC driver异常</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">maven</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">本地jar包引入</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">java.security包</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">oracle</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">sql</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">servlet三大组件的注册</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">java</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">ini4j的使用</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">分页查询</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Monogdb进阶</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1061,19 +1303,7 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">密钥生成器</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">分页查询</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Monogdb进阶</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">java.security包</a>
+                <a href="javascript:void(0)" class="js-tag color5">使用方法</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1089,31 +1319,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">日常bug记录</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">java</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ini4j的使用</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">vue</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">vue父子组件间传值</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">docker</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">安装mysql</a>
+                <a href="javascript:void(0)" class="js-tag color3">vue组件介绍</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1121,15 +1331,7 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">对称加密算法</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">虚拟机的安装</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">vue组件介绍</a>
+                <a href="javascript:void(0)" class="js-tag color1">vue父子组件间传值</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1145,19 +1347,19 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">数字签名算法</a>
+                <a href="javascript:void(0)" class="js-tag color2">docker</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">消息摘要算法</a>
+                <a href="javascript:void(0)" class="js-tag color3">安装mysql</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">github</a>
+                <a href="javascript:void(0)" class="js-tag color2">虚拟机的安装</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">slf4j引入异常</a>
+                <a href="javascript:void(0)" class="js-tag color2">对称加密算法</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1169,23 +1371,31 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">日常bug记录</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">数字签名算法</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">github</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">消息摘要算法</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">证书和密钥的存储类</a>
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">slf4j引入异常</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">ASN.1</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">markdown</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">druid和jpa的简单使用</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">druid和mysql的简单使用</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1197,6 +1407,14 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">druid和jpa的简单使用</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">markdown</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">配置文件的注入</a>
               </li>
              
@@ -1205,11 +1423,15 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">手撸ini文件的读写和修改</a>
+                <a href="javascript:void(0)" class="js-tag color2">druid和mysql的简单使用</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">数字证书</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">手撸ini文件的读写和修改</a>
               </li>
              
               <li class="article-tag-list-item">
